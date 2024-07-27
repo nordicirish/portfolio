@@ -59,7 +59,7 @@ export const experiencesData = [
     date: "2021 - present",
   },
 ] as const;
-
+//as const is used to make the data specific to the values as well as types and readonly. Improves intellisense to show the data values.
 export const projectsData = [
   {
     title: "CorpComment",
