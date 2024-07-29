@@ -2,23 +2,11 @@
 import React, { useEffect } from "react";
 import SectionHeading from "./section-heading";
 import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import { useActiveSectionContext } from "@/context/active-section";
+
+import { useSectionInView } from "@/lib/hooks";
 
 export default function About() {
-  // useInView hook to make the active menu item change when scrolling
-  const { ref, inView } = useInView(
-    // threshold ensures menu item only changes when section is 75% visible
-    { threshold: 0.75 }
-  );
-  // console.log("inView", inView);
-  const { setActiveSection, timeOfLastClick } = useActiveSectionContext();
-
-  useEffect(() => {
-    if (inView && Date.now() - timeOfLastClick > 1000) {
-      setActiveSection("About");
-    }
-  }, [inView, setActiveSection, timeOfLastClick]);
+const { ref } = useSectionInView("About", 0.75);
 
   return (
     // scroll-mt-28 ensures a margin at the top of the section when using the bookmark navigation
