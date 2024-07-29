@@ -12,14 +12,14 @@ export default function Projects() {
     // threshold ensures menu item only changes when section is 25% visible
     { threshold: 0.3 }
   );
-  console.log("inView", inView);
-  const { setActiveSection } = useActiveSectionContext();
+  // console.log("inView", inView);
+  const { setActiveSection, timeOfLastClick } = useActiveSectionContext();
 
   useEffect(() => {
-    if (inView) {
-      setActiveSection("Projects");
+    if (inView && Date.now() - timeOfLastClick > 1000) {
+      setActiveSection("About");
     }
-  }, [inView, setActiveSection]);
+  }, [inView, setActiveSection, timeOfLastClick]);
   return (
     <section ref={ref} id="projects" className="scroll-mt-28">
       <SectionHeading>Projects</SectionHeading>

@@ -12,13 +12,13 @@ export default function About() {
     { threshold: 0.75 }
   );
   // console.log("inView", inView);
-  const { setActiveSection } = useActiveSectionContext();
+  const { setActiveSection, timeOfLastClick } = useActiveSectionContext();
 
   useEffect(() => {
-    if (inView) {
+    if (inView && Date.now() - timeOfLastClick > 1000) {
       setActiveSection("About");
     }
-  }, [inView, setActiveSection]);
+  }, [inView, setActiveSection, timeOfLastClick]);
 
   return (
     // scroll-mt-28 ensures a margin at the top of the section when using the bookmark navigation

@@ -1,5 +1,5 @@
 "use client";
-import React,{useEffect} from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -9,22 +9,22 @@ import { FaGithubSquare } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
 import { useActiveSectionContext } from "@/context/active-section";
 
-
 export default function Intro() {
   const { ref, inView } = useInView(
     // threshold ensures menu item only changes when section is 50% visible
     { threshold: 0.5 }
   );
   // console.log("inView", inView);
-  const { setActiveSection } = useActiveSectionContext();
+  const { setActiveSection, timeOfLastClick } = useActiveSectionContext();
 
   useEffect(() => {
-    if (inView) {
-      setActiveSection("Home");
+    if (inView && Date.now() - timeOfLastClick > 1000) {
+      setActiveSection("About");
     }
-  }, [inView, setActiveSection]);
+  }, [inView, setActiveSection, timeOfLastClick]);
   return (
-    <section ref={ref}
+    <section
+      ref={ref}
       id="home"
       className="mb-28 max-w-[50rem]
     text-center sm:mb-8 scroll-mt-[100rem]"
