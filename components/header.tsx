@@ -10,7 +10,8 @@ import { useActiveSectionContext } from "@/context/active-section";
 export default function Header() {
   //   use context to get the active section
   // allows state to be shared between components
-  const { activeSection, setActiveSection } = useActiveSectionContext();
+  const { activeSection, setActiveSection, setTimeOfLastClick } =
+    useActiveSectionContext();
 
   //   use  negative translate to center the header on the screen - pulled left by half it's width
   return (
@@ -45,7 +46,9 @@ export default function Header() {
                   activeSection === link.name && "text-gray-950"
                 )}
                 href={link.hash}
-                onClick={() => setActiveSection(link.name)}
+                onClick={() => {
+                  setActiveSection(link.name), setTimeOfLastClick(Date.now());
+                }}
               >
                 {link.name}
                 {/* if link is active apply the following styling */}
