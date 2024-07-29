@@ -1,36 +1,45 @@
 "use server";
+import React from "react";
 import { getErrorMessage, validateString } from "@/lib/utils";
 //needs to be used in separate component as it is server side only and won't run on the client
 import { Resend } from "resend";
+import ContactFormEmail from "@/email/contact-form-email";
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export const sendEmail = async (formData: FormData) => {
   const senderEmail = formData.get("senderEmail");
   const message = formData.get("message");
 
+  // simple server-side validation
   if (!validateString(senderEmail, 500)) {
     return {
-      error: "invalid sender email",
+      error: "Invalid sender email",
     };
   }
   if (!validateString(message, 5000)) {
     return {
-      error: "invalid message",
+      error: "Invalid message",
     };
   }
-  try {
-    await resend.emails.send({
-      from: "Portfolio Site Contact Form<onboarding@resend.dev>",
-      to: "nordicirish1@gmail.com",
-      subject: "Message from portfolio site",
-      // can assert as string as already been validated
-      reply_to: senderEmail as string,
-      text: message as string,
-      // html: "<p>Congrats on sending your <strong>first email</strong>!</p>",
-    });
-  } catch (error: unknown) {
+
+  const { data, error } = await resend.emails.send({
+    from: "Contact Form <onboarding@resend.dev>",
+    to: "nordicirish1@gmail.com",
+    subject: "Message from contact form",
+    reply_to: senderEmail,
+
+    react: React.createElement(ContactFormEmail, {
+      message: message,
+      senderEmail: senderEmail,
+    }),
+  });
+  if (error) {
     return {
-        error: getErrorMessage(error),
-    }
-  }        
- };
+      error: getErrorMessage(error),
+    };
+  }
+
+  return {
+    data,
+  };
+};
