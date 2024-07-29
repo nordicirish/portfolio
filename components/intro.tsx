@@ -106,7 +106,7 @@ export default function Intro() {
           active:scale-105
           transition
           cursor-pointer
-          border-black/10"
+          borderBlack"
           href="/CV.pdf"
           download
         >
@@ -120,7 +120,7 @@ export default function Intro() {
           active:scale-105
           transition
           cursor-pointer
-          border-black/10"
+          borderBlack"
           href="https://www.linkedin.com/in/nordic-irish/"
           target="_blank"
         >
@@ -133,7 +133,7 @@ export default function Intro() {
           active:scale-105
           transition
           cursor-pointer
-          border-black/10
+          borderBlack
           text-[1.35rem]"
           href="https://github.com/nordicirish"
           target="_blank"
