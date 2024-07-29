@@ -23,7 +23,7 @@ export default function ActiveSectionContextProvider({
 }: ActiveSectionContextProviderProps) {
   const [activeSection, setActiveSection] = useState<SectionName>("Home");
   // state to keep track of time of last click to change active section
-  const [timeOfLastClick, setTimeOfLastClick] = useState(0);
+  const [timeOfLastClick, setTimeOfLastClick] = useState(0); // we need to keep track of the time of last click to disable the observer temporarily when user clicks on the menu item
 
   return (
     <ActiveSectionContext.Provider value={{ activeSection, setActiveSection, timeOfLastClick, setTimeOfLastClick }}>
