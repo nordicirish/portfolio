@@ -7,5 +7,7 @@
 * Tailwind
 * React Icons
 * Framer Motion
+* React Toaster
+* Resend
 
 
