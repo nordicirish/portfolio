@@ -2,7 +2,7 @@ import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaReact, FaVuejs } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
-import rmtdevImg from "@/public/rmtdev.png";
+
 import learnLangImg from "@/public/learnLangImg.png";
 import invoiceDashboardImg from "@/public/invoiceDashboardImg.png";
 import { RiNextjsFill, RiNextjsLine } from "react-icons/ri";
@@ -52,7 +52,7 @@ export const experiencesData = [
     date: "10/2022 - 02/2023",
   },
   {
-    title: "Diploma Full-Stack Web Development @ Tampere University",
+    title: "Diploma in Full-stack Development @ Tampere University",
     location: "Tampere, Finland",
     description:
       "I studied Full-stack Web Development and gained valuable skills in Front-end (React, Html, Javascript, CSS, SASS, Bootstrap) and Back-end (Node.js, Express, MariaDB) development.",
