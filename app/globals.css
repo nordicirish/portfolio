@@ -4,8 +4,11 @@
 
 /* for react-vertical-timeline-component */
 html {
-  --line-color: #e5e7eb;
+  --line-color: #dff1e4;
+}
+html.dark {
+  --line-color: rgba(255, 255, 255, 0.2);
 }
 .borderBlack {
-    @apply border border-black/10
+  @apply border border-black/10;
 }

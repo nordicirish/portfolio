@@ -45,7 +45,7 @@ export default function Intro() {
           </motion.div>
 
           <motion.span
-            className="absolute bottom-0 right-0  text-4xl"
+            className="absolute bottom-0 right-0 text-4xl"
             initial={{
               opacity: 0,
               scale: 0,
@@ -79,66 +79,51 @@ export default function Intro() {
         and more.
       </motion.h1>
       <motion.div
-        className="flex flex-col sm:flex-row gap-2 items-center justify-center px-4 text-lg font-medium"
+        className="flex flex-col sm:flex-row items-center justify-center gap-4 p-4 text-lg font-medium"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1 }}
       >
-        {/* group adds the hover effect to all elments in the group */}
         <Link
           href="#contact"
-          className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110
-          hover:scale-110 hover:bg-gray-950
-          active:scale-105
-          transition"
+          className="group flex items-center justify-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition bg-gray-900 text-white h-[3.2rem] max-h-[3.2rem] min-h-[3.2rem] px-4"
           onClick={() => {
             setActiveSection("Contact");
             setTimeOfLastClick(Date.now());
           }}
         >
-          Contact me here {/* add group-hover to include the hover effect */}
-          <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
+          <span className="flex gap-2 items-center">
+            Contact me here
+            <BsArrowRight className="w-4 h-4 opacity-70 group-hover:translate-x-1 transition mt-[0.125rem]" />
+          </span>
         </Link>
-        {/* use a tags rather than buttons as these are navigation links */}
         <a
-          className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110
-          hover:scale-110
-          active:scale-105
-          transition
-          cursor-pointer
-          borderBlack"
+          className="group flex items-center justify-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 h-[3.2rem] max-h-[3.2rem] min-h-[3.2rem] px-4"
           href="/CV.pdf"
           download
         >
-          Download CV{" "}
-          <HiDownload className="opacity-60 group-hover:translate-y-1 transition" />
+          <span className="flex gap-2 items-center">
+            Download CV
+            <HiDownload className="w-4 h-4 opacity-60 group-hover:translate-y-1 transition" />
+          </span>
         </a>
         <a
-          className="bg-white text-gray-700 p-4 flex items-center gap-2 rounded-full focus:scale-[1.15]
-          hover:scale-[1.15]
-          hover:text-gray-950
-          active:scale-105
-          transition
-          cursor-pointer
-          borderBlack"
+          className="flex items-center justify-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60 h-[3.2rem] max-h-[3.2rem] min-h-[3.2rem] px-4"
           href="https://www.linkedin.com/in/nordic-irish/"
           target="_blank"
         >
-          <BsLinkedin />
+          <span className="flex items-center gap-2">
+            <BsLinkedin className="w-4 h-4" />
+          </span>
         </a>
         <a
-          className="bg-white text-gray-700 p-4 flex items-center gap-2 rounded-full focus:scale-[1.15]
-          hover:scale-[1.15]
-          hover:text-gray-950
-          active:scale-105
-          transition
-          cursor-pointer
-          borderBlack
-          text-[1.35rem]"
+          className="flex items-center justify-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60 h-[3.2rem] max-h-[3.2rem] min-h-[3.2rem] px-4"
           href="https://github.com/nordicirish"
           target="_blank"
         >
-          <FaGithubSquare />
+          <span className="flex gap-2 items-center">
+            <FaGithubSquare className="w-[1.14rem] h-[1.14rem]" />
+          </span>
         </a>
       </motion.div>
     </section>

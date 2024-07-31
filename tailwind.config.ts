@@ -16,5 +16,7 @@ const config: Config = {
     },
   },
   plugins: [],
+  // prevents tailwind from overriding the default mode with the system preference
+  darkMode: "class",
 };
 export default config;

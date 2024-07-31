@@ -1,10 +1,11 @@
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
-import { FaReact } from "react-icons/fa";
+import { FaReact, FaVuejs } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 import corpcommentImg from "@/public/corpcomment.png";
 import rmtdevImg from "@/public/rmtdev.png";
 import wordanalyticsImg from "@/public/wordanalytics.png";
+import { RiNextjsFill, RiNextjsLine } from "react-icons/ri";
 
 export const links = [
   {
@@ -35,28 +36,28 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "Graduated bootcamp",
-    location: "Miami, FL",
+    title: "Web Developer Internship @ BearIT",
+    location: "Tampere, Finland",
     description:
-      "I graduated after 6 months of studying. I immediately found a job as a front-end developer.",
+      "I levelled up my skills from React to Next.js. and I collaboratively codded a sports training app built with Next.js, PostgreSQL, Tailwind & Typescript and I handled the deployment of a gardening app to AWS.",
+    icon: React.createElement(RiNextjsFill),
+    date: "09/2023 - 12/2023",
+  },
+  {
+    title: "Software Developer Trainee @ Futurice",
+    location: "Tampere, Finland",
+    description:
+      "I was a Full-stack software development in cloud native environment trainee. I undertook 300 hours of agile project coding work and completed 354 hours of studies. I also gained 4 cloud cerifications.",
+    icon: React.createElement(FaVuejs),
+    date: "10/2022 - 02/2023",
+  },
+  {
+    title: "Diploma Full-Stack Web Development @ Tampere University",
+    location: "Tampere, Finland",
+    description:
+      "I studied Full-stack Web Development and gained valuable skills in Front-end (React, Html, Javascript, CSS, SASS, Bootstrap) and Back-end (Node.js, Express, MariaDB) development.",
     icon: React.createElement(LuGraduationCap),
-    date: "2019",
-  },
-  {
-    title: "Front-End Developer",
-    location: "Orlando, FL",
-    description:
-      "I worked as a front-end developer for 2 years in 1 job and 1 year in another job. I also upskilled to the full stack.",
-    icon: React.createElement(CgWorkAlt),
-    date: "2019 - 2021",
-  },
-  {
-    title: "Full-Stack Developer",
-    location: "Houston, TX",
-    description:
-      "I'm now a full-stack developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
-    icon: React.createElement(FaReact),
-    date: "2021 - present",
+    date: "09/2021 - 10/2022",
   },
 ] as const;
 //as const is used to make the data specific to the values as well as types and readonly. Improves intellisense to show the data values.
@@ -96,13 +97,14 @@ export const skillsData = [
   "Tailwind",
   "Prisma",
   "MongoDB",
-  "PhotoShop",
   "SQL",
   "Express",
   "Figma",
-  "PostgreSQL",  
+  "PostgreSQL",
   "Framer Motion",
   "AWS",
   "Azure",
+  "Scrum",
+  "Vue",
   "Vercel",
 ] as const;
