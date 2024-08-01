@@ -61,7 +61,9 @@ export default function Project({
           group-even:group-hover:rotate-2
           transition"
           src={imageUrl}
-          alt="Project I coded"
+          alt={`Screenshot of ${title}. A project that I coded`}
+          width={452}
+          height={300}
           quality={95}
         />
       </section>
