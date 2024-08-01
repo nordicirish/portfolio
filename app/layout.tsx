@@ -5,7 +5,6 @@ import "./globals.css";
 import dynamic from "next/dynamic";
 import ActiveSectionContextProvider from "@/context/active-section";
 import { Toaster } from "react-hot-toast";
-// import ThemeSwitch from "@/components/theme-switch";
 import ThemeContextProvider from "@/context/theme-context";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -23,9 +22,7 @@ export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) 
-
-{
+}>) {
   return (
     <html lang="en" className="!scroll-smooth">
       <body
