@@ -1,3 +1,4 @@
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import Header from "@/components/header";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -35,6 +36,7 @@ export default function RootLayout({
           <ActiveSectionContextProvider>
             <Header />
             {children}
+            <SpeedInsights />
             <Toaster position="top-right" />
             <ThemeSwitch />
           </ActiveSectionContextProvider>
