@@ -1,4 +1,4 @@
-// import About from "@/components/about";
+import About from "@/components/about";
 // import Experience from "@/components/experience";
 import Intro from "@/components/intro";
 // import Projects from "@/components/projects";
@@ -16,7 +16,7 @@ export default function Home() {
   // const SectionDivider = dynamic(() => import("@/components/section-divider"), {
   //   ssr: false,
   // });
-  const About = dynamic(() => import("@/components/about"), { ssr: false });
+  // const About = dynamic(() => import("@/components/about"), { ssr: false });
   const Skills = dynamic(() => import("@/components/skills"), { ssr: false });
   const Experience = dynamic(() => import("@/components/experience"), {
     ssr: false,
