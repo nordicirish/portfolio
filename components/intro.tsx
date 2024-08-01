@@ -86,6 +86,7 @@ export default function Intro() {
       >
         <Link
           href="#contact"
+          aria-label="Contact me"
           className="group flex items-center justify-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition bg-gray-900 text-white h-[3.2rem] max-h-[3.2rem] min-h-[3.2rem] px-4"
           onClick={() => {
             setActiveSection("Contact");
@@ -101,6 +102,7 @@ export default function Intro() {
           className="group flex items-center justify-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 h-[3.2rem] max-h-[3.2rem] min-h-[3.2rem] px-4"
           href="/CV.pdf"
           download
+          aria-label="Download my CV as PDF"
         >
           <span className="flex gap-2 items-center">
             Download CV
@@ -111,6 +113,7 @@ export default function Intro() {
           className="flex items-center justify-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60 h-[3.2rem] max-h-[3.2rem] min-h-[3.2rem] px-4"
           href="https://www.linkedin.com/in/nordic-irish/"
           target="_blank"
+          aria-label="Link to myLinkedin profile"
         >
           <span className="flex items-center gap-2">
             <BsLinkedin className="w-4 h-4" />
@@ -119,6 +122,7 @@ export default function Intro() {
         <a
           className="flex items-center justify-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60 h-[3.2rem] max-h-[3.2rem] min-h-[3.2rem] px-4"
           href="https://github.com/nordicirish"
+          aria-label="Link to myGithub profile"
           target="_blank"
         >
           <span className="flex gap-2 items-center">
