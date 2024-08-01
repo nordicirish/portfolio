@@ -2,9 +2,10 @@ import Header from "@/components/header";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import dynamic from "next/dynamic";
 import ActiveSectionContextProvider from "@/context/active-section";
 import { Toaster } from "react-hot-toast";
-import ThemeSwitch from "@/components/theme-switch";
+// import ThemeSwitch from "@/components/theme-switch";
 import ThemeContextProvider from "@/context/theme-context";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -14,12 +15,17 @@ export const metadata: Metadata = {
   description:
     "Roger Graham is a full-stack developer based in Tampere, Finland, with experience in React, Next.js, Vue, TypeScript, Tailwind, Prisma, PostgreSQL, AWS, Azure, Vercel, Scrum and more...",
 };
+const ThemeSwitch = dynamic(() => import("@/components/theme-switch"), {
+  ssr: false,
+});
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>) 
+
+{
   return (
     <html lang="en" className="!scroll-smooth">
       <body
