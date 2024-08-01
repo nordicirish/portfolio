@@ -12,10 +12,8 @@ export default function Home() {
   const Projects = dynamic(() => import("@/components/projects"), {
     ssr: false,
   });
-  // const Intro = dynamic(() => import("@/components/intro"), { ssr: false });
-  // const SectionDivider = dynamic(() => import("@/components/section-divider"), {
-  //   ssr: false,
-  // });
+  //  const Intro = dynamic(() => import("@/components/intro"), { ssr: false });
+   const SectionDivider = dynamic(() => import("@/components/section-divider"));
   const About = dynamic(() => import("@/components/about"));
   const Skills = dynamic(() => import("@/components/skills"));
   const Experience = dynamic(() => import("@/components/experience"))
