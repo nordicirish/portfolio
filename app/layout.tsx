@@ -12,7 +12,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Roger Graham's Portfolio",
   description:
-    "Roger Graham is a full-stack developer with experience in React, Next.js, Vue, TypeScript, Tailwind, Prisma, PostgreSQL, AWS, Azure, Vercel, Scrum and more.",
+    "Roger Graham is a full-stack developer based in Tampere, Finland, with experience in React, Next.js, Vue, TypeScript, Tailwind, Prisma, PostgreSQL, AWS, Azure, Vercel, Scrum and more...",
 };
 
 export default function RootLayout({
