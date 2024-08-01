@@ -17,11 +17,9 @@ export default function Home() {
   //   ssr: false,
   // });
   // const About = dynamic(() => import("@/components/about"), { ssr: false });
-  const Skills = dynamic(() => import("@/components/skills"), { ssr: false });
-  const Experience = dynamic(() => import("@/components/experience"), {
-    ssr: false,
-  });
-  const Contact = dynamic(() => import("@/components/contact"), { ssr: false });
+  const Skills = dynamic(() => import("@/components/skills"));
+  const Experience = dynamic(() => import("@/components/experience"))
+  const Contact = dynamic(() => import("@/components/contact"))
 
   return (
     <main className="flex flex-col items-center px-4">
