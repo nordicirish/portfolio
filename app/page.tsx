@@ -9,9 +9,7 @@ import Footer from "@/components/footer";
 import dynamic from "next/dynamic";
 
 export default function Home() {
-  const Projects = dynamic(() => import("@/components/projects"), {
-    ssr: false,
-  });
+  const Projects = dynamic(() => import("@/components/projects"));
   //  const Intro = dynamic(() => import("@/components/intro"), { ssr: false });
    const SectionDivider = dynamic(() => import("@/components/section-divider"));
   const About = dynamic(() => import("@/components/about"));
