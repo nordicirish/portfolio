@@ -34,8 +34,8 @@ export default function Intro() {
           >
             {/* add external paths to next.config */}
             <Image
-              src="https://avatars.githubusercontent.com/u/22174316?v=4"
-              alt="Roger Graham portrait"
+              src="/profile.png"
+              alt="Roger Graham portrait photo"
               width={192}
               height={192}
               quality="95"
