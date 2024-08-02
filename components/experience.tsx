@@ -7,16 +7,16 @@ import {
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import { experiencesData } from "@/lib/data";
-import { useSectionInView } from "@/lib/hooks";
 import { useTheme } from "@/context/theme-context";
-
-
+import SectionWithRef from "./section-with-ref";
 
 export default function Experience() {
-  const { ref } = useSectionInView("Experience");
   const { theme } = useTheme();
   return (
-    <section id="experience" ref={ref} className="scroll-mt-28 mb-28 sm:mb-40">
+    // id needs to match SectionName type and value in lib\types.ts
+    // threshold ensures menu item only changes when section is 50% visible
+    // ih threshold value provided default value of 0.75
+    <SectionWithRef id="Experience" className="scroll-mt-28 mb-28 sm:mb-40">
       <SectionHeading>My Experience</SectionHeading>
       {/* lineColor="" to avoid browser warning */}
       <VerticalTimeline lineColor="">
@@ -54,6 +54,6 @@ export default function Experience() {
           </React.Fragment>
         ))}
       </VerticalTimeline>
-    </section>
+    </SectionWithRef>
   );
 }

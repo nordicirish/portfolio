@@ -7,18 +7,17 @@ import { BsArrowRight, BsLinkedin } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
 import { useActiveSectionContext } from "@/context/active-section";
-
-import { useSectionInView } from "@/lib/hooks";
+import SectionWithRef from "./section-with-ref";
 
 export default function Intro() {
-  const { ref } = useSectionInView("Home", 0.5);
-
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
-
+  // id needs to match SectionName type and value in lib\types.ts
+  // threshold ensures menu item only changes when section is 50% visible
+  // ih threshold value provided default value of 0.75
   return (
-    <section
-      ref={ref}
-      id="home"
+    <SectionWithRef
+      id="Home"
+      threshold={0.5}
       className="mb-28 max-w-[50rem]
     text-center sm:mb-8 scroll-mt-[100rem]"
     >
@@ -130,6 +129,6 @@ export default function Intro() {
           </span>
         </a>
       </motion.div>
-    </section>
+    </SectionWithRef>
   );
 }
