@@ -15,7 +15,7 @@ export default function Contact() {
 
     <motion.section
       ref={ref}
-      id="contact"
+      id="Contact"
       className="scroll-mt-28 mb-20 sm:mb-28 w-[min(100%,38rem)] text-center"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
@@ -24,8 +24,8 @@ export default function Contact() {
     >
       <SectionHeading>Contact Me</SectionHeading>
       <p className="text-gray-700 -mt-6 dark:text-white/80">
-        Please email me directly at rogergraham147 (at) gmail.com, or use
-        this form.
+        Please email me directly at rogergraham147 (at) gmail.com, or use this
+        form.
         {/* <a className="underline" href="mailto:rogergraham147@gmail.com">
           rogergraham147@gmail.com
         </a>{" "} */}
