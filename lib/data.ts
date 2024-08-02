@@ -10,27 +10,27 @@ import { RiNextjsFill, RiNextjsLine } from "react-icons/ri";
 export const links = [
   {
     name: "Home",
-    hash: "#home",
+    hash: "#Home",
   },
   {
     name: "About",
-    hash: "#about",
+    hash: "#About",
   },
   {
     name: "Projects",
-    hash: "#projects",
+    hash: "#Projects",
   },
   {
     name: "Skills",
-    hash: "#skills",
+    hash: "#Skills",
   },
   {
     name: "Experience",
-    hash: "#experience",
+    hash: "#Experience",
   },
   {
     name: "Contact",
-    hash: "#contact",
+    hash: "#Contact",
   },
 ] as const;
 
