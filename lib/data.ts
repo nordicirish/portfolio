@@ -47,7 +47,7 @@ export const experiencesData = [
     title: "Software Developer Trainee @ Futurice",
     location: "Tampere, Finland",
     description:
-      "I was a Full-stack software development in cloud native environment trainee. I undertook 300 hours of agile project coding work and completed 354 hours of studies. I also gained 4 cloud cerifications.",
+      "I was a Full-stack software development in cloud native environment trainee. I undertook 300 hours of agile project coding work and completed 354 hours of studies. I also gained 4 cloud certifications.",
     icon: React.createElement(FaVuejs),
     date: "10/2022 - 02/2023",
   },
