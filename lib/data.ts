@@ -1,11 +1,11 @@
 import React from "react";
-import { CgWorkAlt } from "react-icons/cg";
-import { FaReact, FaVuejs } from "react-icons/fa";
+// import { CgWorkAlt } from "react-icons/cg";
+import {  FaVuejs } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 
 import learnLangImg from "@/public/learnLangImg.png";
 import invoiceDashboardImg from "@/public/invoiceDashboardImg.png";
-import { RiNextjsFill, RiNextjsLine } from "react-icons/ri";
+import { RiNextjsFill } from "react-icons/ri";
 
 export const links = [
   {

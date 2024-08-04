@@ -1,17 +1,12 @@
-"use client";
 import React from "react";
 import SectionHeading from "./section-heading";
-import { motion } from "framer-motion";
-
-import { useSectionInView } from "@/lib/hooks";
+import SectionWithRef from "./section-with-ref";
 
 export default function About() {
-  const { ref } = useSectionInView("About", 0.75);
-
-  return (
+   return (
     // scroll-mt-28 ensures a margin at the top of the section when using the bookmark navigation
-    <motion.section
-      ref={ref}
+    <SectionWithRef
+      // ref={ref}
       className="mb-28 max-w-[45rem] text-center leading-8 sm:mb-40 scroll-mt-28"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
@@ -48,6 +43,6 @@ export default function About() {
         <span className="font-medium">learning new things</span>. I am currently
         learning how to play the guitar.
       </p>
-    </motion.section>
+    </SectionWithRef>
   );
 }

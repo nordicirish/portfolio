@@ -1,20 +1,15 @@
 "use client";
 import React from "react";
 import SectionHeading from "./section-heading";
-
-import { useSectionInView } from "@/lib/hooks";
-import { motion } from "framer-motion";
 import { sendEmail } from "@/actions/sendEmail";
-
 import SubmitButton from "./submit-button";
 import toast from "react-hot-toast";
+import SectionWithRef from "./section-with-ref";
 export default function Contact() {
-  const { ref } = useSectionInView("Contact");
   return (
     // w-[min(100%,38rem)] ensures width is the minimum of 100% on smaller screens and 38rem on wider screens
 
-    <motion.section
-      ref={ref}
+    <SectionWithRef
       id="Contact"
       className="scroll-mt-28 mb-20 sm:mb-28 w-[min(100%,38rem)] text-center"
       initial={{ opacity: 0 }}
@@ -61,6 +56,6 @@ export default function Contact() {
         />
         <SubmitButton />
       </form>
-    </motion.section>
+    </SectionWithRef>
   );
 }
