@@ -44,9 +44,9 @@ export default function Header() {
             >
               <Link
                 className={clsx(
-                  "flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition dark:text-gray-400 dark:hover:text-gray-300",
+                  "flex w-full items-center justify-center px-3 py-3 text-gray-800 hover:text-gray-950 transition dark:text-gray-400 dark:hover:text-gray-300",
                   {
-                    "text-gray-950 dark:text-gray-300":
+                    "!text-gray-200 hover:!text-gray-300 dark:text-gray-300 ":
                       activeSection === link.name,
                   }
                 )}
@@ -61,7 +61,7 @@ export default function Header() {
                 {link.name === activeSection && (
                   <motion.span
                     className="absolute rounded-full inset-0 bottom-0 -z-10 bg-Primary
-                    bg-red-200
+                    bg-blue-800
                     dark:bg-fuchsia-900"
                     // layoutId is needed by framer motion to animate the correct span
                     layoutId="activeSection"

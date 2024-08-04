@@ -9,8 +9,8 @@ export default function SubmitButton() {
       title="Submit the message"
       aria-label="Submit the message"
       type="submit"
-      className="group flex items-center justify-center h-[3rem] w-[8rem] bg-red-900 outline-none text-white rounded-full transition-all focus:scale-110 hover:scale-110 hover:bg-red-950 active:scale-105 disabled:scale-100 disabled:bg-opacity-65
-    dark:bg-fuchsia-950 dark:hover:bg-fuchsia-900 dark:active:bg-fuchsia-950 dark:disabled:bg-fuchsia-800 dark:disabled:bg-opacity-50"
+      className="group flex items-center justify-center h-[3rem] w-[8rem] bg-blue-800 outline-none text-white rounded-full transition-all focus:scale-110 hover:scale-110 hover:bg-blue-900 active:scale-105 disabled:scale-100 disabled:bg-opacity-65
+    dark:bg-fuchsia-900 dark:hover:bg-fuchsia-950 dark:active:bg-fuchsia-900 dark:disabled:bg-fuchsia-800 dark:disabled:bg-opacity-50"
       disabled={pending}
     >
       {/* disabled if pending is true */}

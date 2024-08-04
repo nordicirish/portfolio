@@ -26,22 +26,25 @@ export default function Experience() {
               visible={true}
               contentStyle={{
                 background:
-                  theme === "light" ? "#dff1e4" : "rgba(255, 255, 255, 0.05)",
+                  theme === "light"
+                    ? "rgb(226 232 240)"
+                    : "rgba(255, 255, 255, 0.05)",
                 boxShadow: "none",
-                border: theme === "light" ? "#dff1e4)" : "rgba(0, 0, 0, 0.5)",
+                border:
+                  theme === "light" ? "rgb(226 232 240)" : "rgba(0, 0, 0, 0.5)",
                 textAlign: "left",
                 padding: "1.3rem 2rem",
               }}
               contentArrowStyle={{
                 borderRight:
                   theme === "light"
-                    ? "0.4rem solid #dff1e4"
+                    ? "0.4rem solid  rgb(226 232 240)"
                     : "0.4rem solid rgba(255, 255, 255, 0.5)",
               }}
               date={item.date}
               icon={item.icon}
               iconStyle={{
-                background: theme === "light" ? "#dff1e4" : "#1C2432",
+                background: theme === "light" ? "rgb(226 232 240)" : "#1C2432",
                 fontSize: "1.5rem",
               }}
             >

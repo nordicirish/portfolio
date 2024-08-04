@@ -6,6 +6,7 @@ import SubmitButton from "./submit-button";
 import toast from "react-hot-toast";
 import SectionWithRef from "./section-with-ref";
 export default function Contact() {
+
   return (
     // w-[min(100%,38rem)] ensures width is the minimum of 100% on smaller screens and 38rem on wider screens
 
