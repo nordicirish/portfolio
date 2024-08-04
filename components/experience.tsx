@@ -15,8 +15,12 @@ export default function Experience() {
   return (
     // id needs to match SectionName type and value in lib\types.ts
     // threshold ensures menu item only changes when section is 50% visible
-    // ih threshold value provided default value of 0.75
-    <SectionWithRef id="Experience" className="scroll-mt-28 mb-28 sm:mb-40">
+    // if threshold value provided default value of 0.75
+    <SectionWithRef
+      id="Experience"
+      threshold={0.5}
+      className="scroll-mt-28 mb-28 sm:mb-40"
+    >
       <SectionHeading>My Experience</SectionHeading>
       {/* lineColor="" to avoid browser warning */}
       <VerticalTimeline lineColor="">
