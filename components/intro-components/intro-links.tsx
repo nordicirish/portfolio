@@ -8,7 +8,7 @@ import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
 
 export default function IntroLinks() {
-    const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
+  const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
   return (
     <motion.div
       className="flex flex-col sm:flex-row items-center justify-center gap-4 p-4 text-lg font-medium"
@@ -20,7 +20,7 @@ export default function IntroLinks() {
         href="#Contact"
         aria-label="Contact me"
         className="group flex items-center justify-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-blue-900 active:scale-105 transition bg-blue-800 
-    dark:bg-fuchsia-900 dark:hover:bg-fuchsia-950 text-white h-[3.2rem] max-h-[3.2rem] min-h-[3.2rem] px-4 w-1/2 sm:w-auto shadow-light-mode dark:shadow-dark-mode" // Full width on small screens, auto on larger screens
+    dark:bg-fuchsia-900 dark:hover:bg-fuchsia-950 text-white h-[3.2rem] max-h-[3.2rem] min-h-[3.2rem] px-4 w-2/3 sm:w-auto shadow-light-mode dark:shadow-dark-mode" // Full width on small screens, auto on larger screens
         onClick={() => {
           setActiveSection("Contact");
           setTimeOfLastClick(Date.now());
@@ -33,7 +33,7 @@ export default function IntroLinks() {
       </Link>
 
       <a
-        className="group flex items-center justify-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer text-blue-800 hover:text-blue-900 borderBlue dark:border dark:border-white/10 dark:bg-white/10 h-[3.2rem] dark:text-white/60 max-h-[3.2rem] min-h-[3.2rem] px-4 w-1/2 sm:w-auto shadow-light-mode dark:shadow-dark-mode" // Full width on small screens, auto on larger screens
+        className="group flex items-center justify-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer text-blue-800 hover:text-blue-900 borderBlue dark:border dark:border-white/10 dark:bg-white/10 h-[3.2rem] dark:text-white/60 max-h-[3.2rem] min-h-[3.2rem] px-4 w-2/3 sm:w-auto shadow-light-mode dark:shadow-dark-mode" // Full width on small screens, auto on larger screens
         href="/CV.pdf"
         download
         aria-label="Download my CV as PDF"
