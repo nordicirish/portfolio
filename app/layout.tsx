@@ -39,7 +39,7 @@ export default function RootLayout({
           <ActiveSectionContextProvider>
             <Header />
             {children}
-            <GoogleAnalytics gaId="Process.env.NEXT_PUBLIC_GA_ID" />
+            <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID as string} />
             <Toaster position="top-right" />
             <ThemeSwitch />
           </ActiveSectionContextProvider>
