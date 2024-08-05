@@ -47,7 +47,8 @@ export default function Skills() {
       <ul className="flex flex-wrap items-center justify-center gap-2 text-lg  dark:text-white/80 text-gray-900">
         {skillsData.map((skill, index) => (
           <motion.li
-            className="bg-amber-300 borderBlack drop-shadow-md rounded-full w-44 h-20 px-2 py-2 dark:bg-indigo-950 flex items-center justify-evenly flex-col"
+            className="bg-amber-300 borderBlack drop-shadow-md rounded-full w-32 h-16 px-2 py-2 dark:bg-indigo-950 flex items-center justify-evenly flex-col 
+        sm:w-36 sm:h-18 sm:px-3 sm:py-3 md:w-44 md:h-20 md:px-4 md:py-4"
             key={index}
             variants={fadeInAnimationVariants}
             initial="initial"
@@ -65,13 +66,16 @@ export default function Skills() {
                 custom={index} // Pass index as custom prop for staggering
               >
                 <skill.icon
-                  size={40}
+                  size={30}
                   aria-label={`Icon depicting ${skill.skill} skill`}
                   role="img"
                 />
               </motion.div>
             )}
-            <span>{skill.skill}</span> {/* Display the skill name */}
+            <span className="text-xs sm:text-sm md:text-base">
+              {skill.skill}
+            </span>{" "}
+            {/* Adjust text size for different screens */}
           </motion.li>
         ))}
       </ul>
