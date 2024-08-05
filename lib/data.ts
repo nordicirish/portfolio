@@ -1,7 +1,23 @@
 import React from "react";
 // import { CgWorkAlt } from "react-icons/cg";
-import {  FaVuejs } from "react-icons/fa";
+import { FaGitAlt, FaNodeJs, FaReact, FaVuejs } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
+import { TiHtml5 } from "react-icons/ti";
+import { DiCss3 } from "react-icons/di";
+import { RiNextjsLine, RiTailwindCssLine } from "react-icons/ri";
+import { TbBrandJavascript, TbBrandTypescript } from "react-icons/tb";
+import {
+  SiAmazonaws,
+  SiExpress,
+  SiFramer,
+  SiMicrosoftazure,
+  SiMongodb,
+  SiPostgresql,
+  SiPrisma,
+  SiScrumalliance,
+  SiSqlite,
+  SiVercel,
+} from "react-icons/si";
 
 import learnLangImg from "@/public/learnLangImg.png";
 import invoiceDashboardImg from "@/public/invoiceDashboardImg.png";
@@ -86,25 +102,24 @@ export const projectsData = [
 ] as const;
 
 export const skillsData = [
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "TypeScript",
-  "React",
-  "Next.js",
-  "Node.js",
-  "Git",
-  "Tailwind",
-  "Prisma",
-  "MongoDB",
-  "SQL",
-  "Express",
-  "Figma",
-  "PostgreSQL",
-  "Framer Motion",
-  "AWS",
-  "Azure",
-  "Scrum",
-  "Vue",
-  "Vercel",
+  { skill: "HTML", icon: TiHtml5 },
+  { skill: "CSS", icon: DiCss3 },
+  { skill: "JavaScript", icon: TbBrandJavascript },
+  { skill: "React", icon: FaReact },
+  { skill: "Next.js", icon: RiNextjsLine },
+  { skill: "TypeScript", icon: TbBrandTypescript },
+  { skill: "Node.js", icon: FaNodeJs },
+  { skill: "Git", icon: FaGitAlt },
+  { skill: "Tailwind", icon: RiTailwindCssLine },
+  { skill: "Vue", icon: FaVuejs },
+  { skill: "Prisma", icon: SiPrisma },
+  { skill: "MongoDB", icon: SiMongodb },
+  { skill: "PostgreSQL", icon: SiPostgresql },
+  { skill: "SQLite", icon: SiSqlite },
+  { skill: "Express", icon: SiExpress },
+  { skill: "Framer Motion", icon: SiFramer },
+  { skill: "AWS", icon: SiAmazonaws },
+  { skill: "Azure", icon: SiMicrosoftazure },
+  { skill: "Scrum", icon: SiScrumalliance },
+  { skill: "Vercel", icon: SiVercel },
 ] as const;
