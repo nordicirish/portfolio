@@ -11,7 +11,7 @@ export default function About() {
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.175 }}
-      threshold={0.6}
+      threshold={0.75}
       id="About"
     >
       <SectionHeading>About Me</SectionHeading>
