@@ -3,7 +3,7 @@ import SectionHeading from "./section-heading";
 import SectionWithRef from "./section-with-ref";
 
 export default function About() {
-   return (
+  return (
     // scroll-mt-28 ensures a margin at the top of the section when using the bookmark navigation
     <SectionWithRef
       // ref={ref}
@@ -11,6 +11,7 @@ export default function About() {
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.175 }}
+      threshold={0.6}
       id="About"
     >
       <SectionHeading>About Me</SectionHeading>

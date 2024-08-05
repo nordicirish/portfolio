@@ -11,7 +11,7 @@ export default function Projects() {
     // ih threshold value provided default value of 0.75
     <SectionWithRef
       id="Projects"
-      threshold={0.5}
+      threshold={0.75}
       className="scroll-mt-28 mb-28"
     >
       <SectionHeading>My Projects</SectionHeading>

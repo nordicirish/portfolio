@@ -33,7 +33,7 @@ export default function Experience() {
                   theme === "light"
                     ? "rgb(226 232 240)"
                     : "rgba(255, 255, 255, 0.05)",
-                boxShadow: "none",
+                boxShadow: "",
                 border:
                   theme === "light" ? "rgb(226 232 240)" : "rgba(0, 0, 0, 0.5)",
                 textAlign: "left",
