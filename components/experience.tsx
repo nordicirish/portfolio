@@ -19,7 +19,7 @@ export default function Experience() {
     <SectionWithRef
       id="Experience"
       threshold={0.5}
-      className="scroll-mt-28 mb-28 sm:mb-40"
+      className="scroll-mt-28 mb-28 sm:mb-40 max-w-[53rem]"
     >
       <SectionHeading>My Experience</SectionHeading>
       {/* lineColor="" to avoid browser warning */}
@@ -29,6 +29,7 @@ export default function Experience() {
             <VerticalTimelineElement
               visible={true}
               contentStyle={{
+                maxWidth: "53rem",
                 background:
                   theme === "light"
                     ? "rgb(226 232 240)"
