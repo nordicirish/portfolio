@@ -9,7 +9,6 @@ export default function IntroText() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
     >
-      {" "}
       <h1 className="mt-6 text-3xl font-bold !leading-[1.3] sm:text-4xl dark:text-white">
         Hello, I'm Roger Graham
       </h1>
