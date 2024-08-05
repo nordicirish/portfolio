@@ -31,9 +31,7 @@ export default function Experience() {
               contentStyle={{
                 maxWidth: "53rem",
                 background:
-                  theme === "light"
-                    ? "rgb(226 232 240)"
-                    : "rgba(255, 255, 255, 0.05)",
+                  theme === "light" ? "#F1F5F9" : "rgba(255, 255, 255, 0.05)",
                 boxShadow:
                   theme === "light"
                     ? "0px 4px 10px rgba(255, 215, 0, 0.5)" // Gold drop shadow for light mode
@@ -49,7 +47,7 @@ export default function Experience() {
                 borderRight:
                   theme === "light"
                     ? "0.4rem solid gold" // Gold arrow for light mode
-                    : "0.4rem solid rgba(255, 255, 255, 0.5)", // Arrow color for dark mode
+                    : "0.4rem solid rgba(255, 255, 255, 0.05)", // Arrow color for dark mode
               }}
               date={item.date}
               icon={item.icon}
