@@ -4,6 +4,7 @@ import SectionHeading from "./section-heading";
 import { skillsData } from "@/lib/data";
 import { motion } from "framer-motion";
 import SectionWithRef from "./section-with-ref";
+
 const fadeInAnimationVariants = {
   initial: {
     opacity: 0,
@@ -13,7 +14,20 @@ const fadeInAnimationVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      delay: 0.05 * index,
+      delay: 0.15 * index, // Adjust delay for staggering effect
+      duration: 0.5, // Duration for fade-in effect
+    },
+  }),
+};
+
+const spinAnimationVariants = {
+  initial: { rotateY: 0 },
+  animate: (index: number) => ({
+    rotateY: 360,
+    transition: {
+      delay: 0.15 * index, // Delay based on the index to stagger the spin
+      duration: 1, // Duration of the spin animation in seconds
+      ease: "easeInOut", // Easing function
     },
   }),
 };
@@ -26,22 +40,38 @@ export default function Skills() {
     <SectionWithRef
       id="Skills"
       className="mb-28 max-w-[53rem] scroll-mt-28 text-center sm:mb-40"
+      threshold={0.25}
     >
       <SectionHeading>My Skills</SectionHeading>
-      <ul className="flex flex-wrap justify-center gap-2 text-lg text-gray-800">
+
+      <ul className="flex flex-wrap items-center justify-center gap-2 text-lg  dark:text-white/80 text-gray-900">
         {skillsData.map((skill, index) => (
           <motion.li
-            className="bg-slate-300 borderBlack rounded-xl px-5 py-3 dark:bg-indigo-950
-            dark:text-white/80"
+            className="bg-amber-300 borderBlack drop-shadow-md rounded-full w-44 h-20 px-2 py-2 dark:bg-indigo-950 flex items-center justify-evenly flex-col"
             key={index}
             variants={fadeInAnimationVariants}
             initial="initial"
-            whileInView={"animate"}
-            viewport={{ once: true }}
-            //pass in the index so the animation can be staggered
+            whileInView="animate"
+            viewport={{ once: true, amount: 0.1 }} // Lowered amount for earlier triggering
             custom={index}
           >
-            {skill}
+            {skill.icon && (
+              <motion.div
+                className="bg-transparent grow"
+                variants={spinAnimationVariants}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true, amount: 0.1 }}
+                custom={index} // Pass index as custom prop for staggering
+              >
+                <skill.icon
+                  size={40}
+                  aria-label={`Icon depicting ${skill.skill} skill`}
+                  role="img"
+                />
+              </motion.div>
+            )}
+            <span>{skill.skill}</span> {/* Display the skill name */}
           </motion.li>
         ))}
       </ul>
