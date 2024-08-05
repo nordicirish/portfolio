@@ -4,7 +4,7 @@
 
 /* for react-vertical-timeline-component */
 html {
-  --line-color: rgba(226, 232, 240, 0.8);
+  --line-color: rgba(255, 215, 0, 0.5);
 }
 html.dark {
   --line-color: rgba(255, 255, 255, 0.2);
