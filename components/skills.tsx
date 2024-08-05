@@ -47,7 +47,7 @@ export default function Skills() {
       <ul className="flex flex-wrap items-center justify-center gap-2 text-lg  dark:text-white/80 text-gray-900">
         {skillsData.map((skill, index) => (
           <motion.li
-            className="bg-amber-300 borderBlack drop-shadow-md rounded-full w-32 h-16 px-2 py-2 dark:bg-indigo-950 flex items-center justify-evenly flex-col 
+            className="bg-amber-300 borderBlack shadow-light-mode dark:shadow-dark-mode rounded-full w-32 h-16 px-2 py-2 dark:bg-indigo-950 flex items-center justify-evenly flex-col 
         sm:w-36 sm:h-18 sm:px-3 sm:py-3 md:w-44 md:h-20 md:px-4 md:py-4"
             key={index}
             variants={fadeInAnimationVariants}
@@ -74,7 +74,7 @@ export default function Skills() {
             )}
             <span className="text-xs sm:text-sm md:text-base">
               {skill.skill}
-            </span>{" "}
+            </span>
             {/* Adjust text size for different screens */}
           </motion.li>
         ))}

@@ -17,7 +17,7 @@ export default function Header() {
   return (
     <header className="z-[999] relative">
       <motion.div
-        className="fixed top-0 left-1/2 h-[4.5rem] w-full rounded-none border border-white border-opacity-40 bg-white bg-opacity-75 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] sm:top-6 sm:h-[3.25rem] sm:w-[37rem] sm:rounded-full dark:bg-gray-950 dark:border-black/40 dark:bg-opacity-75"
+        className="fixed top-0 left-1/2 h-[4.5rem] w-full rounded-none border border-white border-opacity-40 bg-white bg-opacity-75 backdrop-blur-[0.5rem] sm:top-6 sm:h-[3.25rem] sm:w-[37rem] sm:rounded-full dark:bg-gray-950 dark:border-black/40 dark:bg-opacity-75 shadow-light-mode dark:shadow-dark-mode"
         initial={{
           y: -100,
           //  add -50% transform as framer overrides css translate
@@ -44,9 +44,9 @@ export default function Header() {
             >
               <Link
                 className={clsx(
-                  "flex w-full items-center justify-center px-3 py-3 text-gray-800 hover:text-gray-950 transition dark:text-gray-400 dark:hover:text-gray-300",
+                  "flex w-full items-center justify-center px-3 py-3 text-gray-800  hover:text-gray-950 transition dark:text-gray-400 dark:hover:text-gray-300 ",
                   {
-                    "!text-gray-200 hover:!text-gray-300 dark:text-gray-300 ":
+                    "!text-gray-200 hover:!text-gray-300 dark:text-gray-300":
                       activeSection === link.name,
                   }
                 )}
@@ -60,9 +60,7 @@ export default function Header() {
                 {/* inset sets all positions at 0 to stretch all the way*/}
                 {link.name === activeSection && (
                   <motion.span
-                    className="absolute rounded-full inset-0 bottom-0 -z-10 bg-Primary
-                    bg-blue-800
-                    dark:bg-fuchsia-900"
+                    className="absolute rounded-full inset-0 bottom-0 -z-10 bg-Primary  bg-blue-800 dark:bg-fuchsia-900 shadow-light-mode dark:shadow-dark-mode"
                     // layoutId is needed by framer motion to animate the correct span
                     layoutId="activeSection"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}

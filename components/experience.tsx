@@ -33,22 +33,33 @@ export default function Experience() {
                   theme === "light"
                     ? "rgb(226 232 240)"
                     : "rgba(255, 255, 255, 0.05)",
-                boxShadow: "",
+                boxShadow:
+                  theme === "light"
+                    ? "0px 4px 10px rgba(255, 215, 0, 0.5)" // Gold drop shadow for light mode
+                    : "0px 4px 10px rgba(0, 0, 0, 0.5)", // Dark mode drop shadow
                 border:
-                  theme === "light" ? "rgb(226 232 240)" : "rgba(0, 0, 0, 0.5)",
+                  theme === "light" // Light mode border
+                    ? "2px solid gold" // Gold border
+                    : "2px solid rgba(0, 0, 0, 0.5)", // Dark mode border
                 textAlign: "left",
                 padding: "1.3rem 2rem",
               }}
               contentArrowStyle={{
                 borderRight:
                   theme === "light"
-                    ? "0.4rem solid  rgb(226 232 240)"
-                    : "0.4rem solid rgba(255, 255, 255, 0.5)",
+                    ? "0.4rem solid gold" // Gold arrow for light mode
+                    : "0.4rem solid rgba(255, 255, 255, 0.5)", // Arrow color for dark mode
               }}
               date={item.date}
               icon={item.icon}
               iconStyle={{
-                background: theme === "light" ? "rgb(226 232 240)" : "#1C2432",
+                background: theme === "light" ? "gold" : "#1C2432",
+                border:
+                  theme === "light" ? "2px solid gold" : "2px solid #1C2432",
+                boxShadow:
+                  theme === "light"
+                    ? "0px 4px 10px rgba(255, 215, 0, 0.5)" // Gold drop shadow for light mode
+                    : "0px 4px 10px rgba(0, 0, 0, 0.5)", // Dark mode drop shadow
                 fontSize: "1.5rem",
               }}
             >

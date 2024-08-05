@@ -6,7 +6,6 @@ import SubmitButton from "./submit-button";
 import toast from "react-hot-toast";
 import SectionWithRef from "./section-with-ref";
 export default function Contact() {
-
   return (
     // w-[min(100%,38rem)] ensures width is the minimum of 100% on smaller screens and 38rem on wider screens
 
@@ -41,7 +40,7 @@ export default function Contact() {
         }}
       >
         <input
-          className="h-14 px-4 rounded-lg borderBlack dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
+          className="h-14 px-4 rounded-lg borderBlack dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all  shadow-light-mode dark:shadow-dark-mode"
           name="senderEmail"
           type="email"
           required
@@ -49,7 +48,7 @@ export default function Contact() {
           placeholder="Your email"
         />
         <textarea
-          className="h-52 my-3 rounded-lg borderBlack p-4 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
+          className="h-52 my-3 rounded-lg borderBlack p-4 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all  shadow-light-mode dark:shadow-dark-mode"
           name="message"
           placeholder="Your message"
           required
