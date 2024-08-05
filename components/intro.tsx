@@ -23,14 +23,10 @@ export default function Intro() {
       <div className="flex items-center justify-center">
         <div className="relative">
           <motion.div
-            initial={{
-              opacity: 0,
-              scale: 0,
-            }}
+            initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ type: "tween", duration: 0.2 }}
           >
-            {/* add external paths to next.config */}
             <Image
               src="/profile.png"
               alt="Roger Graham portrait photo"
@@ -38,44 +34,37 @@ export default function Intro() {
               height={192}
               quality="95"
               priority={true}
-              className="h-24 w-24 rounded-full border-[0.35rem] object-cover border-white shadow-xl"
-            ></Image>
+              className="h-32 w-32 rounded-full border-[0.25rem] border-gradient-to-r from-blue-500 to-blue-700 object-cover shadow-lg dark:border-gradient-to-r dark:from-gray-700 dark:to-gray-500"
+            />
           </motion.div>
-
-          <motion.span
-            className="absolute bottom-0 right-0 text-4xl"
-            initial={{
-              opacity: 0,
-              scale: 0,
-            }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{
-              type: "spring",
-              stiffness: 125,
-              delay: 0.1,
-              duration: 0.7,
-            }}
-          >
-            👋
-          </motion.span>
-          {/* <h1 className='text-6xl font-bold text-center text-green-800'></h1> */}
         </div>
       </div>
-      {/* leading specifies the line height */}
+
       <motion.h1
-        className="mb-10 mt-4 px-4 text-2xl font-medium !leading-[1.5]"
-        initial={{ opacity: 0, y: 100 }}
+        className="mt-6 text-3xl font-bold !leading-[1.3] sm:text-4xl dark:text-white"
+        initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3 }}
       >
-        <span className="font-bold">Hello, I'm Roger Graham.</span> I'm a{" "}
-        <span className="font-bold">full-stack developer </span> with experience
-        in{" "}
-        <span className="font-bold">
-          React, Next.js, TypeScript, Tailwind, Prisma, PostgreSQL, AWS, Azure,
-          Vercel, Scrum{" "}
-        </span>
-        and more...
+        Hello, I'm Roger Graham
       </motion.h1>
+      <motion.p
+        className="mt-4 mb-10 px-4 text-lg font-medium !leading-relaxed text-gray-700 dark:text-gray-300 sm:text-xl"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3 }}
+      >
+        I'm a{" "}
+        <span className="font-bold text-blue-600 dark:text-blue-400">
+          full-stack developer
+        </span>{" "}
+        specializing in{" "}
+        <span className="font-bold text-blue-600 dark:text-blue-400">
+          React, Next.js, TypeScript, Tailwind, Prisma, PostgreSQL, AWS, Azure,
+          Vercel, Scrum
+        </span>{" "}
+        and more...
+      </motion.p>
       <motion.div
         className="flex flex-col sm:flex-row items-center justify-center gap-4 p-4 text-lg font-medium"
         initial={{ opacity: 0, y: 100 }}
