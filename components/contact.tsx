@@ -11,7 +11,7 @@ export default function Contact() {
 
     <SectionWithRef
       id="Contact"
-      className="scroll-mt-28 mb-20 sm:mb-28 w-[min(100%,38rem)] text-center"
+      className="flex flex-col items-center scroll-mt-28 mb-20 sm:mb-28 sm:min-w-[53rem] max-w-[53rem] text-center"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1 }}
@@ -27,7 +27,7 @@ export default function Contact() {
       </p>
 
       <form
-        className="mt-10 flex flex-col dark:text-black"
+        className="mt-10 flex flex-col dark:text-black w-[min(100%,38rem)]"
         action={async (formData) => {
           const { data, error } = await sendEmail(formData);
 
