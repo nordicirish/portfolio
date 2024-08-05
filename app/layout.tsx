@@ -6,6 +6,7 @@ import dynamic from "next/dynamic";
 import ActiveSectionContextProvider from "@/context/active-section";
 import { Toaster } from "react-hot-toast";
 import ThemeContextProvider from "@/context/theme-context";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const font = Montserrat({
   subsets: ["latin"],
@@ -38,6 +39,7 @@ export default function RootLayout({
           <ActiveSectionContextProvider>
             <Header />
             {children}
+            <GoogleAnalytics gaId="Process.env.NEXT_PUBLIC_GA_ID" />
             <Toaster position="top-right" />
             <ThemeSwitch />
           </ActiveSectionContextProvider>
