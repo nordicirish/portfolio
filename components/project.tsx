@@ -31,11 +31,14 @@ export default function Project({
       ref={ref}
       style={{ scale: scaleProgress, opacity: opacityProgress }}
     >
-      <section className="bg-gray-100 max-w-[42rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative sm:h-[20rem] hover:bg-gray-200 transition sm:group-even:pl-8 dark:text-white dark:bg-white/10 dark:hover:bg-white/20 shadow-light-mode dark:shadow-dark-mode">
-        <div className="pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] flex flex-col h-full sm:group-even:ml-[18rem]">
+      <section
+        className="flex flex-col-reverse sm:flex-row  bg-gray-50 max-w-[42rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative sm:h-[20rem] hover:bg-gray-200 transition sm:group-even:pl-8 text-gray-900
+       dark:text-white dark:bg-white/10 dark:hover:bg-white/20 shadow-light-mode dark:shadow-dark-mode"
+      >
+        <div className="pt-4 pb-7 px-5 pl-10 sm:pr-2 sm:pt-10 flex flex-col h-full sm:max-w-[50%] sm:group-even:ml-[18rem]">
           <h3 className="text-2xl font-semibold">{title}</h3>
           {/* leading-relaxed allows for line breaks */}
-          <p className="mt-2 leading-relaxed text-gray-700 dark:text-white/70">
+          <p className="mt-2 mb-2 leading-relaxed text-gray-700 dark:text-white/75">
             {description}
           </p>
           <ul className="flex flex-wrap mt-4 gap-2 sm:mt-auto">
@@ -50,15 +53,15 @@ export default function Project({
           </ul>
         </div>
         <Image
-          className="absolute top-8 -right-40 w-[28.25rem] rounded-t-lg shadow-2xl
-          group-even:right-[initial] group-even:-left-40
-          group-hover:-translate-x-3
-          group-hover:translate-y-3
-          group-hover:rotate-2
+          className="w-full sm:w-[28.25rem] sm:absolute top-8 -right-40 rounded-t-lg shadow-2xl
+          sm:group-even:right-[initial] sm:group-even:-left-40
+          sm:group-hover:-translate-x-3
+          sm:group-hover:translate-y-3
+          sm:group-hover:rotate-2
           group-hover:scale-105
-          group-even:group-hover:translate x-3
-          group-even:group-hover:translate y-3
-          group-even:group-hover:rotate-2
+          sm:group-even:group-hover:translate x-3
+          sm:group-even:group-hover:translate y-3
+          sm:group-even:group-hover:rotate-2
           transition"
           src={imageUrl}
           alt={`Screenshot of ${title}. A project that I coded`}
