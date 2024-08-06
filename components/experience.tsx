@@ -60,11 +60,12 @@ export default function Experience() {
                     ? "0px 4px 10px rgba(255, 215, 0, 0.5)" // Gold drop shadow for light mode
                     : "0px 4px 10px rgba(0, 0, 0, 0.5)", // Dark mode drop shadow
                 fontSize: "1.5rem",
+                
               }}
             >
               <h3 className="font-semibold capitalize">{item.title}</h3>
               <p className="font-normal !mt-0">{item.location}</p>
-              <p className="!mt-1 !font-normal text-gray-700 dark:text-white/75">
+              <p className="!mt-1 !font-normal text-gray-900 dark:text-white/75">
                 {item.description}
               </p>
             </VerticalTimelineElement>
