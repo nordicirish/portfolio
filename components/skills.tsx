@@ -11,7 +11,7 @@ export default function Skills() {
     <SectionWithRef
       id="Skills"
       className="mb-28 max-w-[53rem] scroll-mt-28 text-center sm:mb-40"
-      threshold={0.25}
+      threshold={0.50}
     >
       <SectionHeading>My Skills</SectionHeading>
       <SkillsServerComponent />
