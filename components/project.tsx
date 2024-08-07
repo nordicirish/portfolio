@@ -53,7 +53,7 @@ export default function Project({
           </ul>
         </div>
         <Image
-          className="w-full sm:w-[28.25rem] sm:absolute top-8 -right-40 rounded-t-lg shadow-2xl
+          className="w-auto h-auto sm:w-[28.25rem] sm:absolute top-8 -right-40 rounded-t-lg shadow-2xl
           sm:group-even:right-[initial] sm:group-even:-left-40
           sm:group-hover:-translate-x-3
           sm:group-hover:translate-y-3

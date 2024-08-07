@@ -24,3 +24,37 @@ export const getErrorMessage = (error: unknown): string => {
 
   return message;
 };
+
+// lib/icons.ts
+import { TiHtml5 } from 'react-icons/ti';
+import { DiCss3 } from 'react-icons/di';
+import { TbBrandJavascript, TbBrandTypescript } from 'react-icons/tb';
+import { FaReact, FaNodeJs, FaGitAlt, FaVuejs } from 'react-icons/fa';
+import { RiNextjsLine, RiTailwindCssLine } from 'react-icons/ri';
+import { SiPrisma, SiMongodb, SiPostgresql, SiSqlite, SiExpress, SiFramer, SiAmazonaws, SiMicrosoftazure, SiScrumalliance, SiVercel } from 'react-icons/si';
+
+// Create a central import and mapping of icon names to components
+export const iconMap = {
+  TiHtml5,
+  DiCss3,
+  TbBrandJavascript,
+  TbBrandTypescript,
+  FaReact,
+  FaNodeJs,
+  FaGitAlt,
+  FaVuejs,
+  RiNextjsLine,
+  RiTailwindCssLine,
+  SiPrisma,
+  SiMongodb,
+  SiPostgresql,
+  SiSqlite,
+  SiExpress,
+  SiFramer,
+  SiAmazonaws,
+  SiMicrosoftazure,
+  SiScrumalliance,
+  SiVercel,
+} as const;
+// Extract the keys for typing purposes
+export type IconName = keyof typeof iconMap;

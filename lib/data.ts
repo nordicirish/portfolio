@@ -1,27 +1,14 @@
 import React from "react";
+import { IconType } from "react-icons";
+
 // import { CgWorkAlt } from "react-icons/cg";
-import { FaGitAlt, FaNodeJs, FaReact, FaVuejs } from "react-icons/fa";
+import { FaVuejs } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
-import { TiHtml5 } from "react-icons/ti";
-import { DiCss3 } from "react-icons/di";
-import { RiNextjsLine, RiTailwindCssLine } from "react-icons/ri";
-import { TbBrandJavascript, TbBrandTypescript } from "react-icons/tb";
-import {
-  SiAmazonaws,
-  SiExpress,
-  SiFramer,
-  SiMicrosoftazure,
-  SiMongodb,
-  SiPostgresql,
-  SiPrisma,
-  SiScrumalliance,
-  SiSqlite,
-  SiVercel,
-} from "react-icons/si";
 
 import learnLangImg from "@/public/learnLangImg.png";
 import invoiceDashboardImg from "@/public/invoiceDashboardImg.png";
 import { RiNextjsFill } from "react-icons/ri";
+import { IconName } from "./utils";
 
 export const links = [
   {
@@ -101,25 +88,31 @@ export const projectsData = [
   },
 ] as const;
 
-export const skillsData = [
-  { skill: "HTML", icon: TiHtml5 },
-  { skill: "CSS", icon: DiCss3 },
-  { skill: "JavaScript", icon: TbBrandJavascript },
-  { skill: "React", icon: FaReact },
-  { skill: "Next.js", icon: RiNextjsLine },
-  { skill: "TypeScript", icon: TbBrandTypescript },
-  { skill: "Node.js", icon: FaNodeJs },
-  { skill: "Git", icon: FaGitAlt },
-  { skill: "Tailwind", icon: RiTailwindCssLine },
-  { skill: "Vue", icon: FaVuejs },
-  { skill: "Prisma", icon: SiPrisma },
-  { skill: "MongoDB", icon: SiMongodb },
-  { skill: "PostgreSQL", icon: SiPostgresql },
-  { skill: "SQLite", icon: SiSqlite },
-  { skill: "Express", icon: SiExpress },
-  { skill: "Framer Motion", icon: SiFramer },
-  { skill: "AWS", icon: SiAmazonaws },
-  { skill: "Azure", icon: SiMicrosoftazure },
-  { skill: "Scrum", icon: SiScrumalliance },
-  { skill: "Vercel", icon: SiVercel },
+export interface Skill {
+  skill: string;
+  icon: IconName; // Use SkillIdentifier type
+}
+// import and add icons to iconMap array in utils.ts for central control of icon names
+
+export const skillsData: Skill[] = [
+  { skill: "HTML", icon: "TiHtml5" },
+  { skill: "CSS", icon: "DiCss3" },
+  { skill: "JavaScript", icon: "TbBrandJavascript" },
+  { skill: "React", icon: "FaReact" },
+  { skill: "Next.js", icon: "RiNextjsLine" },
+  { skill: "TypeScript", icon: "TbBrandTypescript" },
+  { skill: "Node.js", icon: "FaNodeJs" },
+  { skill: "Git", icon: "FaGitAlt" },
+  { skill: "Tailwind", icon: "RiTailwindCssLine" },
+  { skill: "Vue", icon: "FaVuejs" },
+  { skill: "Prisma", icon: "SiPrisma" },
+  { skill: "MongoDB", icon: "SiMongodb" },
+  { skill: "PostgreSQL", icon: "SiPostgresql" },
+  { skill: "SQLite", icon: "SiSqlite" },
+  { skill: "Express", icon: "SiExpress" },
+  { skill: "Framer Motion", icon: "SiFramer" },
+  { skill: "AWS", icon: "SiAmazonaws" },
+  { skill: "Azure", icon: "SiMicrosoftazure" },
+  { skill: "Scrum", icon: "SiScrumalliance" },
+  { skill: "Vercel", icon: "SiVercel" },
 ] as const;
