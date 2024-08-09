@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion";
+import { animate, motion } from "framer-motion";
 import { Skill } from "@/lib/types";
 import { iconMap } from "@/lib/utils";
 
@@ -64,16 +64,19 @@ const SkillsList: React.FC<SkillsListProps> = ({ skills }) => {
             className="bg-gradient-to-r from-cyan-500 to-blue-500  shadow-light-mode dark:shadow-dark-mode rounded-full w-32 h-16 px-2 py-2 dark:bg-gradient-to-r dark:from-indigo-950 
             dark:to-purple-950 flex items-center justify-evenly flex-col sm:w-36 sm:h-18 sm:px-3 sm:py-3 md:w-40 md:h-20 md:px-4 md:py-4"
             key={index}
-            // isMobile variant is set undefined to prevent any animation-related properties from being applied.
-            variants={isMobile ? undefined : fadeInSpinAnimationVariants}
-            // if isMobile is true, the initial prop is explicitly set to { opacity: 1, y: 0, rotateY: 0 }. The items are fully visible and not animated.
-            initial={isMobile ? { opacity: 1, y: 0, rotateY: 0 } : "initial"}
-            whileInView={isMobile ? undefined : "animate"}
+            style={isMobile ? { opacity: 1, transform: "none" } : {}} // Ensure visibility on mobile
+            variants={!isMobile ? fadeInSpinAnimationVariants : undefined}
+            initial={!isMobile ? "initial" : false} // No initial state on mobile
+            // Explicitly set visible state on mobile
+            whileInView={
+              isMobile ? { opacity: 1, y: 0, rotateY: 0 } : "animate"
+            } // Ensure visibility on mobile
+            // Only apply `whileInView` for non-mobile devices
             custom={index}
             viewport={{ once: true, amount: 0.1 }}
           >
             <IconComponent
-              style={{ width: "100%", height: "100%" }}
+              style={{ width: "100%", height: "100%", opacity: 1 }}
               size={38}
               aria-label={`Icon depicting ${skill.skill} skill`}
               role="img"
