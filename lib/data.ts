@@ -1,5 +1,4 @@
 import React from "react";
-import { IconType } from "react-icons";
 
 // import { CgWorkAlt } from "react-icons/cg";
 import { FaVuejs } from "react-icons/fa";
@@ -9,6 +8,36 @@ import learnLangImg from "@/public/learnLangImg.png";
 import invoiceDashboardImg from "@/public/invoiceDashboardImg.png";
 import { RiNextjsFill } from "react-icons/ri";
 import { IconName } from "./utils";
+
+export const badges = [
+  {
+    href: "https://www.credly.com/badges/ef19b1de-a263-4a93-b28b-094f51590b1b/public_url",
+    src: "/badges/AWS-Certified-Cloud-Practitioner.png",
+    alt: "Roger Graham's AWS Certified Cloud Practitioner",
+  },
+  {
+    href: "https://www.credly.com/badges/5c2ac053-a755-494c-969e-8cdb161e4f56/public_url",
+    src: "/badges/microsoft-certified-azure-fundamentals.png",
+    alt: "Roger Graham's Microsoft Certified: Azure Fundamentals badge",
+  },
+  {
+    href: "https://www.credly.com/badges/3a42f6f6-a1ea-43cb-b7fe-8058ce30bd61/public_url",
+    src: "/badges/microsoft-certified-azure-ai-fundamentals.png",
+    alt: "Roger Graham's Microsoft Certified: Azure AI Fundamentals badge",
+  },
+  {
+    href: "https://www.credly.com/badges/4e135a05-14da-4210-932c-e71a155d65f2/public_url",
+    src: "/badges/microsoft-certified-azure-data-fundamentals.png",
+    alt: "Roger Graham's Microsoft Certified: Azure Data Fundamentals",
+  },
+
+  {
+    href: "https://www.credly.com/badges/1460494b-09b8-4635-945f-4384a500389e/public_url",
+    src: "/badges/professional-scrum-master.png",
+    alt: "Roger Graham's Professional Scrum Master™ I (PSM I)",
+  },
+] as const;
+
 
 export const links = [
   {

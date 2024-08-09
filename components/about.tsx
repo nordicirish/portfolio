@@ -1,8 +1,12 @@
 import React from "react";
 import SectionHeading from "./section-heading";
 import SectionWithRef from "./section-with-ref";
+import Badges from "@/components/about-components/badges";
+import { badges } from "@/lib/data";
+import { BadgeProps } from "@/lib/types";
 
 export default function About() {
+  const mutableBadges: BadgeProps[] = [...badges];
   return (
     // scroll-mt-28 ensures a margin at the top of the section when using the bookmark navigation
     <SectionWithRef
@@ -15,6 +19,7 @@ export default function About() {
       id="About"
     >
       <SectionHeading>About Me</SectionHeading>
+      <Badges badges={mutableBadges} />
       <p className="mb-3">
         After studying{" "}
         <span className="font-medium">Full-Stack Web Development</span> at
@@ -28,13 +33,18 @@ export default function About() {
       <p className="mb-3">
         <span className="italic">My favorite part of coding</span> is the
         problem-solving aspect. I <span className="underline">love</span> the
-        feeling of finally figuring out a solution to a problem. My core stack
-        is{" "}
+        feeling of finally figuring out a solution to a problem.
+      </p>
+      <p className="mb-3">
+        My core stack is{" "}
         <span className="font-medium">
           React, Next.js, Node.js, and PostgreSQL
         </span>
         . I am also familiar with Tailwind, TypeScript and Prisma. I am always
-        looking to learn new technologies. I am currently looking for a{" "}
+        looking to learn new technologies.{" "}
+      </p>
+      <p className="mb-3">
+        I am currently looking for a{" "}
         <span className="font-medium">full-time position</span> as a junior
         software developer.
       </p>
