@@ -48,6 +48,7 @@ export default function IntroLinks() {
           className="flex items-center justify-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] text-blue-800 hover:text-blue-900 active:scale-105 transition cursor-pointer borderBlue dark:border dark:border-white/10 dark:bg-white/10 dark:text-white/60 w-[3.2rem] h-[3.2rem] max-w-[3.2rem] min-w-[3.2rem] max-h-[3.2rem] min-h-[3.2rem] px-4 shadow-light-mode dark:shadow-dark-mode"
           href="https://www.linkedin.com/in/nordic-irish/"
           target="_blank"
+          rel="noopener noreferrer"
           aria-label="Link to my LinkedIn profile"
         >
           <span className="flex items-center gap-2">
@@ -60,6 +61,7 @@ export default function IntroLinks() {
           href="https://github.com/nordicirish"
           aria-label="Link to my GitHub profile"
           target="_blank"
+          rel="noopener noreferrer"
         >
           <span className="flex gap-2 items-center">
             <FaGithubSquare className="w-[1.14rem] h-[1.14rem]" />
