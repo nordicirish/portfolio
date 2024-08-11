@@ -10,6 +10,7 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 
 const font = Montserrat({
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
