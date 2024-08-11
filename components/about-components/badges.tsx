@@ -14,7 +14,7 @@ const Badges: React.FC<BadgesProps> = ({ badges }) => {
             <Image
               src={badge.src}
               alt={badge.alt}
-              aria-description={badge.alt}
+              aria-label={badge.alt}
               className="w-12 h-12 sm:w-16 sm:h-16"
               width={75}
               height={75}
