@@ -1,15 +1,9 @@
 import React from "react";
 import SectionWithRef from "./section-with-ref";
 import ProfileImage from "./intro-components/profile-image";
-// import IntroText from "./intro-components/intro-text";
+import IntroText from "./intro-components/intro-text";
 import IntroLinks from "./intro-components/intro-links";
-import dynamic from "next/dynamic";
-const IntroText = dynamic(
-  () => import("@/components/intro-components/intro-text"),
-  {
-    ssr: false,
-  }
-);
+// import dynamic from "next/dynamic";
 
 export default function Intro() {
   // const ProfileImage = dynamic(() => import("@/components/intro-components/profile-image"));
