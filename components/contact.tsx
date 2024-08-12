@@ -1,11 +1,13 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 import SectionHeading from "./section-heading";
 import { sendEmail } from "@/actions/sendEmail";
 import SubmitButton from "./submit-button";
 import toast from "react-hot-toast";
 import SectionWithRef from "./section-with-ref";
 export default function Contact() {
+  // creates a reference to the form element
+  const formRef = useRef<HTMLFormElement>(null);
   return (
     // w-[min(100%,38rem)] ensures width is the minimum of 100% on smaller screens and 38rem on wider screens
 
@@ -21,11 +23,11 @@ export default function Contact() {
       <p className="text-gray-700 -mt-6 dark:text-white/80">
         Please email me directly at rogergraham147 (at) gmail.com, or use this
         form.
-        
       </p>
 
       <form
         className="mt-10 flex flex-col dark:text-black w-[min(100%,38rem)]"
+        ref={formRef}
         action={async (formData) => {
           const { data, error } = await sendEmail(formData);
           console.log(data);
@@ -36,6 +38,10 @@ export default function Contact() {
           }
 
           toast.success("Email sent successfully!");
+          // Clear form fields after successful send
+          if (formRef.current) {
+            formRef.current.reset();
+          }
         }}
       >
         <input
