@@ -15,9 +15,10 @@ const font = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Roger Graham's Portfolio",
+  title:
+    "Roger Graham | Full-Stack Developer in Tampere, Finland | Available for Hire",
   description:
-    "Roger Graham is a full-stack developer based in Tampere, Finland, with experience in React, Next.js, Vue, TypeScript, Tailwind, Prisma, PostgreSQL, AWS, Azure, Vercel, Scrum and more...",
+    "Roger Graham is a skilled full-stack developer based in Tampere, Finland, with expertise in React, Next.js, Vue, TypeScript, Tailwind, Prisma, and more. Available for hire, Roger offers a strong background in cloud technologies like AWS and Azure, with experience in agile methodologies like Scrum",
 };
 const ThemeSwitch = dynamic(() => import("@/components/theme-switch"), {
   ssr: false,
@@ -30,7 +31,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="!scroll-smooth">
-   
       <body
         className={`${font.className} bg-gray-50 text-gray-950 relative pt-28 sm:pt-36 dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90`}
       >
