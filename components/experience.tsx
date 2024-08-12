@@ -20,9 +20,21 @@ export default function Experience() {
       id="Experience"
       threshold={0.5}
       className="scroll-mt-28 mb-28 sm:mb-40 max-w-[53rem]"
+      initial={{ opacity: 0, x: 100 }}
+      viewport={{ once: true }}
+      whileInView={{
+        opacity: 1,
+        x: 0,
+        transition: {
+          delay: 0.35,
+          duration: 1,
+          ease: "easeInOut",
+        },
+      }}
     >
       <SectionHeading>My Experience</SectionHeading>
       {/* lineColor="" to avoid browser warning */}
+
       <VerticalTimeline lineColor="">
         {experiencesData.map((item, index) => (
           <React.Fragment key={index}>
