@@ -68,6 +68,8 @@ export default function Project({
           width={452}
           height={300}
           quality={95}
+          blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk2PHfGAAEYwHsXvURPgAAAABJRU5ErkJggg=="
+          placeholder="blur"
         />
       </section>
     </motion.div>

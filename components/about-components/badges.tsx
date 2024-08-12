@@ -19,6 +19,8 @@ const Badges: React.FC<BadgesProps> = ({ badges }) => {
               width={75}
               height={75}
               quality={100}
+              blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk2PHfGAAEYwHsXvURPgAAAABJRU5ErkJggg=="
+              placeholder="blur"
             />
           </a>
         </div>
