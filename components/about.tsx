@@ -4,6 +4,7 @@ import SectionWithRef from "./section-with-ref";
 import Badges from "@/components/about-components/badges";
 import { badges } from "@/lib/data";
 import { BadgeProps } from "@/lib/types";
+import Link from "next/link";
 
 export default function About() {
   const mutableBadges: BadgeProps[] = [...badges];
@@ -20,25 +21,60 @@ export default function About() {
     >
       <SectionHeading>About Me</SectionHeading>
       <Badges badges={mutableBadges} />
-      <div className="text-left text-lg text-gray-700 dark:text-white/75 mb-0">
+      <div className="text-left text-lg text-gray-700 dark:text-white/75 mt-4 mb-0">
         <p className="mb-3">
-          I’m a passionate and driven software developer with a strong
-          foundation in Full-stack web development, honed through my studies at
-          Tampere University of Applied Sciences and hands-on experience with
-          BearIT and Futurice.
+          I'm a{" "}
+          <span className="font-semibold text-blue-600 dark:text-blue-400">
+            passionate
+          </span>{" "}
+          and{" "}
+          <span className="font-semibold text-blue-600 dark:text-blue-400">
+            driven
+          </span>{" "}
+          <span className="font-bold text-green-600 dark:text-green-400">
+            software developer
+          </span>{" "}
+          with a strong foundation in full-stack web development, honed through
+          my studies at Tampere University of Applied Sciences and hands-on
+          experience with BearIT and Futurice.
         </p>
-
         <p className="mb-3">
           <span className="font-semibold text-blue-600 dark:text-blue-400">
             What I Do:
           </span>{" "}
           I specialize in building dynamic and responsive web applications using
-          a core stack that includes React, Next.js, Node.js, and PostgreSQL. My
-          toolkit also features Tailwind, TypeScript, and Prisma. I thrive on
-          problem-solving and find immense satisfaction in cracking complex
-          issues and optimizing code.
+          a core stack that includes I specialize in building dynamic and
+          responsive web applications using a core stack that includes{" "}
+          <span className="font-bold text-teal-600 dark:text-teal-400">
+            React
+          </span>
+          ,{" "}
+          <span className="font-bold text-teal-600 dark:text-teal-400">
+            Next.js
+          </span>
+          ,{" "}
+          <span className="font-bold text-teal-600 dark:text-teal-400">
+            Node.js
+          </span>
+          , and{" "}
+          <span className="font-bold text-teal-600 dark:text-teal-400">
+            PostgreSQL
+          </span>
+          . My toolkit also features{" "}
+          <span className="font-bold text-teal-600 dark:text-teal-400">
+            Tailwind
+          </span>
+          ,{" "}
+          <span className="font-bold text-teal-600 dark:text-teal-400">
+            TypeScript
+          </span>
+          , and{" "}
+          <span className="font-bold text-teal-600 dark:text-teal-400">
+            Prisma
+          </span>
+          . I thrive on problem-solving and find immense satisfaction in
+          cracking complex issues and optimising code.
         </p>
-
         <p className="mb-3">
           <span className="font-semibold text-blue-600 dark:text-blue-400">
             My Journey:
@@ -48,17 +84,15 @@ export default function About() {
           always eager to learn and adapt, exploring new technologies and
           methodologies to enhance my skill set.
         </p>
-
         <p className="mb-3">
           <span className="font-semibold text-blue-600 dark:text-blue-400">
             Beyond Coding:
           </span>{" "}
-          Outside of coding, you can find me cycling through scenic routes,
-          capturing moments through photography, or finding balance with yoga.
-          I’m also in the midst of picking up guitar skills, driven by a love
-          for continuous learning and personal growth.
+          Outside of coding, you can find me cycling through the beautiful
+          Finnish countryside, capturing moments through photography, or finding
+          balance with yoga. I’m also in the midst of picking up guitar skills,
+          driven by a love for continuous learning and personal growth.
         </p>
-
         <p className="mb-0">
           <span className="font-semibold text-blue-600 dark:text-blue-400">
             Looking Ahead:
@@ -66,9 +100,17 @@ export default function About() {
           I’m currently seeking a full-time position as a junior software
           developer where I can contribute to exciting projects and grow
           alongside a talented team. If you’re looking for a dedicated and
-          enthusiastic developer with a zest for problem-solving, let’s connect!
+          enthusiastic developer with a zest for problem-solving,{" "}
+          <Link
+            href="#Contact"
+            className="text-blue-600 hover:text-blue-400 dark:text-blue-400 dark:hover:text-blue-600 font-semibold underline"
+            arria-label="Link to contatc form"
+          >
+            {" "}
+            let's connect!
+          </Link>
         </p>
       </div>
-     </SectionWithRef>
+    </SectionWithRef>
   );
 }
