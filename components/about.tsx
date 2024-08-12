@@ -20,40 +20,55 @@ export default function About() {
     >
       <SectionHeading>About Me</SectionHeading>
       <Badges badges={mutableBadges} />
-      <p className="mb-3">
-        After studying{" "}
-        <span className="font-medium">Full-Stack Web Development</span> at
-        Tampere University of Applied Sciences, I have honed my skills as a{" "}
-        <span className="font-medium">Web Developer Intern</span> at{" "}
-        <span className="font-medium">BearIT</span> and as a{" "}
-        <span className="font-medium">Software Developer Trainee</span> in the{" "}
-        <span className="font-medium">Futurice Academy</span>.{" "}
-      </p>
+      <div className="text-left text-lg text-gray-700 dark:text-white/75 mb-0">
+        <p className="mb-3">
+          I’m a passionate and driven software developer with a strong
+          foundation in Full-stack web development, honed through my studies at
+          Tampere University of Applied Sciences and hands-on experience with
+          BearIT and Futurice.
+        </p>
 
-      <p className="mb-3">
-        <span className="italic">My favorite part of coding</span> is the
-        problem-solving aspect. I <span className="underline">love</span> the
-        feeling of finally figuring out a solution to a problem.
-      </p>
-      <p className="mb-3">
-        My core stack is{" "}
-        <span className="font-medium">
-          React, Next.js, Node.js, and PostgreSQL
-        </span>
-        . I am also familiar with Tailwind, TypeScript and Prisma. I am always
-        looking to learn new technologies.{" "}
-      </p>
-      <p className="mb-3">
-        I am currently looking for a{" "}
-        <span className="font-medium">full-time position</span> as a junior
-        software developer.
-      </p>
-      <p>
-        <span className="italic">When I'm not coding</span>, I enjoy cycling,
-        photography, and yoga. I also enjoy{" "}
-        <span className="font-medium">learning new things</span>. I am currently
-        learning how to play the guitar.
-      </p>
-    </SectionWithRef>
+        <p className="mb-3">
+          <span className="font-semibold text-blue-600 dark:text-blue-400">
+            What I Do:
+          </span>{" "}
+          I specialize in building dynamic and responsive web applications using
+          a core stack that includes React, Next.js, Node.js, and PostgreSQL. My
+          toolkit also features Tailwind, TypeScript, and Prisma. I thrive on
+          problem-solving and find immense satisfaction in cracking complex
+          issues and optimizing code.
+        </p>
+
+        <p className="mb-3">
+          <span className="font-semibold text-blue-600 dark:text-blue-400">
+            My Journey:
+          </span>{" "}
+          Throughout my internships and traineeships, I’ve developed a knack for
+          navigating challenges and turning innovative ideas into reality. I’m
+          always eager to learn and adapt, exploring new technologies and
+          methodologies to enhance my skill set.
+        </p>
+
+        <p className="mb-3">
+          <span className="font-semibold text-blue-600 dark:text-blue-400">
+            Beyond Coding:
+          </span>{" "}
+          Outside of coding, you can find me cycling through scenic routes,
+          capturing moments through photography, or finding balance with yoga.
+          I’m also in the midst of picking up guitar skills, driven by a love
+          for continuous learning and personal growth.
+        </p>
+
+        <p className="mb-0">
+          <span className="font-semibold text-blue-600 dark:text-blue-400">
+            Looking Ahead:
+          </span>{" "}
+          I’m currently seeking a full-time position as a junior software
+          developer where I can contribute to exciting projects and grow
+          alongside a talented team. If you’re looking for a dedicated and
+          enthusiastic developer with a zest for problem-solving, let’s connect!
+        </p>
+      </div>
+     </SectionWithRef>
   );
 }

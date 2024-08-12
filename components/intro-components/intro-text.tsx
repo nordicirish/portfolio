@@ -10,7 +10,7 @@ export default function IntroText() {
       transition={{ duration: 0.3 }}
     >
       <h1 className="mt-6 text-3xl font-bold !leading-[1.3] sm:text-4xl dark:text-white">
-        Hello, I'm Roger Graham
+        Hello! I'm Roger Graham
       </h1>
       <p className="mt-4 mb-10 px-4 text-lg font-medium !leading-relaxed text-gray-700 dark:text-gray-300 sm:text-xl">
         I'm a{" "}
