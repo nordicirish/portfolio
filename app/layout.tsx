@@ -6,8 +6,16 @@ import dynamic from "next/dynamic";
 import ActiveSectionContextProvider from "@/context/active-section";
 import { Toaster } from "react-hot-toast";
 import ThemeContextProvider from "@/context/theme-context";
-import { GoogleAnalytics } from "@next/third-parties/google";
-
+// import { GoogleAnalytics } from "@next/third-parties/google";
+const GoogleAnalytics = dynamic(
+  () =>
+    import("@next/third-parties/google").then(
+      (module) => module.GoogleAnalytics
+    ),
+  {
+    ssr: false,
+  }
+);
 const font = Montserrat({
   subsets: ["latin"],
   display: "swap",
