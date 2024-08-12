@@ -38,7 +38,6 @@ export const badges = [
   },
 ] as const;
 
-
 export const links = [
   {
     name: "Home",
@@ -111,7 +110,7 @@ export const projectsData = [
   {
     title: "Learn Languages App",
     description:
-      "A vocabulary learning app. This was my first ever Full-stack project. I developed it as my Tampere University course project in 2022.",
+      "A vocabulary learning app. This was my first ever full-stack project. I developed it as my Tampere University course project in 2022.",
     tags: ["React", "Node.js", "Express", "MariaDB", "Bootstrap"],
     imageUrl: learnLangImg,
   },
