@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { animate, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Skill } from "@/lib/types";
 import { iconMap } from "@/lib/utils";
 
@@ -39,13 +39,16 @@ const fadeInSpinAnimationVariants = {
     rotateY: 0,
   },
   animate: (index: number) => ({
-    opacity: 1,
+    opacity: 0.25,
     y: 0,
     rotateY: 360,
     transition: {
-      delay: index * 0.5, // Adjust delay for each item to stagger the animations
-      duration: 1.5, // Total duration for both animations
+      delay: index * 0.3, // Adjust delay for each item to stagger the animations
+      duration: 1.0, // Total duration for both animations
       ease: "easeInOut",
+    },
+    transitionEnd: {
+      opacity: 1, // Return opacity to 1 after animation is complete
     },
   }),
 };
