@@ -6,16 +6,9 @@ import dynamic from "next/dynamic";
 import ActiveSectionContextProvider from "@/context/active-section";
 import { Toaster } from "react-hot-toast";
 import ThemeContextProvider from "@/context/theme-context";
-// import { GoogleAnalytics } from "@next/third-parties/google";
-const GoogleAnalytics = dynamic(
-  () =>
-    import("@next/third-parties/google").then(
-      (module) => module.GoogleAnalytics
-    ),
-  {
-    ssr: false,
-  }
-);
+
+import { Analytics } from "@vercel/analytics/react";
+
 const font = Montserrat({
   subsets: ["latin"],
   display: "swap",
@@ -37,6 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="!scroll-smooth">
+   
       <body
         className={`${font.className} bg-gray-50 text-gray-950 relative pt-28 sm:pt-36 dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90`}
       >
@@ -48,7 +42,7 @@ export default function RootLayout({
           <ActiveSectionContextProvider>
             <Header />
             {children}
-            <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID as string} />
+            <Analytics />
             <Toaster position="top-right" />
             <ThemeSwitch />
           </ActiveSectionContextProvider>
