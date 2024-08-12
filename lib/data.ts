@@ -71,7 +71,7 @@ export const experiencesData = [
     title: "Web Developer Internship @ BearIT",
     location: "Tampere, Finland",
     description:
-      "I levelled up my skills from React to Next.js. and I collaboratively codded a sports training app built with Next.js, PostgreSQL, Tailwind & Typescript and I handled the deployment of a gardening app to AWS.",
+      "I levelled up my skills from React to Next.js. and I collaboratively coded a sports training app built with Next.js, PostgreSQL, Tailwind & Typescript and I handled the deployment of a gardening app to AWS.",
     icon: React.createElement(RiNextjsFill),
     date: "09/2023 - 12/2023",
   },
@@ -79,7 +79,7 @@ export const experiencesData = [
     title: "Software Developer Trainee @ Futurice",
     location: "Tampere, Finland",
     description:
-      "I was a Full-stack software development in cloud native environment trainee. I undertook 300 hours of agile project coding work and completed 354 hours of studies. I also gained 4 cloud certifications.",
+      "I was a Full-stack Software Development in Cloud Native Environment trainee. I undertook 300 hours of agile project coding work and completed 354 hours of studies. I also gained 4 cloud certifications.",
     icon: React.createElement(FaVuejs),
     date: "10/2022 - 02/2023",
   },
