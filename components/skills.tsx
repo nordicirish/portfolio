@@ -10,8 +10,8 @@ export default function Skills() {
     // ih threshold value provided default value of 0.75
     <SectionWithRef
       id="Skills"
-      className="mb-28 max-w-[53rem] scroll-mt-28 text-center sm:mb-40"
-      threshold={0.50}
+      className="mb-28 max-w-[53rem] scroll-mt-28 text-center sm:mb-32"
+      threshold={0.5}
     >
       <SectionHeading>My Skills</SectionHeading>
       <SkillsServerComponent />

@@ -12,7 +12,7 @@ export default function Projects() {
     <SectionWithRef
       id="Projects"
       threshold={0.75}
-      className="scroll-mt-28 mb-28 max-w-[53rem]"
+      className="scroll-mt-28 mb-28 sm:mb-32 max-w-[53rem]"
     >
       <SectionHeading>My Projects</SectionHeading>
       <div>
