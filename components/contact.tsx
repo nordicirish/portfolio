@@ -59,7 +59,9 @@ export default function Contact() {
           required
           maxLength={5000}
         />
-        <SubmitButton />
+        <div className="flex justify-center sm:justify-end sm:pr-12 w-full">
+          <SubmitButton />
+        </div>
       </form>
     </SectionWithRef>
   );
