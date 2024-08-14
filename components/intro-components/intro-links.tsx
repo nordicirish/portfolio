@@ -39,7 +39,7 @@ export default function IntroLinks() {
       >
         <span className="flex gap-2 items-center">
           Download my CV
-          <HiDownload className="w-6 h-6 opacity-95 dark:opacity-40 group-hover:translate-y-1 transition" />
+          <HiDownload className="w-6 h-6 opacity-95 dark:opacity-85 group-hover:translate-y-1 transition" />
         </span>
       </a>
       {/* Container for LinkedIn and GitHub */}
@@ -52,10 +52,8 @@ export default function IntroLinks() {
         aria-label="Link to my LinkedIn profile"
       >
         <span className="block sm:hidden">Connect on LinkedIn</span>
-        <span className="flex items-center gap-2">
-          <BsLinkedin
-            className="w-6 h-6"
-          />
+        <span className="flex items-center ">
+          <BsLinkedin className="w-6 h-6 opacity-95 dark:opacity-85" />
         </span>
       </a>
 
@@ -67,8 +65,8 @@ export default function IntroLinks() {
         rel="noopener noreferrer"
       >
         <span className="block sm:hidden">Check out my GitHub</span>
-        <span className="flex gap-2 items-center">
-          <FaGithubSquare className="w-[1.71rem] h-[1.71rem] sm:w-[1.14rem] sm:h-[1.14rem]" />
+        <span className="flex items-center">
+          <FaGithubSquare className="w-[1.71rem] h-[1.71rem] opacity-95 dark:opacity-85" />
         </span>
       </a>
       {/* </div> */}
