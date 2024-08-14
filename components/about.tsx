@@ -24,14 +24,14 @@ export default function About() {
       <div className="text-left text-lg text-gray-700 dark:text-white/75 mt-8 mb-0">
         <p className="mb-3">
           I'm a{" "}
-          <span className="font-semibold text-blue-600 dark:text-blue-400">
+          <span className="font-semibold text-blue-700 dark:text-blue-400">
             passionate
           </span>{" "}
           and{" "}
-          <span className="font-semibold text-blue-600 dark:text-blue-400">
+          <span className="font-semibold text-blue-700 dark:text-blue-400">
             driven
           </span>{" "}
-          <span className="font-bold text-green-600 dark:text-green-400">
+          <span className="font-bold text-green-700 dark:text-green-400">
             software developer
           </span>{" "}
           with a strong foundation in full-stack web development, honed through
@@ -39,44 +39,44 @@ export default function About() {
           experience with BearIT and Futurice.
         </p>
         <p className="mb-3">
-          <span className="font-semibold text-blue-600 dark:text-blue-400">
+          <span className="font-semibold text-blue-700 dark:text-blue-400">
             What I Do:
           </span>{" "}
           I specialize in building dynamic and responsive web applications using
           a core stack that includes I specialize in building dynamic and
           responsive web applications using a core stack that includes{" "}
-          <span className="font-bold text-teal-600 dark:text-teal-400">
+          <span className="font-bold text-teal-700 dark:text-teal-400">
             React
           </span>
           ,{" "}
-          <span className="font-bold text-teal-600 dark:text-teal-400">
+          <span className="font-bold text-teal-700 dark:text-teal-400">
             Next.js
           </span>
           ,{" "}
-          <span className="font-bold text-teal-600 dark:text-teal-400">
+          <span className="font-bold text-teal-700 dark:text-teal-400">
             Node.js
           </span>
           , and{" "}
-          <span className="font-bold text-teal-600 dark:text-teal-400">
+          <span className="font-bold text-teal-700 dark:text-teal-400">
             PostgreSQL
           </span>
           . My toolkit also features{" "}
-          <span className="font-bold text-teal-600 dark:text-teal-400">
+          <span className="font-bold text-teal-700 dark:text-teal-400">
             Tailwind
           </span>
           ,{" "}
-          <span className="font-bold text-teal-600 dark:text-teal-400">
+          <span className="font-bold text-teal-700 dark:text-teal-400">
             TypeScript
           </span>
           , and{" "}
-          <span className="font-bold text-teal-600 dark:text-teal-400">
+          <span className="font-bold text-teal-700 dark:text-teal-400">
             Prisma
           </span>
           . I thrive on problem-solving and find immense satisfaction in
           cracking complex issues and optimising code.
         </p>
         <p className="mb-3">
-          <span className="font-semibold text-blue-600 dark:text-blue-400">
+          <span className="font-semibold text-blue-700 dark:text-blue-400">
             My Journey:
           </span>{" "}
           Throughout my internships and traineeships, I’ve developed a knack for
@@ -85,7 +85,7 @@ export default function About() {
           methodologies to enhance my skill set.
         </p>
         <p className="mb-3">
-          <span className="font-semibold text-blue-600 dark:text-blue-400">
+          <span className="font-semibold text-blue-700 dark:text-blue-400">
             Beyond Coding:
           </span>{" "}
           Outside of coding, you can find me cycling through the beautiful
@@ -94,7 +94,7 @@ export default function About() {
           driven by a love for continuous learning and personal growth.
         </p>
         <p className="mb-0">
-          <span className="font-semibold text-blue-600 dark:text-blue-400">
+          <span className="font-semibold text-blue-700 dark:text-blue-400">
             Looking Ahead:
           </span>{" "}
           I’m currently seeking a full-time position as a junior software
@@ -103,7 +103,7 @@ export default function About() {
           enthusiastic developer with a zest for problem-solving,{" "}
           <Link
             href="#Contact"
-            className="text-blue-600 hover:text-blue-400 dark:text-blue-400 dark:hover:text-blue-600 font-semibold underline"
+            className="text-blue-700 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-500 font-semibold underline"
             arria-label="Link to contatc form"
           >
             {" "}
