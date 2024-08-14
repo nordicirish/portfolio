@@ -19,7 +19,7 @@ export default function IntroLinks() {
       <Link
         href="#Contact"
         aria-label="Contact me"
-        className="group flex items-center justify-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-blue-900 active:scale-105 transition bg-blue-800 dark:bg-fuchsia-900 dark:hover:bg-fuchsia-950 text-white h-[3.2rem] max-h-[3.2rem] min-h-[3.2rem] px-4 w-3/4 sm:w-auto shadow-light-mode dark:shadow-dark-mode" // Full width on small screens, auto on larger screens
+        className="group flex items-center justify-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-blue-900 active:scale-105 transition bg-blue-800 dark:bg-fuchsia-900 dark:hover:bg-fuchsia-950 text-white h-[3.2rem] max-h-[3.2rem] min-h-[3.2rem] px-4 w-2/3 sm:w-auto shadow-light-mode dark:shadow-dark-mode" // Full width on small screens, auto on larger screens
         onClick={() => {
           setActiveSection("Contact");
           setTimeOfLastClick(Date.now());
@@ -27,47 +27,51 @@ export default function IntroLinks() {
       >
         <span className="flex gap-2 items-center">
           Contact me here
-          <BsArrowRight className="w-4 h-4 opacity-70 group-hover:translate-x-1 transition mt-[0.125rem]" />
+          <BsArrowRight className="w-6 h-6 opacity-70 group-hover:translate-x-1 transition mt-[0.125rem]" />
         </span>
       </Link>
 
       <a
-        className="group flex items-center justify-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer text-blue-800 hover:text-blue-900 borderBlue dark:border dark:border-white/10 dark:bg-white/10 h-[3.2rem] dark:text-white/60 max-h-[3.2rem] min-h-[3.2rem] px-4 w-3/4 sm:w-auto shadow-light-mode dark:shadow-dark-mode" // Full width on small screens, auto on larger screens
+        className="group flex items-center justify-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer text-blue-800 hover:text-blue-900 borderBlue dark:border dark:border-white/10 dark:bg-white/10 h-[3.2rem] dark:text-white/60 max-h-[3.2rem] min-h-[3.2rem] px-4 w-2/3 sm:w-auto shadow-light-mode dark:shadow-dark-mode" // Full width on small screens, auto on larger screens
         href="/CV.pdf"
         download
         aria-label="Download my CV as PDF"
       >
         <span className="flex gap-2 items-center">
-          Download My CV
-          <HiDownload className="w-4 h-4 dark:opacity-40 group-hover:translate-y-1 transition" />
+          Download my CV
+          <HiDownload className="w-6 h-6 opacity-95 dark:opacity-40 group-hover:translate-y-1 transition" />
         </span>
       </a>
       {/* Container for LinkedIn and GitHub */}
-      <div className="flex flex-row gap-2">
-        <a
-          className="flex items-center justify-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] text-blue-800 hover:text-blue-900 active:scale-105 transition cursor-pointer borderBlue dark:border dark:border-white/10 dark:bg-white/10 dark:text-white/60 w-[3.2rem] h-[3.2rem] max-w-[3.2rem] min-w-[3.2rem] max-h-[3.2rem] min-h-[3.2rem] px-4 shadow-light-mode dark:shadow-dark-mode"
-          href="https://www.linkedin.com/in/nordic-irish/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Link to my LinkedIn profile"
-        >
-          <span className="flex items-center gap-2">
-            <BsLinkedin className="w-4 h-4" />
-          </span>
-        </a>
+      {/* <div className="flex justify-center gap-4 sm:gap-2 "> */}
+      <a
+        className="group flex items-center justify-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] text-blue-800 hover:text-blue-900 active:scale-105 transition cursor-pointer borderBlue dark:border dark:border-white/10 dark:bg-white/10 dark:text-white/60 w-2/3 sm:w-[3.2rem] h-[3.2rem] sm:max-w-[3.2rem] min-w-[3.2rem] max-h-[3.2rem] min-h-[3.2rem] px-4 shadow-light-mode dark:shadow-dark-mode"
+        href="https://www.linkedin.com/in/nordic-irish/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Link to my LinkedIn profile"
+      >
+        <span className="block sm:hidden">Connect on LinkedIn</span>
+        <span className="flex items-center gap-2">
+          <BsLinkedin
+            className="w-6 h-6"
+          />
+        </span>
+      </a>
 
-        <a
-          className="flex items-center justify-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] text-blue-800 hover:text-blue-800 active:scale-105 transition cursor-pointer borderBlue dark:border dark:border-white/10 dark:bg-white/10 dark:text-white/60 w-[3.2rem] h-[3.2rem] max-w-[3.2rem] min-w-[3.2rem] max-h-[3.2rem] min-h-[3.2rem] px-4 shadow-light-mode dark:shadow-dark-mode"
-          href="https://github.com/nordicirish"
-          aria-label="Link to my GitHub profile"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span className="flex gap-2 items-center">
-            <FaGithubSquare className="w-[1.14rem] h-[1.14rem]" />
-          </span>
-        </a>
-      </div>
+      <a
+        className="group flex items-center justify-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] text-blue-800 hover:text-blue-800 active:scale-105 transition cursor-pointer borderBlue dark:border dark:border-white/10 dark:bg-white/10 dark:text-white/60 w-2/3 sm:w-[3.2rem] h-[3.2rem] sm:max-w-[3.2rem] min-w-[3.2rem] max-h-[3.2rem] min-h-[3.2rem] px-4 shadow-light-mode dark:shadow-dark-mode"
+        href="https://github.com/nordicirish"
+        aria-label="Link to my GitHub profile"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span className="block sm:hidden">Check out my GitHub</span>
+        <span className="flex gap-2 items-center">
+          <FaGithubSquare className="w-[1.71rem] h-[1.71rem] sm:w-[1.14rem] sm:h-[1.14rem]" />
+        </span>
+      </a>
+      {/* </div> */}
     </motion.div>
   );
 }
