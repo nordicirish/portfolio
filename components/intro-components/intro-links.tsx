@@ -38,7 +38,7 @@ export default function IntroLinks() {
         aria-label="Download my CV as PDF"
       >
         <span className="flex gap-2 items-center">
-          Download CV
+          Download My CV
           <HiDownload className="w-4 h-4 dark:opacity-40 group-hover:translate-y-1 transition" />
         </span>
       </a>
