@@ -21,7 +21,7 @@ export default function About() {
     >
       <SectionHeading>About Me</SectionHeading>
       <Badges badges={mutableBadges} />
-      <div className="flex flex-col w-full text-left text-lg text-gray-700 dark:text-white/75 mt-8 mb-0">
+      <div className="flex flex-col text-left text-lg text-gray-700 dark:text-white/75 mt-8 mb-0 sm:px-10">
         <p className="mb-3">
           I'm a{" "}
           <span className="font-semibold text-blue-700 dark:text-blue-400">
