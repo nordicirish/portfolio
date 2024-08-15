@@ -11,7 +11,7 @@ export default function IntroLinks() {
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
   return (
     <motion.div
-      className="flex flex-col sm:flex-row items-center justify-center gap-4 text-lg font-medium"
+      className="flex flex-col sm:flex-row items-center justify-center gap-4 text-sm sm:text-lg font-medium"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.1 }}
@@ -27,7 +27,7 @@ export default function IntroLinks() {
       >
         <span className="flex gap-2 items-center">
           Contact me here
-          <BsArrowRight className="w-6 h-6 opacity-70 group-hover:translate-x-1 transition mt-[0.125rem]" />
+          <BsArrowRight className="w-4 h-4 sm:w-6 sm:h-6 opacity-70 group-hover:translate-x-1 transition mt-[0.125rem]" />
         </span>
       </Link>
 
@@ -39,7 +39,7 @@ export default function IntroLinks() {
       >
         <span className="flex gap-2 items-center">
           Download my CV
-          <HiDownload className="w-6 h-6 opacity-95 dark:opacity-85 group-hover:translate-y-1 transition" />
+          <HiDownload className="w-4 h-4 sm:w-6 sm:h-6 opacity-95 dark:opacity-85 group-hover:translate-y-1 transition" />
         </span>
       </a>
       {/* Container for LinkedIn and GitHub */}
@@ -53,7 +53,7 @@ export default function IntroLinks() {
       >
         <span className="block sm:hidden">Connect on LinkedIn</span>
         <span className="flex items-center ">
-          <BsLinkedin className="w-6 h-6 opacity-95 dark:opacity-85" />
+          <BsLinkedin className="w-4 h-4 sm:w-6 sm:h-6 opacity-95 dark:opacity-85" />
         </span>
       </a>
 
@@ -66,7 +66,7 @@ export default function IntroLinks() {
       >
         <span className="block sm:hidden">Check out my GitHub</span>
         <span className="flex items-center">
-          <FaGithubSquare className="w-[1.71rem] h-[1.71rem] opacity-95 dark:opacity-85" />
+          <FaGithubSquare className="w-[1.14rem] h-[1.14rem] sm:w-[1.71rem] sm:h-[1.71rem] opacity-95 dark:opacity-85" />
         </span>
       </a>
       {/* </div> */}
