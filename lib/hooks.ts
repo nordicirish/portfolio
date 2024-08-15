@@ -1,5 +1,5 @@
 import { useActiveSectionContext } from "@/context/active-section";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { SectionName } from "./types";
 
@@ -21,3 +21,24 @@ export function useSectionInView(sectionName: SectionName, threshold = 0.75) {
 
   return { ref };
 }
+
+
+// detects the size of the window for mobile devices
+
+export const useIsMobile = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return isMobile;
+};
