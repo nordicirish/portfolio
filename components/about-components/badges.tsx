@@ -4,7 +4,7 @@ import { BadgesProps } from "@/lib/types";
 
 const Badges: React.FC<BadgesProps> = ({ badges }) => {
   return (
-    <div className="flex flex-wrap justify-center gap-4">
+    <div className="flex flex-wrap justify-evenly md:justify-center  gap-4 md:gap-8">
       {badges.map((badge, index) => (
         <div
           key={index}
