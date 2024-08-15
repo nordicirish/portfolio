@@ -30,8 +30,8 @@ export default function IntroLinks() {
           <BsArrowRight className="w-4 h-4 sm:w-6 sm:h-6 opacity-70 group-hover:translate-x-1 transition mt-[0.125rem]" />
         </span>
       </Link>
-
-      <Link
+      {/* needs to be an a tag for download - Link is meant for client side routing between pages  */}
+      <a
         className="group flex items-center justify-center gap-2 rounded-lg outline-none focus:scale-110 hover:scale-110 active:scale-110 transition-transform duration-300 ease-out cursor-pointer text-blue-800 hover:text-blue-900 borderBlue dark:border dark:border-white/10 dark:bg-white/10 h-[3.2rem] dark:text-white/60 max-h-[3.2rem] min-h-[3.2rem] px-4 w-3/4 sm:w-auto shadow-lg dark:shadow-md" // Full width on small screens, auto on larger screens
         href="/CV.pdf"
         download
@@ -41,7 +41,7 @@ export default function IntroLinks() {
           Download my CV
           <HiDownload className="w-4 h-4 sm:w-6 sm:h-6 opacity-95 dark:opacity-85 group-hover:translate-y-1 transition" />
         </span>
-      </Link>
+      </a>
 
       <a
         className="group flex items-center justify-center gap-2 rounded-lg focus:scale-110 hover:scale-110 text-blue-800 hover:text-blue-900 active:scale-110 transition-transform duration-300 ease-out cursor-pointer borderBlue dark:border dark:border-white/10 dark:bg-white/10 dark:text-white/60 w-3/4 sm:w-[3.2rem] h-[3.2rem] sm:max-w-[3.2rem] min-w-[3.2rem] max-h-[3.2rem] min-h-[3.2rem] px-4 shadow-lg dark:shadow-md"
