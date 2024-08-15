@@ -21,7 +21,7 @@ const animationVariantsDesktop = {
     y: 0,
     rotateY: 360,
     transition: {
-      delay: index * 0.3, // Adjust delay for each item to stagger the animations
+      delay: index * 0.1, // Adjust delay for each item to stagger the animations
       duration: 0.9, // Total duration for both animations
       ease: "easeInOut",
     },
@@ -41,7 +41,7 @@ const animationVariantsMobile = {
     y: 0,
     rotateY: 0,
     transition: {
-      delay: index * 0.3, // No delay on mobile
+      delay: index * 0.05,
       duration: 0.5, //
       ease: "easeInOut",
     },
