@@ -41,7 +41,7 @@ export default function Project({
           <p className="mt-2 mb-2 leading-relaxed text-gray-900 dark:text-gray-200">
             {description}
           </p>
-          <ul className="flex flex-wrap mt-4 gap-2 sm:mt-auto">
+          <ul className="flex flex-wrap mt-4 gap-2 sm:mt-auto items-center justify-center">
             {tags.map((tag, index) => (
               <li
                 className="bg-slate-950 text-gray-100 px-3 py-1 text-[0.7rem] uppercase tracking-wider rounded-full dark:bg-slate-100 dark:text-gray-950"
