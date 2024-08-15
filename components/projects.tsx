@@ -15,12 +15,14 @@ export default function Projects() {
       className="scroll-mt-28 mb-28 sm:mb-32 w-full max-w-[50rem]"
     >
       <SectionHeading>My Projects</SectionHeading>
-      <div className="flex flex-col justify-center">
-        {projectsData.map((project, index) => (
-          <React.Fragment key={index}>
-            <Project {...project} />
-          </React.Fragment>
-        ))}
+      <div className="flex justify-center">
+        <div className="flex flex-col">
+          {projectsData.map((project, index) => (
+            <React.Fragment key={index}>
+              <Project {...project} />
+            </React.Fragment>
+          ))}
+        </div>
       </div>
     </SectionWithRef>
   );

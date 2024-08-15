@@ -27,7 +27,7 @@ export default function Project({
   return (
     //need to use enclosing div so animation is smooth
     <motion.div
-      className="group mb-3 sm:mb-8 last:mb-0 flex w-full max-w[42rem]"
+      className="group mb-3 sm:mb-8 last:mb-0 flex w-full max-w-[42rem]"
       ref={ref}
       style={{ scale: scaleProgress, opacity: opacityProgress }}
     >
