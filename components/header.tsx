@@ -20,7 +20,7 @@ export default function Header() {
     <header className="z-[999] relative">
       <motion.nav
         className={clsx(
-          "fixed top-0 left-1/2 w-full h-[3.25rem] rounded-none border border-white border-opacity-40 bg-white bg-opacity-75 backdrop-blur-[0.5rem] sm:top-6 sm:w-[37rem] sm:rounded-full dark:bg-gray-950 dark:border-black/40 dark:bg-opacity-75 shadow-light-mode dark:shadow-dark-mode flex items-center justify-center transition",
+          "fixed top-0 left-1/2 w-full h-[3.25rem] rounded-none border border-white border-opacity-40 bg-white bg-opacity-75 backdrop-blur-[0.5rem] md:top-6 md:w-[37rem] md:rounded-full dark:bg-gray-950 dark:border-black/40 dark:bg-opacity-75 shadow-light-mode dark:shadow-dark-mode flex items-center justify-center transition",
           {
             "h-[3.25rem]": !mobileNavbar,
             "h-auto": mobileNavbar,
@@ -53,17 +53,17 @@ export default function Header() {
 
         <ul
           className={clsx(
-            "flex w-full flex-col items-center md:flex-row h-[3.25rem] sm:justify-center gap-y-1 text-[0.9rem] font-medium text-gray-500 mt-12 sm:mt-0 sm:gap-5 mb-6 sm:mb-0 transition-all duration-300",
+            "flex w-full flex-col items-center md:flex-row h-[3.25rem] md:justify-center gap-y-1 text-[0.9rem] font-medium text-gray-500 mt-12 md:mt-0 md:gap-5 mb-6 md:mb-0 transition-all duration-300",
             {
               "overflow-hidden h-auto": mobileNavbar,
               hidden: !mobileNavbar,
-              " sm:h-auto sm:flex": true,
+              " md:h-auto md:flex": true,
             }
           )}
         >
           {links.map((link) => (
             <motion.li
-              className="h-12 sm:h-10 w-full sm:w-auto flex items-center justify-center relative"
+              className="h-12 md:h-10 w-full md:w-auto flex items-center justify-center relative"
               key={link.hash}
               initial={{ y: -100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -87,7 +87,7 @@ export default function Header() {
                 {link.name === activeSection && (
                   <motion.span
                     className="absolute 
-                           sm:rounded-full inset-0 bottom-0 -z-10 bg-Primary bg-blue-800 dark:bg-fuchsia-900 shadow-light-mode dark:shadow-dark-mode"
+                           md:rounded-full inset-0 bottom-0 -z-10 bg-Primary bg-blue-800 dark:bg-fuchsia-900 shadow-light-mode dark:shadow-dark-mode"
                     layoutId="activeSection"
                     transition={{
                       type: "spring",
