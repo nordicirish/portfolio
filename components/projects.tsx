@@ -12,10 +12,10 @@ export default function Projects() {
     <SectionWithRef
       id="Projects"
       threshold={0.75}
-      className="scroll-mt-28 mb-28 sm:mb-32 max-w-[53rem]"
+      className="scroll-mt-28 mb-28 sm:mb-32 w-full max-w-[50rem]"
     >
       <SectionHeading>My Projects</SectionHeading>
-      <div>
+      <div className="flex flex-col justify-center">
         {projectsData.map((project, index) => (
           <React.Fragment key={index}>
             <Project {...project} />

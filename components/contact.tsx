@@ -13,7 +13,7 @@ export default function Contact() {
 
     <SectionWithRef
       id="Contact"
-      className="flex flex-col items-center scroll-mt-28 mb-20 sm:mb-28 sm:min-w-[53rem] max-w-[53rem] text-center"
+      className="flex flex-col items-center scroll-mt-28 mb-20 sm:mb-28 w-full sm:min-w-[53rem] max-w-[53rem] text-center"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1 }}

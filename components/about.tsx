@@ -12,7 +12,7 @@ export default function About() {
     // scroll-mt-28 ensures a margin at the top of the section when using the bookmark navigation
     <SectionWithRef
       // ref={ref}
-      className="mb-28 max-w-[45rem] text-center leading-8 sm:mb-32 scroll-mt-28"
+      className="mb-28 w-full max-w-[50rem] text-center leading-8 sm:mb-32 scroll-mt-28"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.175 }}
@@ -21,7 +21,7 @@ export default function About() {
     >
       <SectionHeading>About Me</SectionHeading>
       <Badges badges={mutableBadges} />
-      <div className="text-left text-lg text-gray-700 dark:text-white/75 mt-8 mb-0">
+      <div className="flex flex-col w-full text-left text-lg text-gray-700 dark:text-white/75 mt-8 mb-0">
         <p className="mb-3">
           I'm a{" "}
           <span className="font-semibold text-blue-700 dark:text-blue-400">

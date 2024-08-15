@@ -27,12 +27,12 @@ export default function Project({
   return (
     //need to use enclosing div so animation is smooth
     <motion.div
-      className="group mb-3 sm:mb-8 last:mb-0"
+      className="group mb-3 sm:mb-8 last:mb-0 flex w-full max-w[42rem]"
       ref={ref}
       style={{ scale: scaleProgress, opacity: opacityProgress }}
     >
       <section
-        className="flex flex-col-reverse sm:flex-row bg-gray-50 max-w-[42rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative sm:h-[20rem] hover:bg-gray-100 transition sm:group-even:pl-8 text-gray-900
+        className="flex flex-col-reverse sm:flex-row bg-gray-50 border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative sm:h-[20rem] hover:bg-gray-100 transition sm:group-even:pl-8 text-gray-900
        dark:text-white dark:bg-white/10 dark:hover:bg-white/20 shadow-light-mode dark:shadow-dark-mode"
       >
         <div className="pt-4 pb-7 px-5 pl-10 sm:pr-2 sm:pt-10 flex flex-col h-full sm:max-w-[50%] sm:group-even:ml-[18rem]">
