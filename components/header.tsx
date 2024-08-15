@@ -39,7 +39,7 @@ export default function Header() {
       >
         {/* Button for opening/closing the mobile nav */}
         <button
-          className="absolute top-2 left-2 md:hidden text-gray-600 hover:text-gray-900 transition z-50 p-2 dark:text-gray-400 dark:hover:text-gray-300 "
+          className="absolute top-2 left-2 md:hidden text-gray-800 hover:text-gray-950 transition z-50 p-2 dark:text-gray-400 dark:hover:text-gray-300 "
           onClick={() => setMobileNavbar(!mobileNavbar)}
           aria-label={mobileNavbar ? "Close menu" : "Open menu"}
           aria-expanded={mobileNavbar}
@@ -53,7 +53,7 @@ export default function Header() {
 
         <ul
           className={clsx(
-            "flex w-full flex-col items-center md:flex-row h-[3.25rem] md:justify-center gap-y-1 text-[0.9rem] font-medium text-gray-500 mt-12 md:mt-0 md:gap-5 mb-6 md:mb-0 transition-all duration-300",
+            "flex w-full flex-col items-center md:flex-row h-[3.25rem] md:justify-center gap-y-1 text-[0.9rem] font-medium text-gray-700 mt-12 md:mt-0 md:gap-5 mb-6 md:mb-0 transition-all duration-300",
             {
               "overflow-hidden h-auto": mobileNavbar,
               hidden: !mobileNavbar,
@@ -70,7 +70,7 @@ export default function Header() {
             >
               <Link
                 className={clsx(
-                  "flex w-full items-center justify-center px-3 py-3 text-gray-800 hover:text-gray-950 transition dark:text-gray-400 dark:hover:text-gray-300 ",
+                  "flex w-full items-center justify-center px-3 py-3 text-gray-80 hover:text-gray-950 transition dark:text-gray-400 dark:hover:text-gray-300 ",
                   {
                     "!text-gray-200 hover:!text-gray-300 dark:text-gray-300":
                       activeSection === link.name,
