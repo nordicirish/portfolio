@@ -19,7 +19,7 @@ export default function IntroLinks() {
       <Link
         href="#Contact"
         aria-label="Contact me"
-        className="group flex items-center justify-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-blue-900 active:scale-105 transition bg-blue-800 dark:bg-fuchsia-900 dark:hover:bg-fuchsia-950 text-white h-[3.2rem] max-h-[3.2rem] min-h-[3.2rem] px-4 w-3/4 sm:w-auto shadow-light-mode dark:shadow-dark-mode" // Full width on small screens, auto on larger screens
+        className="group flex items-center justify-center gap-2 rounded-lg outline-none focus:scale-110 hover:scale-110 hover:bg-blue-900 active:scale-110 transition-transform duration-300 ease-out bg-blue-800 dark:bg-fuchsia-900 dark:hover:bg-fuchsia-950 text-white h-[3.2rem] max-h-[3.2rem] min-h-[3.2rem] px-4 w-3/4 sm:w-auto shadow-lg dark:shadow-md" // Full width on small screens, auto on larger screens
         onClick={() => {
           setActiveSection("Contact");
           setTimeOfLastClick(Date.now());
@@ -31,8 +31,8 @@ export default function IntroLinks() {
         </span>
       </Link>
 
-      <a
-        className="group flex items-center justify-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer text-blue-800 hover:text-blue-900 borderBlue dark:border dark:border-white/10 dark:bg-white/10 h-[3.2rem] dark:text-white/60 max-h-[3.2rem] min-h-[3.2rem] px-4 w-3/4 sm:w-auto shadow-light-mode dark:shadow-dark-mode" // Full width on small screens, auto on larger screens
+      <Link
+        className="group flex items-center justify-center gap-2 rounded-lg outline-none focus:scale-110 hover:scale-110 active:scale-110 transition-transform duration-300 ease-out cursor-pointer text-blue-800 hover:text-blue-900 borderBlue dark:border dark:border-white/10 dark:bg-white/10 h-[3.2rem] dark:text-white/60 max-h-[3.2rem] min-h-[3.2rem] px-4 w-3/4 sm:w-auto shadow-lg dark:shadow-md" // Full width on small screens, auto on larger screens
         href="/CV.pdf"
         download
         aria-label="Download my CV as PDF"
@@ -41,11 +41,10 @@ export default function IntroLinks() {
           Download my CV
           <HiDownload className="w-4 h-4 sm:w-6 sm:h-6 opacity-95 dark:opacity-85 group-hover:translate-y-1 transition" />
         </span>
-      </a>
-      {/* Container for LinkedIn and GitHub */}
-      {/* <div className="flex justify-center gap-4 sm:gap-2 "> */}
+      </Link>
+
       <a
-        className="group flex items-center justify-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] text-blue-800 hover:text-blue-900 active:scale-105 transition cursor-pointer borderBlue dark:border dark:border-white/10 dark:bg-white/10 dark:text-white/60 w-3/4 sm:w-[3.2rem] h-[3.2rem] sm:max-w-[3.2rem] min-w-[3.2rem] max-h-[3.2rem] min-h-[3.2rem] px-4 shadow-light-mode dark:shadow-dark-mode"
+        className="group flex items-center justify-center gap-2 rounded-lg focus:scale-110 hover:scale-110 text-blue-800 hover:text-blue-900 active:scale-110 transition-transform duration-300 ease-out cursor-pointer borderBlue dark:border dark:border-white/10 dark:bg-white/10 dark:text-white/60 w-3/4 sm:w-[3.2rem] h-[3.2rem] sm:max-w-[3.2rem] min-w-[3.2rem] max-h-[3.2rem] min-h-[3.2rem] px-4 shadow-lg dark:shadow-md"
         href="https://www.linkedin.com/in/nordic-irish/"
         target="_blank"
         rel="noopener noreferrer"
@@ -58,7 +57,7 @@ export default function IntroLinks() {
       </a>
 
       <a
-        className="group flex items-center justify-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] text-blue-800 hover:text-blue-800 active:scale-105 transition cursor-pointer borderBlue dark:border dark:border-white/10 dark:bg-white/10 dark:text-white/60 w-3/4 sm:w-[3.2rem] h-[3.2rem] sm:max-w-[3.2rem] min-w-[3.2rem] max-h-[3.2rem] min-h-[3.2rem] px-4 shadow-light-mode dark:shadow-dark-mode"
+        className="group flex items-center justify-center gap-2 rounded-lg focus:scale-110 hover:scale-110 text-blue-800 hover:text-blue-800 active:scale-110 transition-transform duration-300 ease-out cursor-pointer borderBlue dark:border dark:border-white/10 dark:bg-white/10 dark:text-white/60 w-3/4 sm:w-[3.2rem] h-[3.2rem] sm:max-w-[3.2rem] min-w-[3.2rem] max-h-[3.2rem] min-h-[3.2rem] px-4 shadow-lg dark:shadow-md"
         href="https://github.com/nordicirish"
         aria-label="Link to my GitHub profile"
         target="_blank"
@@ -69,7 +68,6 @@ export default function IntroLinks() {
           <FaGithubSquare className="w-[1.14rem] h-[1.14rem] sm:w-[1.71rem] sm:h-[1.71rem] opacity-95 dark:opacity-85" />
         </span>
       </a>
-      {/* </div> */}
     </motion.div>
   );
 }
