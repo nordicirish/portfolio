@@ -19,12 +19,12 @@ export default function Experience() {
     <SectionWithRef
       id="Experience"
       threshold={0.5}
-      className="scroll-mt-28 mb-28 sm:mb-32 max-w-[53rem]"
-      initial={{ opacity: 0, x: 100 }}
+      className="scroll-mt-28 mb-28 sm:mb-32 w-full max-w-[50rem]"
+      initial={{ opacity: 0, y: 100 }}
       viewport={{ once: true }}
       whileInView={{
         opacity: 1,
-        x: 0,
+        y: 0,
         transition: {
           delay: 0.35,
           duration: 1,
