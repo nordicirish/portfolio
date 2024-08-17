@@ -1,7 +1,11 @@
 "use client";
-import { motion, MotionProps } from "framer-motion";
+import { MotionProps } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
 import { SectionName } from "@/lib/types";
+import dynamic from "next/dynamic";
+const MotionSection = dynamic(() =>
+  import("framer-motion").then((mod) => mod.motion.section)
+);
 
 interface SectionWithRefProps extends MotionProps {
   id: SectionName;
@@ -24,9 +28,9 @@ const SectionWithRef: React.FC<SectionWithRefProps> = ({
 
   if (hasMotionProps) {
     return (
-      <motion.section ref={ref} id={id} className={className} {...motionProps}>
+      <MotionSection ref={ref} id={id} className={className} {...motionProps}>
         {children}
-      </motion.section>
+      </MotionSection>
     );
   }
 
