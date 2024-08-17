@@ -51,7 +51,7 @@ export default function Experience() {
     // if threshold value provided default value of 0.75
     <SectionWithRef
       id="Experience"
-      threshold={0.5}
+      desktopThreshold={0.5}
       className="scroll-mt-28 mb-28 sm:mb-32 w-full max-w-[50rem]"
       initial={fadeUpAnimation.initial}
       viewport={{ once: true }}
