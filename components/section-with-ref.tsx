@@ -5,7 +5,8 @@ import { SectionName } from "@/lib/types";
 
 interface SectionWithRefProps extends MotionProps {
   id: SectionName;
-  threshold?: number;
+  mobileThreshold?: number;
+  desktopThreshold?: number;
   className?: React.HTMLAttributes<HTMLDivElement>["className"];
   // Add any other props
   children: React.ReactNode;
@@ -13,12 +14,13 @@ interface SectionWithRefProps extends MotionProps {
 
 const SectionWithRef: React.FC<SectionWithRefProps> = ({
   id,
-  threshold,
+  mobileThreshold,
+  desktopThreshold,
   className,
   children,
   ...motionProps
 }) => {
-  const { ref } = useSectionInView(id, threshold);
+  const { ref } = useSectionInView(id, mobileThreshold, desktopThreshold);
   // Check if any motion props are passed
   const hasMotionProps = Object.keys(motionProps).length > 0;
 
