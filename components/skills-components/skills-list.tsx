@@ -1,9 +1,13 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion";
 import { Skill } from "@/lib/types";
 import { iconMap } from "@/lib/utils";
 import { useIsMobile } from "@/lib/hooks";
+import dynamic from "next/dynamic";
+const MotionLi = dynamic(
+  () => import("framer-motion").then((mod) => mod.motion.li),
+  { ssr: false }
+);
 
 // client side component to render skills list
 interface SkillsListProps {
@@ -65,7 +69,7 @@ const SkillsList: React.FC<SkillsListProps> = ({ skills }) => {
           if (!IconComponent) return null; // Skip rendering if no icon component
 
           return (
-            <motion.li
+            <MotionLi
               className="bg-gradient-to-r from-cyan-300 to-blue-400 shadow-light-mode dark:shadow-dark-mode rounded-full w-32 h-16 px-2 py-2 dark:bg-gradient-to-r dark:from-cyan-800
             dark:to-blue-950 flex items-center justify-evenly flex-col sm:w-36 sm:h-18 sm:px-3 sm:py-3 md:w-40 md:h-20 md:px-4 md:py-4"
               key={index}
@@ -83,7 +87,7 @@ const SkillsList: React.FC<SkillsListProps> = ({ skills }) => {
                 role="img"
               />
               <span className="text-sm">{skill.skill}</span>
-            </motion.li>
+            </MotionLi>
           );
         })}
       </ul>
