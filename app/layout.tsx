@@ -7,8 +7,9 @@ import ActiveSectionContextProvider from "@/context/active-section";
 import { Toaster } from "react-hot-toast";
 import ThemeContextProvider from "@/context/theme-context";
 import { Analytics } from "@vercel/analytics/react";
+import { Suspense } from "react";
 
-// import { Analytics } from "@vercel/analytics/react";
+
 
 const font = Montserrat({
   subsets: ["latin"],
@@ -46,7 +47,9 @@ export default function RootLayout({
             <Header />
             {children}
             <Analytics />
-            <Toaster position="top-right" />
+            <Suspense fallback={<div>Loading Message...</div>}>
+              <Toaster position="top-right" />
+            </Suspense>
             <ThemeSwitch />
           </ActiveSectionContextProvider>
         </ThemeContextProvider>
