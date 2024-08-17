@@ -14,11 +14,13 @@ const MotionDiv = dynamic(
 export default function Intro() {
   // id needs to match SectionName type and value in lib\types.ts
   // threshold ensures menu item only changes when section is 50% visible
-  // ih threshold value provided default value of 0.75
+  // desktopThreshold value provided default value of 0.75
+  // mobileTheshold value provided default value of 0.4
+
   return (
     <SectionWithRef
       id="Home"
-      threshold={0.5}
+      desktopThreshold={0.5}
       className="mb-28 w-full max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]"
     >
       <MotionDiv
