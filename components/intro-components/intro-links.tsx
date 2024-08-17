@@ -8,7 +8,7 @@ import { FaGithubSquare } from "react-icons/fa";
 export default function IntroLinks() {
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
   return (
-    <>
+    <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-sm sm:text-lg font-medium">
       <Link
         href="#Contact"
         aria-label="Contact me"
@@ -48,7 +48,6 @@ export default function IntroLinks() {
           <BsLinkedin className="w-4 h-4 sm:w-6 sm:h-6 opacity-95 dark:opacity-85" />
         </span>
       </a>
-
       <a
         className="group flex items-center justify-center gap-2 rounded-lg focus:scale-110 hover:scale-110 text-blue-800 hover:text-blue-800 active:scale-110 transition-transform duration-300 ease-out cursor-pointer borderBlue dark:border dark:border-white/10 dark:bg-white/10 dark:text-white/60 w-3/4 sm:w-[3.2rem] h-[3.2rem] sm:max-w-[3.2rem] min-w-[3.2rem] max-h-[3.2rem] min-h-[3.2rem] px-4 shadow-lg dark:shadow-md"
         href="https://github.com/nordicirish"
@@ -61,6 +60,6 @@ export default function IntroLinks() {
           <FaGithubSquare className="w-[1.14rem] h-[1.14rem] sm:w-[1.71rem] sm:h-[1.71rem] opacity-95 dark:opacity-85" />
         </span>
       </a>
-    </>
+    </div>
   );
 }
