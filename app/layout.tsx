@@ -6,7 +6,7 @@ import dynamic from "next/dynamic";
 import ActiveSectionContextProvider from "@/context/active-section";
 // import { Toaster } from "react-hot-toast";
 import ThemeContextProvider from "@/context/theme-context";
-
+import { Analytics } from "@vercel/analytics/react";
 
 // import { Analytics } from "@vercel/analytics/react";
 
@@ -33,8 +33,7 @@ const Toaster = dynamic(
 
 // .then((mod) => mod.Analytics) part is a callback function that is called when the Promise is resolved. The mod parameter is the resolved module, and mod.Analytics is accessing the Analytics component from the module
 
-const Analytics = dynamic(() => import("@vercel/analytics/react").then((mod) => mod.Analytics), { ssr: false });
-
+// const Analytics = dynamic(() => import("@vercel/analytics/react").then((mod) => mod.Analytics), { ssr: false });
 
 export default function RootLayout({
   children,
@@ -54,7 +53,7 @@ export default function RootLayout({
           <ActiveSectionContextProvider>
             <Header />
             {children}
-            <Analytics  />
+            <Analytics />
             <Toaster position="top-right" />
             <ThemeSwitch />
           </ActiveSectionContextProvider>
