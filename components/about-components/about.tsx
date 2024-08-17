@@ -11,7 +11,6 @@ export default function About() {
   return (
     // scroll-mt-28 ensures a margin at the top of the section when using the bookmark navigation
     <SectionWithRef
-      // ref={ref}
       className="mb-28 w-full max-w-[50rem] text-center leading-8 sm:mb-32 scroll-mt-28"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
