@@ -8,8 +8,7 @@ import { Toaster } from "react-hot-toast";
 import ThemeContextProvider from "@/context/theme-context";
 import { Analytics } from "@vercel/analytics/react";
 import { Suspense } from "react";
-
-
+import ThemeSwitch from "@/components/theme-switch";
 
 const font = Montserrat({
   subsets: ["latin"],
@@ -22,9 +21,9 @@ export const metadata: Metadata = {
   description:
     "Roger Graham is a skilled full-stack developer based in Tampere, Finland, with expertise in React, Next.js, Vue, TypeScript, Tailwind, Prisma, and more. Available for hire, Roger offers a strong background in cloud technologies like AWS and Azure, with experience in agile methodologies like Scrum",
 };
-const ThemeSwitch = dynamic(() => import("@/components/theme-switch"), {
-  ssr: false,
-});
+// const ThemeSwitch = dynamic(() => import("@/components/theme-switch"), {
+//   ssr: false,
+// });
 
 
 
