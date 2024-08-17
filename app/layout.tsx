@@ -2,7 +2,6 @@ import Header from "@/components/header";
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
-import dynamic from "next/dynamic";
 import ActiveSectionContextProvider from "@/context/active-section";
 import { Toaster } from "react-hot-toast";
 import ThemeContextProvider from "@/context/theme-context";
@@ -21,11 +20,6 @@ export const metadata: Metadata = {
   description:
     "Roger Graham is a skilled full-stack developer based in Tampere, Finland, with expertise in React, Next.js, Vue, TypeScript, Tailwind, Prisma, and more. Available for hire, Roger offers a strong background in cloud technologies like AWS and Azure, with experience in agile methodologies like Scrum",
 };
-// const ThemeSwitch = dynamic(() => import("@/components/theme-switch"), {
-//   ssr: false,
-// });
-
-
 
 export default function RootLayout({
   children,
