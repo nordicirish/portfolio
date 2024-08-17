@@ -1,7 +1,5 @@
-"use client";
 import React from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { useActiveSectionContext } from "@/context/active-section";
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
@@ -10,12 +8,7 @@ import { FaGithubSquare } from "react-icons/fa";
 export default function IntroLinks() {
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
   return (
-    <motion.div
-      className="flex flex-col sm:flex-row items-center justify-center gap-4 text-sm sm:text-lg font-medium"
-      initial={{ opacity: 0, y: 100 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.1 }}
-    >
+    <>
       <Link
         href="#Contact"
         aria-label="Contact me"
@@ -68,6 +61,6 @@ export default function IntroLinks() {
           <FaGithubSquare className="w-[1.14rem] h-[1.14rem] sm:w-[1.71rem] sm:h-[1.71rem] opacity-95 dark:opacity-85" />
         </span>
       </a>
-    </motion.div>
+    </>
   );
 }

@@ -1,6 +1,6 @@
 import Footer from "@/components/footer";
 import dynamic from "next/dynamic";
-import Intro from "@/components/intro";
+import Intro from "@/components/intro-components/intro";
 // import Skills from "@/components/skills";
 export default function Home() {
   const Projects = dynamic(() => import("@/components/projects"));
