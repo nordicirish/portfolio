@@ -5,10 +5,10 @@ import Intro from "@/components/intro";
 export default function Home() {
   const Projects = dynamic(() => import("@/components/projects"));
   const SectionDivider = dynamic(() => import("@/components/section-divider"));
-  const About = dynamic(() => import("@/components/about"));
+  const About = dynamic(() => import("@/components/about-components/about"));
   const Experience = dynamic(() => import("@/components/experience"));
   const Contact = dynamic(() => import("@/components/contact"));
-  const Skills = dynamic(() => import("@/components/skills"));
+  const Skills = dynamic(() => import("@/components/skills-components/skills"));
 
   return (
     <main className="flex flex-col items-center px-4 w-full">

@@ -1,6 +1,6 @@
 import React from "react";
-import SectionHeading from "./section-heading";
-import SectionWithRef from "./section-with-ref";
+import SectionHeading from "../section-heading";
+import SectionWithRef from "../section-with-ref";
 import Badges from "@/components/about-components/badges";
 import { badges } from "@/lib/data";
 import { BadgeProps } from "@/lib/types";

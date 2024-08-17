@@ -1,7 +1,7 @@
 import React from "react";
-import SectionHeading from "./section-heading";
-import SectionWithRef from "./section-with-ref";
-import SkillsServerComponent from "./skills-components/skills-server-component";
+import SectionHeading from "../section-heading";
+import SectionWithRef from "../section-with-ref";
+import SkillsServerComponent from "./skills-server-component";
 
 export default function Skills() {
   return (
