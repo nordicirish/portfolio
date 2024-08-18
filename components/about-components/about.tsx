@@ -3,11 +3,11 @@ import SectionHeading from "../section-heading";
 import SectionWithRef from "../section-with-ref";
 import Badges from "@/components/about-components/badges";
 import { badges } from "@/lib/data";
-import { BadgeProps } from "@/lib/types";
+import { BadgesProps } from "@/lib/types";
 import Link from "next/link";
 
 export default function About() {
-  const mutableBadges: BadgeProps[] = [...badges];
+ const badgesArray: BadgesProps[] = [...badges];
   return (
     // scroll-mt-28 ensures a margin at the top of the section when using the bookmark navigation
     <SectionWithRef
@@ -19,7 +19,7 @@ export default function About() {
       id="About"
     >
       <SectionHeading>About Me</SectionHeading>
-      <Badges badges={mutableBadges} />
+      <Badges badges={badgesArray} />
       <div className="flex flex-col text-left text-lg text-gray-700 dark:text-white/75 mt-8 mb-0 sm:px-10">
         <p className="mb-3">
           I'm a{" "}
