@@ -1,9 +1,4 @@
 import React from "react";
-
-// Static Site Generation (SSG)
-
-
-
 export default function IntroText() {
   return (
     <>

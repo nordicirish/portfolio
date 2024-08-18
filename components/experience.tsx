@@ -1,15 +1,11 @@
 "use client";
 import React from "react";
 import SectionHeading from "./section-heading";
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
-import "react-vertical-timeline-component/style.min.css";
 import { experiencesData } from "@/lib/data";
 import { useTheme } from "@/context/theme-context";
 import SectionWithRef from "./section-with-ref";
 import { useIsMobile } from "@/lib/hooks";
+import ExperienceTimeline from "./experience-timeline";
 const fadeUpAnimationDesktop = {
   initial: {
     opacity: 0,
@@ -19,7 +15,7 @@ const fadeUpAnimationDesktop = {
     opacity: 1,
     y: 0,
     transition: {
-      delay: 0.35,
+      delay: 0.5,
       duration: 1,
       ease: "easeInOut",
     },
@@ -32,7 +28,7 @@ const fadeUpAnimationMobile = {
     opacity: 1,
     y: 0,
     transition: {
-      delay: 0.35,
+      delay: 0.5,
       duration: 1,
       ease: "easeInOut",
     },
@@ -42,6 +38,7 @@ const fadeUpAnimationMobile = {
 export default function Experience() {
   const isMobile = useIsMobile();
   const { theme } = useTheme();
+  const experiencesCopy = [...experiencesData];
   const fadeUpAnimation = isMobile
     ? fadeUpAnimationMobile
     : fadeUpAnimationDesktop;
@@ -58,56 +55,7 @@ export default function Experience() {
       whileInView={fadeUpAnimation.whileInView}
     >
       <SectionHeading>My Experience</SectionHeading>
-      {/* lineColor="" to avoid browser warning */}
-
-      <VerticalTimeline lineColor="">
-        {experiencesData.map((item, index) => (
-          <React.Fragment key={index}>
-            <VerticalTimelineElement
-              visible={true}
-              contentStyle={{
-                maxWidth: "53rem",
-                background:
-                  theme === "light" ? "#F1F5F9" : "rgba(255, 255, 255, 0.05)",
-                boxShadow:
-                  theme === "light"
-                    ? "0px 4px 10px #2D9EE5" // Gold drop shadow for light mode
-                    : "0px 4px 10px rgba(0, 0, 0, 0.5)", // Dark mode drop shadow
-                border:
-                  theme === "light" // Light mode border
-                    ? "2px solid #2D9EE5" //
-                    : "2px solid rgba(0, 0, 0, 0.5)", // Dark mode border
-                textAlign: "left",
-                padding: "1.3rem 2rem",
-              }}
-              contentArrowStyle={{
-                borderRight:
-                  theme === "light"
-                    ? "0.4rem solid #2D9EE5" // Gold arrow for light mode
-                    : "0.4rem solid rgba(255, 255, 255, 0.05)", // Arrow color for dark mode
-              }}
-              date={item.date}
-              icon={item.icon}
-              iconStyle={{
-                background: theme === "light" ? "#2D9EE5" : "#1C2432",
-                border:
-                  theme === "light" ? "2px solid #2D9EE5" : "2px solid #1C2432",
-                boxShadow:
-                  theme === "light"
-                    ? "0px 4px 10px #2D9EE5"
-                    : "0px 4px 10px rgba(0, 0, 0, 0.5)", // Dark mode drop shadow
-                fontSize: "1.5rem",
-              }}
-            >
-              <h3 className="font-semibold capitalize">{item.title}</h3>
-              <p className="font-normal !mt-0">{item.location}</p>
-              <p className="!mt-1 !font-normal text-gray-900 dark:text-gray-200">
-                {item.description}
-              </p>
-            </VerticalTimelineElement>
-          </React.Fragment>
-        ))}
-      </VerticalTimeline>
+      <ExperienceTimeline experiencesData={experiencesCopy} theme={theme} />
     </SectionWithRef>
   );
 }
