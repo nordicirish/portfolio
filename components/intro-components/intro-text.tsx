@@ -1,11 +1,8 @@
 import React from "react";
 
 // Static Site Generation (SSG)
-export const getStaticProps = async () => {
-  return {
-    props: {},
-  };
-};
+
+
 
 export default function IntroText() {
   return (
