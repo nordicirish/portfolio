@@ -5,7 +5,12 @@ import { experiencesData } from "@/lib/data";
 import { useTheme } from "@/context/theme-context";
 import SectionWithRef from "./section-with-ref";
 import { useIsMobile } from "@/lib/hooks";
-import ExperienceTimeline from "./experience-timeline";
+import dynamic from "next/dynamic";
+
+const ExperienceTimeline = dynamic(() => import("@/components/experience-timeline"), {
+  ssr: false,
+});
+
 const fadeUpAnimationDesktop = {
   initial: {
     opacity: 0,
