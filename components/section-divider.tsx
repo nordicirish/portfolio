@@ -8,7 +8,7 @@ export default function SectionDivider() {
   if (!isMobile) {
     return (
       <motion.div
-        className="bg-gradient-to-r from-blue-500/10 to-blue-700/10 dark:from-gray-100/10 dark:to-gray-400/10 my-24 h-16 w-1 rounded-full hidden sm:block"
+        className="bg-gradient-to-b from-cyan-500 from-10% via-blue-700 via-50% to-cyan-500 to-90% dark:from-cyan-400 dark:from-10% dark:via-blue-400 dark:via-50% dark:to-cyan-400 dark:to-90% my-24 h-16 w-1 rounded-full hidden sm:block"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.125 }}
