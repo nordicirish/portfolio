@@ -8,7 +8,7 @@ import { FaGithubSquare } from "react-icons/fa";
 export default function IntroLinks() {
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
   return (
-    <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-sm sm:text-lg font-medium">
+    <>
       <Link
         href="#Contact"
         aria-label="Contact me"
@@ -60,6 +60,6 @@ export default function IntroLinks() {
           <FaGithubSquare className="w-[1.14rem] h-[1.14rem] sm:w-[1.71rem] sm:h-[1.71rem] opacity-95 dark:opacity-85" />
         </span>
       </a>
-    </div>
+    </>
   );
 }
