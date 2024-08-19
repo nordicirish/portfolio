@@ -19,7 +19,7 @@ const Navbar = () => {
         "fixed top-0 left-1/2 w-full h-[3.25rem] rounded-none border border-white border-opacity-40 bg-white bg-opacity-60 backdrop-blur-[0.5rem] md:top-6 md:w-[37rem] md:rounded-full dark:bg-gray-950 dark:border-black/40 dark:bg-opacity-60 shadow-light-mode dark:shadow-dark-mode flex items-center justify-center transition",
         {
           "h-[3.25rem]": !mobileNavbar,
-          "h-auto": mobileNavbar,
+          "h-auto bg-opacity-75 dark:bg-opacity-75": mobileNavbar,
         }
       )}
       initial={{
