@@ -8,9 +8,9 @@ import ThemeContextProvider from "@/context/theme-context";
 import { Analytics } from "@vercel/analytics/react";
 import { lazy, Suspense } from "react";
 import ThemeSwitch from "@/components/theme-switch";
+import BackgroundDivs from "@/components/background-divs";
 
 // Lazy load the BackgroundDivs component
-const BackgroundDivs = lazy(() => import("@/components/background-divs"));
 
 const font = Montserrat({
   subsets: ["latin"],
@@ -34,11 +34,8 @@ export default function RootLayout({
       <body
         className={`${font.className} bg-gray-50 text-gray-950 relative pt-28 sm:pt-36 dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90`}
       >
-        <Suspense fallback={null}>
-          <BackgroundDivs />
-        </Suspense>
-
         <ThemeContextProvider>
+          <BackgroundDivs />
           <ActiveSectionContextProvider>
             <Header />
             {children}
