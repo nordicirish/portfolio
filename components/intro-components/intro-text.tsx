@@ -7,7 +7,7 @@ export default function IntroText() {
       </h1>
       <p className="mt-4 mb-10 px-4 text-lg font-medium !leading-relaxed text-gray-700 dark:text-gray-300 sm:text-xl">
         I'm a{" "}
-        <span className="font-bold text-blue-700 dark:text-blue-400">
+        <span className="font-bold text-green-700 dark:text-green-400">
           full-stack developer
         </span>{" "}
         specializing in{" "}
