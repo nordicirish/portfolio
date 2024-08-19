@@ -11,7 +11,7 @@ export default function IntroText() {
           full-stack developer
         </span>{" "}
         specializing in{" "}
-        <span className="font-bold ">
+        <span className="font-bold text-blue-700 dark:text-blue-400">
           React, Next.js, TypeScript, Tailwind, Prisma, PostgreSQL, AWS, Azure,
           Vercel, Scrum
         </span>{" "}
