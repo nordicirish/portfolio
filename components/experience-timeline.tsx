@@ -51,8 +51,12 @@ const ExperienceTimeline: React.FC<Props> = ({ experiencesData, theme }) => {
               fontSize: "1.5rem",
             }}
           >
-            <h3 className="font-semibold capitalize">{item.title}</h3>
-            <p className="font-normal !mt-0">{item.location}</p>
+            <h3 className="font-semibold capitalize text-blue-700 dark:text-blue-400">
+              {item.title}
+            </h3>
+            <p className="font-normal !mt-0 text-green-700 dark:text-green-400">
+              {item.location}
+            </p>
             <p className="!mt-1 !font-normal text-gray-900 dark:text-gray-200">
               {item.description}
             </p>

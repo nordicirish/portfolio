@@ -31,10 +31,7 @@ export default function Project({
       ref={ref}
       style={{ scale: scaleProgress, opacity: opacityProgress }}
     >
-      <section
-        className="flex flex-col-reverse sm:flex-row bg-gray-50 border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative sm:h-[20rem] hover:bg-gray-100 transition sm:group-even:pl-8 text-gray-900
-       dark:text-white dark:bg-white/10 dark:hover:bg-white/20 shadow-light-mode dark:shadow-dark-mode"
-      >
+      <section className="flex flex-col-reverse sm:flex-row bg-gray-50 border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative sm:h-[20rem] hover:bg-gray-100 transition sm:group-even:pl-8 text-blue-700 dark:text-blue-400 dark:bg-white/10 dark:hover:bg-white/20 shadow-light-mode dark:shadow-dark-mode">
         <div className="pt-4 pb-7 px-5 pl-10 sm:pr-2 sm:pt-10 flex flex-col h-full sm:max-w-[50%] sm:group-even:ml-[18rem]">
           <h3 className="text-2xl font-semibold">{title}</h3>
           {/* leading-relaxed allows for line breaks */}
@@ -44,7 +41,7 @@ export default function Project({
           <ul className="flex flex-wrap mt-4 gap-2 sm:mt-auto items-center justify-center">
             {tags.map((tag, index) => (
               <li
-                className="bg-slate-950 text-gray-100 px-3 py-1 text-[0.7rem] uppercase tracking-wider rounded-full dark:bg-slate-100 dark:text-gray-950"
+                className=" bg-teal-700 dark:bg-teal-400 text-gray-100 px-3 py-1 text-[0.7rem] uppercase tracking-wider rounded-full  dark:text-gray-950"
                 key={index}
               >
                 {tag}
