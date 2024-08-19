@@ -4,7 +4,7 @@ import Intro from "@/components/intro-components/intro";
 import About from "@/components/about-components/about";
 
 export default function Home() {
-  const SectionDivider = dynamic(() => import("@/components/section-divider"));
+  // const SectionDivider = dynamic(() => import("@/components/section-divider"));
   const Projects = dynamic(() => import("@/components/projects"));
   const Experience = dynamic(() => import("@/components/experience"));
   const Contact = dynamic(() => import("@/components/contact"));
@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <main className="flex flex-col items-center px-4 w-full">
       <Intro />
-      <SectionDivider />
+      {/* <SectionDivider /> */}
       <About />
       <Projects />
       <Skills />
