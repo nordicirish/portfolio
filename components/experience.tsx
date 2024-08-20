@@ -7,34 +7,37 @@ import SectionWithRef from "./section-with-ref";
 import { useIsMobile } from "@/lib/hooks";
 import dynamic from "next/dynamic";
 
-const ExperienceTimeline = dynamic(() => import("@/components/experience-timeline"), {
-  ssr: false,
-});
+const ExperienceTimeline = dynamic(
+  () => import("@/components/experience-timeline"),
+  {
+    ssr: false,
+  }
+);
 
 const fadeUpAnimationDesktop = {
   initial: {
     opacity: 0,
-    y: 100,
+    x: 100,
   },
   whileInView: {
     opacity: 1,
-    y: 0,
+    x: 0,
     transition: {
-      delay: 0.5,
-      duration: 1,
+      delay: 0.3,
+      duration: 0.5,
       ease: "easeInOut",
     },
   },
 };
 
 const fadeUpAnimationMobile = {
-  initial: { opacity: 0, y: 0 },
+  initial: { opacity: 0, x: 0 },
   whileInView: {
     opacity: 1,
-    y: 0,
+    x: 0,
     transition: {
-      delay: 0.5,
-      duration: 1,
+      delay: 0.3,
+      duration: 0.5,
       ease: "easeInOut",
     },
   },

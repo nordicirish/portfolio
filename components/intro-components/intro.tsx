@@ -21,7 +21,7 @@ export default function Intro() {
       <motion.div
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ type: "tween", duration: 0.2 }}
+        transition={{ type: "easeIn", duration: 0.3 }}
         className="-mt-6 flex align-middle justify-center"
       >
         <ProfileImage />
