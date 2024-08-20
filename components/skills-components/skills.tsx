@@ -10,7 +10,7 @@ export default function Skills() {
     // optionally provide mobileThreshold value
     <SectionWithRef
       id="Skills"
-      className="mb-28 scroll-mt-28 text-center sm:mb-32"
+      className="mb-28 scroll-mt-28 text-center sm:mb-32 w-full"
       desktopThreshold={0.5}
     >
       <SectionHeading>My Skills</SectionHeading>

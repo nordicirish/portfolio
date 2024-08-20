@@ -3,6 +3,7 @@ import React from "react";
 import { Skill } from "@/lib/types";
 import { iconMap } from "@/lib/utils";
 import { useIsMobile } from "@/lib/hooks";
+import { useTheme } from "@/context/theme-context";
 import dynamic from "next/dynamic";
 const MotionLi = dynamic(
   () => import("framer-motion").then((mod) => mod.motion.li),
@@ -12,7 +13,7 @@ const MotionLi = dynamic(
 // client side component to render skills list
 interface SkillsListProps {
   skills: Skill[];
-}
+  }
 
 const animationVariantsDesktop = {
   initial: {
@@ -55,7 +56,9 @@ const animationVariantsMobile = {
   }),
 };
 
-const SkillsList: React.FC<SkillsListProps> = ({ skills }) => {
+const SkillsList: React.FC<SkillsListProps> = ({ skills,  }) => {
+  const { theme } = useTheme();
+  console.log(theme);
   const isMobile = useIsMobile();
   const animationVariants = isMobile
     ? animationVariantsMobile
@@ -70,8 +73,8 @@ const SkillsList: React.FC<SkillsListProps> = ({ skills }) => {
 
           return (
             <MotionLi
-              className="bg-gradient-to-r from-cyan-300 to-blue-400 shadow-light-mode dark:shadow-dark-mode rounded-full w-32 h-16 px-2 py-2 dark:bg-gradient-to-r dark:from-cyan-800
-            dark:to-blue-950 flex items-center justify-evenly flex-col sm:w-36 sm:h-18 sm:px-3 sm:py-3 md:w-40 md:h-20 md:px-4 md:py-4"
+              className="bg-gradient-to-r from-blue-400 to-teal-400 text-teal-950 shadow-light-mode dark:shadow-dark-mode rounded-full w-32 h-16 px-2 py-2 dark:bg-gradient-to-r dark:from-teal-800
+            dark:to-blue-900 dark:text-teal-200 flex items-center justify-evenly flex-col sm:w-36 sm:h-18 sm:px-3 sm:py-3 md:w-40 md:h-20 md:px-4 md:py-4"
               key={index}
               initial={animationVariants.initial}
               whileInView={animationVariants.whileInView(index)}
@@ -81,7 +84,12 @@ const SkillsList: React.FC<SkillsListProps> = ({ skills }) => {
               viewport={{ once: true, amount: 0.1 }}
             >
               <IconComponent
-                style={{ width: "100%", height: "100%", opacity: 1 }}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  color: theme === "light" ? "#234E52" : "#B2FFFC",
+                  opacity: 1,
+                }}
                 size={38}
                 aria-label={`Icon depicting ${skill.skill} skill`}
                 role="img"
