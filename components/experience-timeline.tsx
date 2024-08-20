@@ -4,6 +4,7 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
+import { useIsMobile } from "@/lib/hooks";
 
 interface Props {
   experiencesData: any[];
@@ -11,6 +12,7 @@ interface Props {
 }
 
 const ExperienceTimeline: React.FC<Props> = ({ experiencesData, theme }) => {
+  const isMobile = useIsMobile();
   return (
     <VerticalTimeline lineColor="">
       {experiencesData.map((item, index) => (
@@ -18,12 +20,12 @@ const ExperienceTimeline: React.FC<Props> = ({ experiencesData, theme }) => {
           <VerticalTimelineElement
             visible={true}
             contentStyle={{
-              maxWidth: "53rem",
+              maxWidth: "50rem",
               background:
                 theme === "light" ? "#F1F5F9" : "rgba(255, 255, 255, 0.05)",
               boxShadow:
                 theme === "light"
-                  ? "0px 4px 10px #2D9EE5" // Gold drop shadow for light mode
+                  ? "0px 4px 10px #2D9EE5"
                   : "0px 4px 10px rgba(0, 0, 0, 0.5)", // Dark mode drop shadow
               border:
                 theme === "light" // Light mode border
@@ -39,6 +41,8 @@ const ExperienceTimeline: React.FC<Props> = ({ experiencesData, theme }) => {
                   : "0.4rem solid rgba(255, 255, 255, 0.05)", // Arrow color for dark mode
             }}
             date={item.date}
+            // inject a custom className for the 
+            dateClassName={isMobile ? "" : "mx-2"}
             icon={item.icon}
             iconStyle={{
               background: theme === "light" ? "#2D9EE5" : "#1C2432",

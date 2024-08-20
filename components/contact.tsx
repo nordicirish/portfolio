@@ -9,11 +9,9 @@ export default function Contact() {
   // creates a reference to the form element
   const formRef = useRef<HTMLFormElement>(null);
   return (
-    
-
     <SectionWithRef
       id="Contact"
-      className="flex flex-col items-center scroll-mt-28  mb-20 sm:mb-28 text-center"
+      className="flex flex-col items-center scroll-mt-28  mb-20 sm:mb-28 text-center w-full"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1 }}

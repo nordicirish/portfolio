@@ -16,13 +16,13 @@ export default function Intro() {
     <SectionWithRef
       id="Home"
       desktopThreshold={0.5}
-      className="mb-28 text-center scroll-mt-[100rem]" 
+      className="mb-28 text-center scroll-mt-[100rem] w-full" 
     >
       <motion.div
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ type: "easeIn", duration: 0.3 }}
-        className="-mt-6 flex align-middle justify-center"
+        className="flex align-middle justify-center"
       >
         <ProfileImage />
       </motion.div>
