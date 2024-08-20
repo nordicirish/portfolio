@@ -16,7 +16,7 @@ export default function Intro() {
     <SectionWithRef
       id="Home"
       desktopThreshold={0.5}
-      className="mb-28 w-full max-w-[50rem] text-center  scroll-mt-[100rem]"
+      className="mb-28 w-full max-w-[50rem] text-center  scroll-mt-[100rem] scroll-smooth"
     >
       <motion.div
         initial={{ opacity: 0, scale: 0 }}
@@ -37,7 +37,7 @@ export default function Intro() {
       <motion.div
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.1 }}
+        transition={{ duration: 0.3 }}
         className="flex flex-col sm:flex-row items-center justify-center gap-4 text-sm sm:text-lg font-medium"
       >
         <IntroLinks />
