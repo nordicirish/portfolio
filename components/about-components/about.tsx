@@ -7,7 +7,7 @@ import { BadgesProps } from "@/lib/types";
 import Link from "next/link";
 
 export default function About() {
- const badgesArray: BadgesProps[] = [...badges];
+  const badgesArray: BadgesProps[] = [...badges];
   return (
     // scroll-mt-28 ensures a margin at the top of the section when using the bookmark navigation
     <SectionWithRef
@@ -15,7 +15,7 @@ export default function About() {
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.175 }}
-      desktopThreshold={0.75} 
+      desktopThreshold={0.75}
       id="About"
     >
       <SectionHeading>About Me</SectionHeading>
@@ -42,8 +42,7 @@ export default function About() {
             What I Do:
           </span>{" "}
           I specialize in building dynamic and responsive web applications using
-          a core stack that includes I specialize in building dynamic and
-          responsive web applications using a core stack that includes{" "}
+          a core stack that includes{" "}
           <span className="font-bold text-teal-700 dark:text-teal-400">
             React
           </span>
@@ -89,14 +88,14 @@ export default function About() {
           </span>{" "}
           Outside of coding, you can find me cycling through the beautiful
           Finnish countryside, capturing moments through photography, or finding
-          balance with yoga. I’m also in the midst of picking up guitar skills,
+          balance with yoga. I’m also learning to play guitar,
           driven by a love for continuous learning and personal growth.
         </p>
         <p className="mb-0">
           <span className="font-semibold text-blue-700 dark:text-blue-400">
             Looking Ahead:
           </span>{" "}
-          I’m currently seeking a full-time position as a junior software
+          I’m currently seeking a full-time or part-time position as a junior software
           developer where I can contribute to exciting projects and grow
           alongside a talented team. If you’re looking for a dedicated and
           enthusiastic developer with a zest for problem-solving,{" "}
