@@ -17,11 +17,11 @@ const ExperienceTimeline = dynamic(
 const fadeUpAnimationDesktop = {
   initial: {
     opacity: 0,
-    x: 100,
+    y: 100,
   },
   whileInView: {
     opacity: 1,
-    x: 0,
+    y: 0,
     transition: {
       delay: 0.3,
       duration: 0.5,
@@ -31,10 +31,10 @@ const fadeUpAnimationDesktop = {
 };
 
 const fadeUpAnimationMobile = {
-  initial: { opacity: 0, x: 0 },
+  initial: { opacity: 0, y: 0 },
   whileInView: {
     opacity: 1,
-    x: 0,
+    y: 0,
     transition: {
       delay: 0.3,
       duration: 0.5,
@@ -57,7 +57,7 @@ export default function Experience() {
     <SectionWithRef
       id="Experience"
       desktopThreshold={0.5}
-      className="scroll-mt-28 scroll-smooth mb-28 sm:mb-32 w-full max-w-[50rem]"
+      className="scroll-mt-28 mb-28 sm:mb-32 w-full"
       initial={fadeUpAnimation.initial}
       viewport={{ once: true }}
       whileInView={fadeUpAnimation.whileInView}

@@ -16,7 +16,7 @@ export default function Intro() {
     <SectionWithRef
       id="Home"
       desktopThreshold={0.5}
-      className="mb-28 w-full max-w-[50rem] text-center  scroll-mt-[100rem] scroll-smooth "
+      className="mb-28 text-center scroll-mt-[100rem]" 
     >
       <motion.div
         initial={{ opacity: 0, scale: 0 }}

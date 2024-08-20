@@ -9,11 +9,11 @@ export default function Contact() {
   // creates a reference to the form element
   const formRef = useRef<HTMLFormElement>(null);
   return (
-    // w-[min(100%,38rem)] ensures width is the minimum of 100% on smaller screens and 38rem on wider screens
+    
 
     <SectionWithRef
       id="Contact"
-      className="flex flex-col items-center scroll-mt-28 scroll-smooth mb-20 sm:mb-28 w-full sm:min-w-[53rem] max-w-[53rem] text-center"
+      className="flex flex-col items-center scroll-mt-28  mb-20 sm:mb-28 text-center"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1 }}

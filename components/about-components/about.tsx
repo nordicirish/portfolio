@@ -11,7 +11,7 @@ export default function About() {
   return (
     // scroll-mt-28 ensures a margin at the top of the section when using the bookmark navigation
     <SectionWithRef
-      className="mb-28 w-full max-w-[50rem] text-center leading-8 sm:mb-32 scroll-mt-28"
+      className="mb-28 text-center leading-8 sm:mb-32 scroll-mt-28"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.175 }}
@@ -88,16 +88,16 @@ export default function About() {
           </span>{" "}
           Outside of coding, you can find me cycling through the beautiful
           Finnish countryside, capturing moments through photography, or finding
-          balance with yoga. I’m also learning to play guitar,
-          driven by a love for continuous learning and personal growth.
+          balance with yoga. I’m also learning to play guitar, driven by a love
+          for continuous learning and personal growth.
         </p>
         <p className="mb-0">
           <span className="font-semibold text-blue-700 dark:text-blue-400">
             Looking Ahead:
           </span>{" "}
-          I’m currently seeking a full-time or part-time position as a junior software
-          developer where I can contribute to exciting projects and grow
-          alongside a talented team. If you’re looking for a dedicated and
+          I’m currently seeking a full-time or part-time position as a junior
+          software developer where I can contribute to exciting projects and
+          grow alongside a talented team. If you’re looking for a dedicated and
           enthusiastic developer with a zest for problem-solving,{" "}
           <Link
             href="#Contact"

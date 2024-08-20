@@ -13,7 +13,7 @@ export default function Projects() {
     <SectionWithRef
       id="Projects"
       desktopThreshold={0.5}
-      className="scroll-mt-28 scroll-smooth mb-28 sm:mb-32 w-full max-w-[50rem]"
+      className="scroll-mt-28 mb-28 sm:mb-32"
     >
       <SectionHeading>My Projects</SectionHeading>
       <div className="flex justify-center">
