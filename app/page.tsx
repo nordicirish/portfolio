@@ -11,7 +11,7 @@ export default function Home() {
   const Skills = dynamic(() => import("@/components/skills-components/skills"));
 
   return (
-    <main className="flex flex-col items-center px-4 w-full">
+    <main className="flex flex-col items-center justify-center px-4 w-full">
       <Intro />
       {/* <SectionDivider /> */}
       <About />
