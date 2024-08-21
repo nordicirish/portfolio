@@ -33,6 +33,7 @@ const ExperienceTimeline: React.FC<Props> = ({ experiencesData, theme }) => {
                   : "2px solid rgba(0, 0, 0, 0.5)", // Dark mode border
               textAlign: "left",
               padding: "1.3rem 2rem",
+              fontSize: "1rem",
             }}
             contentArrowStyle={{
               borderRight:
@@ -55,13 +56,13 @@ const ExperienceTimeline: React.FC<Props> = ({ experiencesData, theme }) => {
               fontSize: "1.5rem",
             }}
           >
-            <h3 className="font-semibold capitalize text-blue-700 dark:text-blue-400">
+            <h3 className="font-semibold capitalize text-lg text-blue-700 dark:text-blue-400">
               {item.title}
             </h3>
             <p className="font-normal !mt-0 text-green-700 dark:text-green-400">
               {item.location}
             </p>
-            <p className="!mt-1 !font-normal text-gray-900 dark:text-gray-200">
+            <p className="!mt-1 !font-normal text-lg text-gray-900 dark:text-gray-200">
               {item.description}
             </p>
           </VerticalTimelineElement>

@@ -35,7 +35,7 @@ export default function Project({
         <div className="pt-4 pb-7 px-5 pl-10 sm:pr-2 sm:pt-10 flex flex-col h-full sm:max-w-[50%] sm:group-even:ml-[18rem]">
           <h3 className="text-2xl font-semibold">{title}</h3>
           {/* leading-relaxed allows for line breaks */}
-          <p className="mt-2 mb-2 leading-relaxed text-gray-900 dark:text-gray-200">
+          <p className="mt-2 mb-2  leading-relaxed text-gray-900 dark:text-gray-200">
             {description}
           </p>
           <ul className="flex flex-wrap mt-4 gap-2 sm:mt-auto items-center justify-center">
