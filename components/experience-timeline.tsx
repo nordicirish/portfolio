@@ -12,7 +12,6 @@ interface Props {
 }
 
 const ExperienceTimeline: React.FC<Props> = ({ experiencesData, theme }) => {
-  const isMobile = useIsMobile();
   return (
     <VerticalTimeline lineColor="">
       {experiencesData.map((item, index) => (
@@ -43,7 +42,7 @@ const ExperienceTimeline: React.FC<Props> = ({ experiencesData, theme }) => {
             }}
             date={item.date}
             // inject a custom className for the
-            dateClassName={isMobile ? "mx-0" : "mx-2"}
+            dateClassName="xl:mx-2 mx-0"
             icon={item.icon}
             iconStyle={{
               background: theme === "light" ? "#2D9EE5" : "#1C2432",
