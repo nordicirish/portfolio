@@ -36,7 +36,7 @@ const NavbarLink: React.FC<NavbarLinkProps> = ({
         {name}
         {name === activeSection && (
           <motion.span
-            className="absolute inset-0 bottom-0 -z-10 bg-Primary bg-blue-800 dark:bg-fuchsia-900 shadow-light-mode dark:shadow-dark-mode md:rounded-full"
+            className="absolute inset-0 bottom-0 -z-10 gradientActiveMenuItem shadow-light-mode dark:shadow-dark-mode md:rounded-full"
             layoutId="activeSection"
             transition={{
               type: "spring",

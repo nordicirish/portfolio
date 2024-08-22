@@ -3,16 +3,19 @@ import Image from "next/image";
 
 export default function ProfileImage() {
   return (
-    <Image
-      src="/profile.png"
-      alt="Roger Graham portrait photo"
-      width={176}
-      height={176}
-      quality="95"
-      priority={true}
-      blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk2PHfGAAEYwHsXvURPgAAAABJRU5ErkJggg=="
-      placeholder="blur"
-      className="h-44 w-44 rounded-full object-cover border-[0.35rem] border-white/40 shadow-xl "
-    />
+    <div className="flex flex-col  justify-center items-center relative">
+      <div className="absolute rounded-full w-44 h-44 bg-gradient-to-r from-cyan-500 from-10% via-blue-700 via-50% to-cyan-500 to-90% dark:from-cyan-400 dark:from-10% dark:via-blue-400 dark:via-50% dark:to-cyan-400 dark:to-90% p-1 z-1 blur-sm shadow-lg">
+        {/* background element with blur effect */}
+      </div>
+      <Image
+        src="/profile.png"
+        alt="Roger Graham portrait photo"
+        width={176}
+        height={176}
+        quality="95"
+        priority={true}
+        className="h-44 w-44 rounded-full z-2 relative"
+      />
+    </div>
   );
 }

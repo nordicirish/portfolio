@@ -12,7 +12,7 @@ export default function IntroLinks() {
       <Link
         href="#Contact"
         aria-label="Contact me"
-        className="group flex items-center justify-center gap-2 rounded-lg outline-none focus:scale-110 hover:scale-110 hover:bg-blue-900 active:scale-110 transition-transform duration-300 ease-out bg-blue-800 dark:bg-fuchsia-900 dark:hover:bg-fuchsia-950 text-white h-10 sm:h-[3.2rem] px-4 w-56 sm:w-auto shadow-lg dark:shadow-md" // Full width on small screens, auto on larger screens
+        className="group flex items-center gradientLink justify-center gap-2 rounded-lg outline-none focus:scale-110 hover:scale-110  active:scale-110 transition-transform duration-300 ease-out text-white h-10 sm:h-[3.2rem] px-4 w-56 sm:w-auto shadow-lg dark:shadow-md" // Full width on small screens, auto on larger screens
         onClick={() => {
           setActiveSection("Contact");
           setTimeOfLastClick(Date.now());
@@ -25,7 +25,7 @@ export default function IntroLinks() {
       </Link>
       {/* needs to be an a tag for download - Link is meant for client side routing between pages  */}
       <a
-        className="group flex items-center justify-center gap-2 rounded-lg outline-none focus:scale-110 hover:scale-110 active:scale-110 transition-transform duration-300 ease-out cursor-pointer text-blue-800 hover:text-blue-900 borderBlue dark:border dark:border-white/10 dark:bg-white/10 h-10 sm:h-[3.2rem] dark:text-white/60 px-4 w-56 sm:w-auto shadow-lg dark:shadow-/md" // Full width on small screens, auto on larger screens
+        className="lightGradientLink group flex items-center justify-center gap-2 rounded-lg outline-none focus:scale-110 hover:scale-110 active:scale-110 transition-transform duration-300 ease-out cursor-pointer  text-blue-800 hover:text-blue-900    h-10 sm:h-[3.2rem] dark:text-white/60 px-4 w-56 sm:w-auto shadow-lg dark:shadow-/md" // Full width on small screens, auto on larger screens
         href="/CV.pdf"
         download
         aria-label="Download my CV as PDF"
@@ -37,7 +37,7 @@ export default function IntroLinks() {
       </a>
 
       <a
-        className="group flex items-center justify-center gap-2 rounded-lg focus:scale-110 hover:scale-110 text-blue-800 hover:text-blue-900 active:scale-110 transition-transform duration-300 ease-out cursor-pointer borderBlue dark:border dark:border-white/10 dark:bg-white/10 dark:text-white/60 w-56 sm:w-[3.2rem] h-10 sm:h-[3.2rem] px-4 shadow-lg dark:shadow-md"
+        className="lightGradientLink group flex items-center justify-center gap-2 rounded-lg focus:scale-110 hover:scale-110 text-blue-800 hover:text-blue-900 active:scale-110 transition-transform duration-300 ease-out cursor-pointer  dark:text-white/60 w-56 sm:w-[3.2rem] h-10 sm:h-[3.2rem] px-4 shadow-lg dark:shadow-md"
         href="https://www.linkedin.com/in/nordic-irish/"
         target="_blank"
         rel="noopener noreferrer"
@@ -49,7 +49,7 @@ export default function IntroLinks() {
         </span>
       </a>
       <a
-        className="group flex items-center justify-center gap-2 rounded-lg focus:scale-110 hover:scale-110 text-blue-800 hover:text-blue-800 active:scale-110 transition-transform duration-300 ease-out cursor-pointer borderBlue dark:border dark:border-white/10 dark:bg-white/10 dark:text-white/60 w-56 sm:w-[3.2rem] h-10 sm:h-[3.2rem] px-4 shadow-lg dark:shadow-md"
+        className="lightGradientLink group flex items-center justify-center gap-2 rounded-lg focus:scale-110 hover:scale-110 text-blue-800 hover:text-blue-800 active:scale-110 transition-transform duration-300 ease-out cursor-pointer  dark:text-white/60 w-56 sm:w-[3.2rem] h-10 sm:h-[3.2rem] px-4 shadow-lg dark:shadow-md"
         href="https://github.com/nordicirish"
         aria-label="Link to my GitHub profile"
         target="_blank"
