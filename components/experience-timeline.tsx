@@ -42,8 +42,8 @@ const ExperienceTimeline: React.FC<Props> = ({ experiencesData, theme }) => {
                   : "0.4rem solid rgba(255, 255, 255, 0.05)", // Arrow color for dark mode
             }}
             date={item.date}
-            // inject a custom className for the 
-            dateClassName={isMobile ? "" : "mx-2"}
+            // inject a custom className for the
+            dateClassName={isMobile ? "mx-0" : "mx-2"}
             icon={item.icon}
             iconStyle={{
               background: theme === "light" ? "#2D9EE5" : "#1C2432",
