@@ -18,13 +18,13 @@ export default function Contact() {
       viewport={{ once: true }}
     >
       <SectionHeading>Contact Me</SectionHeading>
-      <p className="text-gray-700 -mt-6 dark:text-white/80">
+      <p className="text-gray-700  dark:text-white/80">
         Please email me directly at rogergraham147 (at) gmail.com, or use this
         form.
       </p>
 
       <form
-        className="mt-10 flex flex-col dark:text-black w-[min(100%,38rem)]"
+        className="mt-6 flex flex-col dark:text-black w-[min(100%,38rem)]"
         ref={formRef}
         action={async (formData) => {
           const { data, error } = await sendEmail(formData);
@@ -57,7 +57,7 @@ export default function Contact() {
           required
           maxLength={5000}
         />
-        <div className="flex justify-center sm:justify-end sm:pr-12 w-full">
+        <div className="flex justify-center sm:justify-end sm:pr-6 w-full mt-3">
           <SubmitButton />
         </div>
       </form>
