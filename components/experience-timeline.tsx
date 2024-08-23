@@ -4,7 +4,6 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-import { useIsMobile } from "@/lib/hooks";
 
 interface Props {
   experiencesData: any[];
@@ -24,11 +23,11 @@ const ExperienceTimeline: React.FC<Props> = ({ experiencesData, theme }) => {
                 theme === "light" ? "#F1F5F9" : "rgba(255, 255, 255, 0.05)",
               boxShadow:
                 theme === "light"
-                  ? "0px 4px 10px #2D9EE5"
+                  ? "0px 4px 10px #3498db"
                   : "0px 4px 10px rgba(0, 0, 0, 0.5)", // Dark mode drop shadow
               border:
                 theme === "light" // Light mode border
-                  ? "2px solid #2D9EE5" //
+                  ? "2px solid #4ade80" //
                   : "2px solid rgba(0, 0, 0, 0.5)", // Dark mode border
               textAlign: "left",
               padding: "1.3rem 2rem",
@@ -37,22 +36,23 @@ const ExperienceTimeline: React.FC<Props> = ({ experiencesData, theme }) => {
             contentArrowStyle={{
               borderRight:
                 theme === "light"
-                  ? "0.4rem solid #2D9EE5" // Gold arrow for light mode
-                  : "0.4rem solid rgba(255, 255, 255, 0.05)", // Arrow color for dark mode
+                  ? "0.6rem solid #3498db" //  arrow for light mode
+                  : "0.6rem solid rgba(255, 255, 255, 0.05)", // Arrow color for dark mode
             }}
             date={item.date}
             // inject a custom className for the
             dateClassName="xl:mx-2 mx-0"
             icon={item.icon}
             iconStyle={{
-              background: theme === "light" ? "#2D9EE5" : "#1C2432",
+              background: theme === "light" ? "#F1F5F9" : "#1C2432",
               border:
-                theme === "light" ? "2px solid #2D9EE5" : "2px solid #1C2432",
+                theme === "light" ? "2px solid #4ade80" : "2px solid #1C2432",
               boxShadow:
                 theme === "light"
-                  ? "0px 4px 10px #2D9EE5"
+                  ? "0px 4px 10px #3498db"
                   : "0px 4px 10px rgba(0, 0, 0, 0.5)", // Dark mode drop shadow
               fontSize: "1.5rem",
+              color: theme === "light" ? "#15803d" : "#e5e7eb",
             }}
           >
             <h3 className="font-semibold capitalize text-lg text-blue-700 dark:text-blue-400">
