@@ -13,7 +13,7 @@ const MotionLi = dynamic(
 // client side component to render skills list
 interface SkillsListProps {
   skills: Skill[];
-  }
+}
 
 const animationVariantsDesktop = {
   initial: {
@@ -56,7 +56,7 @@ const animationVariantsMobile = {
   }),
 };
 
-const SkillsList: React.FC<SkillsListProps> = ({ skills,  }) => {
+const SkillsList: React.FC<SkillsListProps> = ({ skills }) => {
   const { theme } = useTheme();
   console.log(theme);
   const isMobile = useIsMobile();
@@ -64,8 +64,8 @@ const SkillsList: React.FC<SkillsListProps> = ({ skills,  }) => {
     ? animationVariantsMobile
     : animationVariantsDesktop;
   return (
-    <div className="flex items-center justify-center">
-      <ul className="flex col flex-wrap items-center max-w-[48rem] justify-center gap-2 text-lg dark:text-white/85 text-gray-900">
+    <div className="flex w-full items-center justify-center">
+      <ul className="flex col flex-wrap items-center  justify-center gap-2 ">
         {skills.map((skill, index) => {
           const IconComponent = iconMap[skill.icon]; // Get the icon component
 
@@ -73,28 +73,25 @@ const SkillsList: React.FC<SkillsListProps> = ({ skills,  }) => {
 
           return (
             <MotionLi
-              className="bg-gradient-to-r from-blue-400 to-teal-400 text-teal-950 shadow-light-mode dark:shadow-dark-mode rounded-full w-32 h-16 px-2 py-2 dark:bg-gradient-to-r dark:from-teal-800
-            dark:to-blue-900 dark:text-teal-200 flex items-center justify-evenly flex-col sm:w-36 sm:h-18 sm:px-3 sm:py-3 md:w-40 md:h-20 md:px-4 md:py-4"
+              className="relative hexagon bg-gradient-to-r from-blue-300 to-teal-300 text-slate-950 shadow-light-mode dark:shadow-dark-mode dark:bg-gradient-to-r dark:from-teal-800 dark:to-blue-900 dark:text-teal-200 flex items-center justify-evenly flex-col  max-w-28 max-h-28 sm:max-w-32 sm:max-h-32 px-6 py-6 sm:px-6 sm:py-6"
               key={index}
               initial={animationVariants.initial}
               whileInView={animationVariants.whileInView(index)}
-              // Ensure visibility on mobile
-              // Only apply `whileInView` for non-mobile devices
               custom={index}
               viewport={{ once: true, amount: 0.1 }}
             >
               <IconComponent
                 style={{
-                  width: "100%",
-                  height: "100%",
+                  maxWidth: "59%",
+                  maxHeight: "59%",
                   color: theme === "light" ? "#234E52" : "#B2FFFC",
                   opacity: 1,
                 }}
-                size={38}
+                size={100}
                 aria-label={`Icon depicting ${skill.skill} skill`}
                 role="img"
               />
-              <span className="text-sm">{skill.skill}</span>
+              <span className="text-sm leading-1 -mt-2 sm:-mt-3">{skill.skill}</span>
             </MotionLi>
           );
         })}

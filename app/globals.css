@@ -44,3 +44,9 @@ html.dark {
   @apply dark:from-slate-700 dark:via-slate-600 dark:to-slate-700;
   @apply dark:hover:from-slate-600 dark:hover:via-slate-500 dark:hover:to-slate-600;
 }
+
+.hexagon {
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  width: 100%;
+  height: 100%;
+}

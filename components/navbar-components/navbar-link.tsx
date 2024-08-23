@@ -27,6 +27,7 @@ const NavbarLink: React.FC<NavbarLinkProps> = ({
           "flex w-full items-center justify-center px-3 py-3 text-gray-800 hover:text-gray-950 transition dark:text-gray-400 dark:hover:text-gray-300",
           {
             "!text-gray-200 hover:!text-gray-300 dark:text-gray-300":
+              // set active class if name is equal to activeSection from useActiveSectionContext
               activeSection === name,
           }
         )}
@@ -34,6 +35,7 @@ const NavbarLink: React.FC<NavbarLinkProps> = ({
         onClick={onClick}
       >
         {name}
+        {/* applies background styles to active section */}
         {name === activeSection && (
           <motion.span
             className="absolute inset-0 bottom-0 -z-10 gradientActiveMenuItem shadow-light-mode dark:shadow-dark-mode md:rounded-full"

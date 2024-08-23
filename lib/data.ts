@@ -138,7 +138,7 @@ export const skillsData: Skill[] = [
   { skill: "PostgreSQL", icon: "SiPostgresql" },
   { skill: "SQLite", icon: "SiSqlite" },
   { skill: "Express", icon: "SiExpress" },
-  { skill: "Framer Motion", icon: "SiFramer" },
+  { skill: "Framer", icon: "SiFramer" },
   { skill: "AWS", icon: "SiAmazonaws" },
   { skill: "Azure", icon: "SiMicrosoftazure" },
   { skill: "Scrum", icon: "SiScrumalliance" },
