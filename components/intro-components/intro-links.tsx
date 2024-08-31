@@ -38,7 +38,7 @@ export default function IntroLinks() {
 
       <a
         className="lightGradientLink group flex items-center justify-center gap-2 rounded-lg focus:scale-100 hover:scale-110 text-blue-800 hover:text-blue-900 active:scale-110 transition-transform duration-300 ease-out cursor-pointer  dark:text-white/60 w-56 sm:w-[3.2rem] h-10 sm:h-[3.2rem] px-4 shadow-lg dark:shadow-md"
-        href="https://www.linkedin.com/in/nordic-irish/"
+        href="https://www.linkedin.com/in/roger-graham-coder/"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Link to my LinkedIn profile"
