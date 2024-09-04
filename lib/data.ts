@@ -3,7 +3,7 @@ import React from "react";
 // import { CgWorkAlt } from "react-icons/cg";
 import { FaVuejs } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
-
+import imageGenieImg from "@/public/imageGenieImg.jpeg";
 import learnLangImg from "@/public/learnLangImg.png";
 import invoiceDashboardImg from "@/public/invoiceDashboardImg.png";
 import { RiNextjsFill } from "react-icons/ri";
@@ -94,17 +94,17 @@ export const experiencesData = [
 //as const is used to make the data specific to the values as well as types and readonly. Improves intellisense to show the data values.
 export const projectsData = [
   {
+    title: "Image Genie",
+    description:
+      "Image Genie is a full-stack app for AI text-to-image generation using React, Next.js, TypeScript, and OpenAI's DALL-E SDK. Users can download generated images.",
+    tags: ["OpenAI", "React", "Next.js", "TypeScript", "Tailwind"],
+    imageUrl: imageGenieImg,
+  },
+  {
     title: "Invoice Dashboard",
     description:
       "This app is based on the Next.js App Router Course. I've added Blob storage and message handling using the useContext hook.",
-    tags: [
-      "React",
-      "Next.js",
-      "TypeScript",
-      "PostgreSQL",
-      "Tailwind",
-      "Vercel",
-    ],
+    tags: ["React", "Next.js", "TypeScript", "PostgreSQL", "Tailwind"],
     imageUrl: invoiceDashboardImg,
   },
   {
