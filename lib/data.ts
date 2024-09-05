@@ -94,7 +94,7 @@ export const experiencesData = [
 //as const is used to make the data specific to the values as well as types and readonly. Improves intellisense to show the data values.
 export const projectsData = [
   {
-    title: "Image Genie",
+    title: "ImageGenie",
     description:
       "Image Genie is a full-stack app for AI text-to-image generation using React, Next.js, TypeScript, and OpenAI's DALL-E SDK. Users can download generated images.",
     tags: ["OpenAI", "React", "Next.js", "TypeScript", "Tailwind"],

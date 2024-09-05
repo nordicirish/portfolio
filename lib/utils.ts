@@ -1,3 +1,9 @@
+import { clsx, type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
 export const validateString = (
   value: unknown,
   maxLength: number
@@ -26,12 +32,23 @@ export const getErrorMessage = (error: unknown): string => {
 };
 
 // lib/icons.ts
-import { TiHtml5 } from 'react-icons/ti';
-import { DiCss3 } from 'react-icons/di';
-import { TbBrandJavascript, TbBrandTypescript } from 'react-icons/tb';
-import { FaReact, FaNodeJs, FaGitAlt, FaVuejs } from 'react-icons/fa';
-import { RiNextjsLine, RiTailwindCssLine } from 'react-icons/ri';
-import { SiPrisma, SiMongodb, SiPostgresql, SiSqlite, SiExpress, SiFramer, SiAmazonaws, SiMicrosoftazure, SiScrumalliance, SiVercel } from 'react-icons/si';
+import { TiHtml5 } from "react-icons/ti";
+import { DiCss3 } from "react-icons/di";
+import { TbBrandJavascript, TbBrandTypescript } from "react-icons/tb";
+import { FaReact, FaNodeJs, FaGitAlt, FaVuejs } from "react-icons/fa";
+import { RiNextjsLine, RiTailwindCssLine } from "react-icons/ri";
+import {
+  SiPrisma,
+  SiMongodb,
+  SiPostgresql,
+  SiSqlite,
+  SiExpress,
+  SiFramer,
+  SiAmazonaws,
+  SiMicrosoftazure,
+  SiScrumalliance,
+  SiVercel,
+} from "react-icons/si";
 
 // Create a central import and mapping of icon names to components
 export const iconMap = {
