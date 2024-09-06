@@ -49,7 +49,7 @@ const Navbar = () => {
             </SheetTrigger>
             <SheetContent
               side="right"
-              className="w-[300px] sm:w-[400px] bg-white/70 dark:bg-gray-950/70 pt-24"
+              className="w-[300px] sm:w-[400px] h-fit max-h-2/3 bg-white/90 dark:bg-gray-950/70 pt-[5.5rem] rounded-sm"
             >
               <nav className="flex flex-col space-y-4">
                 {links.map((link) => (
