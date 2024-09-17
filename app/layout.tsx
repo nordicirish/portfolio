@@ -6,7 +6,7 @@ import ActiveSectionContextProvider from "@/context/active-section";
 import { Toaster } from "react-hot-toast";
 import ThemeContextProvider from "@/context/theme-context";
 import { Analytics } from "@vercel/analytics/react";
-import { lazy, Suspense } from "react";
+import { Suspense } from "react";
 import ThemeSwitch from "@/components/theme-switch";
 import BackgroundDivs from "@/components/background-divs";
 
