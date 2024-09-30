@@ -6,8 +6,10 @@ import { LuGraduationCap } from "react-icons/lu";
 import imageGenieImg from "@/public/imageGenieImg.jpeg";
 import learnLangImg from "@/public/learnLangImg.png";
 import invoiceDashboardImg from "@/public/invoiceDashboardImg.png";
+import stockDashboardImg from "@/public/stockDashboardImg.png";
 import { RiNextjsFill } from "react-icons/ri";
 import { IconName } from "./utils";
+import { url } from "inspector";
 
 export const badges = [
   {
@@ -96,9 +98,18 @@ export const projectsData = [
   {
     title: "ImageGenie",
     description:
-      "Image Genie is a full-stack app for AI text-to-image generation using React, Next.js, TypeScript, and OpenAI's DALL-E SDK. Users can download generated images.",
+      "Image Genie is a full-stack app for AI text-to-image generation using React, Next.js, TypeScript, and OpenAI's DALL-E API. Users can download generated images.",
     tags: ["OpenAI", "React", "Next.js", "TypeScript", "Tailwind"],
     imageUrl: imageGenieImg,
+    gitghubUrl: "https://github.com/nordicirish/dall-e-image-generator-app",
+  },
+  {
+    title: "Stock Dashboard",
+    description:
+      "Stock Dashboard is a full-stack app for that allows users to search, store and view stock data using React, Next.js, TypeScript, PostgreSQL and OpenAI's API.",
+    tags: ["OpenAI", "React", "Next.js", "TypeScript", "PostgreSQL"],
+    imageUrl: stockDashboardImg,
+    gitghubUrl: "https://github.com/nordicirish/stock-dashboard",
   },
   {
     title: "Invoice Dashboard",
@@ -106,6 +117,7 @@ export const projectsData = [
       "This app is based on the Next.js App Router Course. I've added Blob storage and message handling using the useContext hook.",
     tags: ["React", "Next.js", "TypeScript", "PostgreSQL", "Tailwind"],
     imageUrl: invoiceDashboardImg,
+    gitghubUrl: "https://github.com/nordicirish/nextjs-dashboard",
   },
   {
     title: "Learn Languages App",
@@ -113,6 +125,7 @@ export const projectsData = [
       "A vocabulary learning app. This was my first ever full-stack project. I developed it as my Tampere University course project in 2022.",
     tags: ["React", "Node.js", "Express", "MariaDB", "Bootstrap"],
     imageUrl: learnLangImg,
+    gitghubUrl: "https://github.com/nordicirish/learn-languages-app",
   },
 ] as const;
 
