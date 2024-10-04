@@ -106,8 +106,8 @@ export const projectsData = [
   {
     title: "Stock Dashboard",
     description:
-      "Stock Dashboard is a full-stack app for that allows users to search, store and view stock data using React, Next.js, TypeScript, PostgreSQL and OpenAI's API.",
-    tags: ["OpenAI", "React", "Next.js", "TypeScript", "PostgreSQL"],
+      "Stock Dashboard is a full-stack app that allows users to search, store and view stock data using React, Next.js, TypeScript, PostgreSQL, Zod, and OpenAI's API.",
+    tags: ["OpenAI", "React", "Next.js", "TypeScript",  "PostgreSQL", "Zod"],
     imageUrl: stockDashboardImg,
     gitghubUrl: "https://github.com/nordicirish/stock-dashboard",
   },

@@ -11,7 +11,7 @@ export default function Contact() {
   return (
     <SectionWithRef
       id="Contact"
-      className="flex flex-col items-center scroll-mt-28  mb-20 sm:mb-28 text-center w-full"
+      className="flex flex-col items-center scroll-mt-28 mb-20 sm:mb-28 text-center w-full"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1 }}
@@ -24,7 +24,7 @@ export default function Contact() {
       </p>
 
       <form
-        className="mt-6 flex flex-col dark:text-black w-[min(100%,38rem)]"
+        className="mt-6 flex flex-col dark:text-black w-[min(100%,46rem)]"
         ref={formRef}
         action={async (formData) => {
           const { data, error } = await sendEmail(formData);
@@ -51,7 +51,7 @@ export default function Contact() {
           placeholder="Your email"
         />
         <textarea
-          className="h-52 my-3 rounded-lg borderBlack p-4  dark:bg-slate-800 dark:text-gray-100 dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all shadow-light-mode dark:shadow-dark-mode"
+          className="h-60 my-3 rounded-lg borderBlack p-4  dark:bg-slate-800 dark:text-gray-100 dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all shadow-light-mode dark:shadow-dark-mode"
           name="message"
           placeholder="Your message"
           required

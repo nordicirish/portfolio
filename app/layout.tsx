@@ -32,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="!scroll-smooth">
       <body
-        className={`${font.className} bg-gray-50 text-gray-950 relative pt-24 sm:pt-32 dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90 max-w-[51rem] mx-auto`}
+        className={`${font.className} bg-gray-50 text-gray-950 relative pt-24 sm:pt-32 dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90 max-w-[60rem] mx-auto`}
       >
         <ThemeContextProvider>
           <BackgroundDivs />

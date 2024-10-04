@@ -18,7 +18,7 @@ const ExperienceTimeline: React.FC<Props> = ({ experiencesData, theme }) => {
           <VerticalTimelineElement
             visible={true}
             contentStyle={{
-              maxWidth: "50rem",
+              maxWidth: "58rem",
               background:
                 theme === "light" ? "#F1F5F9" : "rgba(255, 255, 255, 0.05)",
               boxShadow:
