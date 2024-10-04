@@ -9,7 +9,7 @@ import invoiceDashboardImg from "@/public/invoiceDashboardImg.png";
 import stockDashboardImg from "@/public/stockDashboardImg.png";
 import { RiNextjsFill } from "react-icons/ri";
 import { IconName } from "./utils";
-import { url } from "inspector";
+
 
 export const badges = [
   {
@@ -149,7 +149,7 @@ export const skillsData: Skill[] = [
   { skill: "Prisma", icon: "SiPrisma" },
   { skill: "MongoDB", icon: "SiMongodb" },
   { skill: "PostgreSQL", icon: "SiPostgresql" },
-  { skill: "SQLite", icon: "SiSqlite" },
+  { skill: "OpenAI", icon: "SiOpenai" },
   { skill: "Express", icon: "SiExpress" },
   { skill: "Framer", icon: "SiFramer" },
   { skill: "AWS", icon: "SiAmazonaws" },

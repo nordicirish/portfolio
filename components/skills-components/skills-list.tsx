@@ -65,7 +65,7 @@ const SkillsList: React.FC<SkillsListProps> = ({ skills }) => {
     : animationVariantsDesktop;
   return (
     <div className="flex w-full items-center justify-center">
-      <ul className="flex col flex-wrap items-center  justify-center gap-2 ">
+      <ul className="flex col flex-wrap items-center  justify-center gap-4">
         {skills.map((skill, index) => {
           const IconComponent = iconMap[skill.icon]; // Get the icon component
 
@@ -73,7 +73,7 @@ const SkillsList: React.FC<SkillsListProps> = ({ skills }) => {
 
           return (
             <MotionLi
-              className="relative hexagon bg-gradient-to-r from-blue-300 to-teal-300 text-slate-950 shadow-light-mode dark:shadow-dark-mode dark:bg-gradient-to-r dark:from-teal-800 dark:to-blue-900 dark:text-teal-200 flex items-center justify-evenly flex-col  max-w-28 max-h-28 sm:max-w-40 sm:max-h-40 px-6 py-6 sm:px-6 sm:py-6"
+              className="relative hexagon bg-gradient-to-r from-blue-300 to-teal-300 text-slate-950 shadow-light-mode dark:shadow-dark-mode dark:bg-gradient-to-r dark:from-teal-800 dark:to-blue-900 dark:text-teal-200 flex items-center justify-evenly flex-col max-w-28 max-h-28 sm:max-w-36 sm:max-h-36 px-6 py-6 sm:px-6 sm:py-6"
               key={index}
               initial={animationVariants.initial}
               whileInView={animationVariants.whileInView(index)}

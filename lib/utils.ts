@@ -46,6 +46,7 @@ import {
   SiFramer,
   SiAmazonaws,
   SiMicrosoftazure,
+   SiOpenai,
   SiScrumalliance,
   SiVercel,
 } from "react-icons/si";
@@ -65,7 +66,7 @@ export const iconMap = {
   SiPrisma,
   SiMongodb,
   SiPostgresql,
-  SiSqlite,
+  SiOpenai,
   SiExpress,
   SiFramer,
   SiAmazonaws,
