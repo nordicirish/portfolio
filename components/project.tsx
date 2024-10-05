@@ -57,7 +57,7 @@ export default function Project({
               <Image
                 className="object-cover  object-left-top rounded-lg shadow-2xl 
                   transition 
-                  group-hover:scale-[1.04] 
+                  md:group-hover:scale-[1.04] 
                   group-hover:-translate-y-[2%] 
                   group-hover:rotate-1
                   group-even:group-hover:translate-x-[2%]
