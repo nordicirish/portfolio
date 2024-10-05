@@ -40,7 +40,7 @@ export default function Project({
         className="cursor-pointer"
       >
         <section className="flex flex-col-reverse md:flex-row bg-gray-50 border border-black/5 rounded-lg overflow-hidden md:pr-8 relative md:h-[20rem] hover:bg-gray-100 transition md:group-even:pl-20 text-blue-700 dark:text-blue-400 dark:bg-white/10 dark:hover:bg-white/20 shadow-light-mode dark:shadow-dark-mode">
-          <div className="pt-8 pb-7 px-5 pl-14 md:pr-2 md:pt-10 flex flex-col h-full md:max-w-[50%] md:group-even:ml-[20rem]">
+          <div className="pt-8 pb-7 px-5 md:pl-14 md:pr-2 md:pt-10 flex flex-col h-full md:max-w-[50%] md:group-even:ml-[20rem]">
             <h3 className="text-2xl font-semibold">{title}</h3>
             {/* leading-relaxed allows for line breaks */}
             <p className="mt-2 mb-2 leading-relaxed text-gray-900 dark:text-gray-200">
