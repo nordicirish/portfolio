@@ -1,8 +1,10 @@
-"use server";
 import { getSkills } from "@/actions/getSkills";
 // import SkillsList from "@/components/skills-components/skills-list";
 import dynamic from "next/dynamic";
-const SkillsList = dynamic(() => import("@/components/skills-components/skills-list"), { ssr: false });
+const SkillsList = dynamic(
+  () => import("@/components/skills-components/skills-list"),
+  { ssr: true }
+);
 
 // Server side component that fetches skills data and passes it to the client component
 

@@ -7,6 +7,7 @@ const nextConfig = {
         hostname: "avatars.githubusercontent.com",
       },
     ],
+    qualities: [70, 75, 95, 100],
   },
   async headers() {
     return [
