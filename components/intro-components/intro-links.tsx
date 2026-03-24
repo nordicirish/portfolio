@@ -24,7 +24,7 @@ export default function IntroLinks() {
         </span>
       </Link>
       {/* needs to be an a tag for download - Link is meant for client side routing between pages  */}
-      <a
+      {/* <a
         className="lightGradientLink group flex items-center justify-center gap-2 rounded-lg outline-none focus:scale-110 hover:scale-110 active:scale-100 transition-transform duration-300 ease-out cursor-pointer text-blue-800 hover:text-blue-900 h-10 sm:h-[3.2rem] dark:text-white/60 px-4 w-56 sm:w-auto shadow-lg dark:shadow-/md" // Full width on small screens, auto on larger screens
         href="/CV.pdf"
         download
@@ -34,7 +34,7 @@ export default function IntroLinks() {
           Download my CV
           <HiDownload className="w-4 h-4 sm:w-6 sm:h-6 opacity-95 dark:opacity-85 group-hover:translate-y-1 transition" />
         </span>
-      </a>
+      </a> */}
 
       <a
         className="lightGradientLink group flex items-center justify-center gap-2 rounded-lg focus:scale-100 hover:scale-110 text-blue-800 hover:text-blue-900 active:scale-110 transition-transform duration-300 ease-out cursor-pointer  dark:text-white/60 w-56 sm:w-[3.2rem] h-10 sm:h-[3.2rem] px-4 shadow-lg dark:shadow-md"
