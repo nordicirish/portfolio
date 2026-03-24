@@ -19,7 +19,7 @@ export default function Contact() {
     >
       <SectionHeading>Contact Me</SectionHeading>
       <p className="text-gray-700  dark:text-white/80">
-        Please use the form below to contact me.
+        Please use the form below to get in touch.
       </p>
 
       <form
