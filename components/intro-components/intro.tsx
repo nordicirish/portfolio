@@ -29,7 +29,7 @@ export default function Intro() {
     <SectionWithRef
       id="Home"
       desktopThreshold={0.5}
-      className="mb-28 text-center scroll-mt-[100rem] w-full"
+      className="mb-28 sm:mb-32 text-center scroll-mt-[100rem] w-full"
     >
       <motion.div
         variants={containerVariants}

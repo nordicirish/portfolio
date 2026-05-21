@@ -8,12 +8,12 @@ export default function IntroText() {
       <p className="mt-4 mb-10 px-4 text-lg font-medium !leading-relaxed text-gray-700 dark:text-gray-300 sm:text-xl">
         I'm a{" "}
         <span className="font-bold text-green-700 dark:text-green-400">
-          full-stack developer
+          full-stack & AI developer
         </span>{" "}
         specializing in{" "}
         <span className="font-bold text-blue-700 dark:text-blue-400">
           React, Next.js, TypeScript, Tailwind, Prisma, PostgreSQL, AWS, Azure,
-          Vercel, Scrum
+          Vercel, Scrum, Gemini, OpenAI
         </span>{" "}
         and more...
       </p>

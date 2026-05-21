@@ -75,6 +75,20 @@ export default function About() {
         </p>
         <p className="mb-3">
           <span className="font-semibold text-blue-700 dark:text-blue-400">
+            AI & Innovation:
+          </span>{" "}
+          I actively explore the potential of artificial intelligence and hold a{" "}
+          <span className="font-bold text-teal-700 dark:text-teal-400">
+            Microsoft Certified: Azure AI Fundamentals
+          </span>{" "}
+          credential. I have practical experience integrating{" "}
+          <span className="font-bold text-teal-700 dark:text-teal-400">
+            OpenAI's and Gemini's APIs
+          </span>{" "}
+          into web applications—enabling features like intelligent stock data analysis and AI-driven image generation.
+        </p>
+        <p className="mb-3">
+          <span className="font-semibold text-blue-700 dark:text-blue-400">
             My Journey:
           </span>{" "}
           Throughout my internships and traineeships, I’ve developed a knack for
