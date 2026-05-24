@@ -7,6 +7,7 @@ import imageGenieImg from "@/public/imageGenieImg.jpeg";
 import learnLangImg from "@/public/learnLangImg.png";
 import invoiceDashboardImg from "@/public/invoiceDashboardImg.png";
 import stockDashboardImg from "@/public/stockDashboardImg.png";
+import geminiTradingCouncilImg from "@/public/chat_overlay_mockup.png";
 import { RiNextjsFill } from "react-icons/ri";
 import { IconName } from "./utils";
 
@@ -95,6 +96,19 @@ export const experiencesData = [
 ] as const;
 //as const is used to make the data specific to the values as well as types and readonly. Improves intellisense to show the data values.
 export const projectsData = [
+  {
+    title: "Gemini AI Council",
+    description:
+      "An autonomous multi-agent portfolio intelligence system. Using parallel sub-agents, it runs live market scans, consensus debates, and outputs risk-compliant payloads.",
+    tags: [
+      "Gemini API",
+      "Agentic AI",
+      "Python",
+      "yfinance"
+    ],
+    imageUrl: geminiTradingCouncilImg,
+    gitghubUrl: "https://github.com/nordicirish/gemini_cli_subagent_system",
+  },
   {
     title: "ImageGenie",
     description:
