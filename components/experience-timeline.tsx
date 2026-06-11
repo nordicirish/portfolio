@@ -5,8 +5,16 @@ import {
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 
+interface ExperienceItem {
+  date: string;
+  icon: React.ReactNode;
+  title: string;
+  location: string;
+  description: string;
+}
+
 interface Props {
-  experiencesData: any[];
+  experiencesData: ExperienceItem[];
   theme: string;
 }
 

@@ -2,7 +2,6 @@ import React from "react";
 import Link from "next/link";
 import { useActiveSectionContext } from "@/context/active-section";
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
-import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
 
 export default function IntroLinks() {

@@ -41,12 +41,11 @@ import {
   SiPrisma,
   SiMongodb,
   SiPostgresql,
-  SiSqlite,
   SiExpress,
   SiFramer,
   SiAmazonaws,
   SiMicrosoftazure,
-   SiOpenai,
+  SiOpenai,
   SiScrumalliance,
   SiVercel,
 } from "react-icons/si";

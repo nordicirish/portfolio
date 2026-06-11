@@ -1,5 +1,4 @@
 import { links } from "@/lib/data";
-import { badges } from "@/lib/data";
 
 import { IconName } from "@/lib/utils";
 

@@ -1,0 +1,197 @@
+# CLAUDE.md — Portfolio Site
+# Role: Senior Next.js Engineer | System: Karpathy-v2
+# Last reviewed against: Next.js 16.2.9, React ^19, TypeScript ^5
+
+---
+
+## 0. REPO SNAPSHOT
+
+| Concern            | Decision                                                            |
+| ------------------ | ------------------------------------------------------------------- |
+| Framework          | Next.js 16.2.9 (App Router) — Turbopack default, React 19 full support |
+| Language           | TypeScript (strict mode, `@/*` path alias)                         |
+| Styling            | Tailwind CSS v3 + `tailwind-merge` + `tailwindcss-animate`         |
+| UI primitives      | Radix UI + shadcn/ui (`components/ui/`)                            |
+| Animation          | Framer Motion                                                       |
+| Font               | `next/font/google` — Montserrat (see `app/layout.tsx`)             |
+| Email              | Resend + React Email (`email/`, `react-email-starter/`)            |
+| Server Actions     | `actions/` directory (e.g. `sendEmail.ts`, `getSkills.ts`)         |
+| Context / state    | React Context only (`context/`) — no Redux, no Zustand             |
+| Analytics          | `@vercel/analytics`                                                 |
+| Deploy target      | Vercel (`vercel.json`)                                             |
+| Image CDN          | GitHub Avatars via `next/image` remote patterns                    |
+
+> **Future-proofing note**: When the Next.js major version changes, update the table above
+> and re-check the sections marked `[VERSION-SENSITIVE]` below. Everything else is
+> framework-agnostic and should remain stable.
+
+---
+
+## 1. KARPATHY CORE PRINCIPLES
+
+1. **Think Before Coding** — State assumptions, surface tradeoffs, plan. If ambiguous, **ASK**.
+2. **Simplicity First** — Write the minimum code necessary. No speculative features.
+3. **Surgical Changes** — Touch only what is necessary. Do not reformat adjacent files.
+4. **Verify Then Sign-off** — Success = "I ran the code and it works." Define success criteria, test, then stop.
+
+---
+
+## 2. NEXT.JS / REACT CONSTRAINTS [VERSION-SENSITIVE]
+
+### Rendering model
+- **Default to React Server Components (RSC).** Use `"use client"` only when you need
+  browser APIs, `useState`, `useEffect`, or event handlers.
+- All components in `components/` that use Framer Motion, `useInView`, or React context
+  **must** be Client Components — they already carry `"use client"`.
+- `app/layout.tsx` and `app/page.tsx` are Server Components by default. Keep them that way.
+
+### Data fetching
+- Fetch data with `async/await` directly inside RSCs.
+- Do **not** use `useEffect` for data fetching. Use Server Actions (`actions/`) instead.
+- Server Actions must be annotated with `"use server"` at the top of the file or function.
+
+### Routing
+- App Router (`app/`) exclusively. No `pages/` directory.
+- Dynamic routes: `app/[slug]/page.tsx`. Catch-all: `app/[...slug]/page.tsx`.
+- Metadata: export a `metadata` object or `generateMetadata()` from each `page.tsx`.
+
+### Images [VERSION-SENSITIVE]
+- Always use `next/image`. Never raw `<img>`.
+- Provide explicit `width` + `height` **or** fill + a sized wrapper. No unconstrained images.
+- Remote domains must be listed in `next.config.mjs → images.remotePatterns`.
+
+### Fonts [VERSION-SENSITIVE]
+- Use `next/font/google` (self-hosted, zero layout shift). The root font is **Montserrat**.
+- Add new fonts in `app/layout.tsx` and pass the `className` through.
+
+### Environment variables
+- Server-only secrets: `process.env.RESEND_API_KEY` (no `NEXT_PUBLIC_` prefix).
+- Client-safe vars: `NEXT_PUBLIC_*` prefix. **Never expose secrets to the client.**
+- `.env` is gitignored. Document new vars in `README.md`.
+
+---
+
+## 3. COMPONENT CONVENTIONS
+
+```
+components/
+├── ui/                  ← shadcn/ui primitives (do not hand-edit unless patching a bug)
+├── *-components/        ← feature-scoped sub-components
+├── *.tsx                ← page-level section components
+```
+
+- Section components that use scroll intersection (`react-intersection-observer`) go in
+  `components/section-with-ref.tsx` or extend that pattern.
+- Use `cn()` from `@/lib/utils` for conditional class merging (wraps `clsx` + `tailwind-merge`).
+- Keep animation variants co-located with the component that uses them — not in a global file.
+- Radix + shadcn components live in `components/ui/`. Treat them as vendored: patch, don't rewrite.
+
+---
+
+## 4. STYLING RULES
+
+- **Tailwind utility classes only.** No inline `style={{}}` except for dynamic values Tailwind
+  cannot express (e.g. `style={{ '--delay': delay + 's' }}`).
+- Dark mode: `dark:` prefix. The theme toggle is managed by `context/theme-context.tsx`.
+- Max content width is `60rem` set on `<body>` in `layout.tsx`. Do not re-constrain inside sections.
+- Animations: prefer `tailwindcss-animate` keyframes for simple transitions; use Framer Motion
+  for complex sequenced or gesture-driven animations.
+
+---
+
+## 5. EMAIL SYSTEM
+
+- Email templates live in `email/`. Use `@react-email/components` primitives.
+- Sending is handled by `actions/sendEmail.ts` via the **Resend** SDK.
+- Test emails locally with `react-email-starter/` (`npm run email` from that subdirectory).
+- Always validate with `zod` (or equivalent) before calling `resend.emails.send()`.
+
+---
+
+## 6. AUTOMATED WORKFLOW LOOP
+
+### PHASE 1 — WALKTHROUGH (Think)
+- Bullet-point exactly which files will be touched and why.
+- **Wait for confirmation** unless the task is a single-line fix.
+
+### PHASE 2 — EXECUTION (Surgical)
+- Read the full file before editing — check imports, exports, existing patterns.
+- Match the existing code style (single quotes, no semicolons where absent, etc.).
+
+### PHASE 3 — VERIFICATION (Test)
+
+```bash
+# Always run after any non-trivial change:
+npm run lint    # runs: eslint . (next lint was removed in Next.js 16)
+npm run build
+
+# Type-check only (faster for small changes):
+npx tsc --noEmit
+```
+
+- If a Server Action changes, smoke-test the contact form end-to-end.
+- If a layout/font/metadata change, open `localhost:3000` and check the `<head>`.
+
+### PHASE 4 — FINALIZE (Commit)
+
+```bash
+git add <files_changed>
+```
+
+Generate a **Conventional Commit** message:
+
+| Prefix     | When to use                                      |
+| ---------- | ------------------------------------------------ |
+| `feat:`    | New section, component, or user-facing feature   |
+| `fix:`     | Bug fix                                          |
+| `style:`   | Tailwind / CSS changes with no logic change      |
+| `refactor:`| Code restructure, no behaviour change            |
+| `chore:`   | Config, deps, tooling                            |
+| `content:` | Copy/data changes (projects, skills, bio text)   |
+
+Output: `✅ Staged. Suggested commit message: \`<message>\``  
+Then ask: **"Shall I commit this now?"**
+
+---
+
+## 7. VERCEL DEPLOYMENT
+
+- Production deploys trigger automatically on push to `main`.
+- Preview deploys are created for every PR/branch push.
+- Check `vercel.json` before adding rewrites or headers — they override `next.config.mjs`.
+- Environment variables must be set in the Vercel dashboard **and** locally in `.env`.
+
+---
+
+## 8. VERSION-UPGRADE CHECKLIST [VERSION-SENSITIVE]
+
+When upgrading Next.js to a new major version:
+
+- [ ] Run `npx @next/codemod@latest` to auto-migrate deprecated APIs.
+- [ ] Check for breaking changes in `next/image` (prop names have changed historically).
+- [ ] Check for breaking changes in `next/font` API.
+- [ ] Verify `Metadata` type imports still resolve from `next`.
+- [ ] Re-test Server Actions (`"use server"`) — the calling convention may change.
+- [ ] Update the version table in **Section 0** of this file.
+- [ ] Update `eslint-config-next` to match the new Next.js version.
+
+---
+
+## 9. COMMANDS
+
+| Command    | Action                                                                 |
+| ---------- | ---------------------------------------------------------------------- |
+| `/assist`  | Scan project structure and suggest improvements vs. current Next.js docs |
+| `/review`  | Review last changes against Karpathy's "Surgical" principle            |
+
+---
+
+## 10. WHAT NOT TO DO
+
+- ❌ Do not add `pages/` directory entries.
+- ❌ Do not use CSS-in-JS runtime libraries (styled-components, Emotion).
+- ❌ Do not install a state-management library (Redux, Zustand, Jotai). Use React Context.
+- ❌ Do not expose `RESEND_API_KEY` or other secrets to the client bundle.
+- ❌ Do not use raw `<img>` tags.
+- ❌ Do not add `"use client"` to layout or page files without a strong reason.
+- ❌ Do not touch `components/ui/` files unless patching a specific shadcn bug.
