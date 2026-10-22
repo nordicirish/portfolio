@@ -1,0 +1,56 @@
+baseURL = "https://rogergraham.fi/"
+title = "Roger Graham | Full-Stack Developer in Tampere, Finland | Available for Hire"
+locale = "en"
+defaultContentLanguage = "en"
+enableRobotsTXT = false
+disableKinds = ["taxonomy", "term", "RSS", "section"]
+
+[security]
+  [security.node]
+    [security.node.permissions]
+      allowRead = ["*", "**", "C:/**", "c:/**", "\\\\?\\**", "\\\\?\\c:\\**"]
+
+[params]
+  description = "Roger Graham is a skilled full-stack developer based in Tampere, Finland, with expertise in React, Next.js, Vue, TypeScript, Tailwind, Prisma, and more. Available for hire, Roger offers a strong background in cloud technologies like AWS and Azure, with experience in agile methodologies like Scrum"
+  # Serverless contact endpoint (Vercel Function in api/sendEmail.ts)
+  contactEndpoint = "/api/sendEmail"
+
+# English only for now. Add [languages.fi] + i18n/fi.yaml to enable Finnish.
+[languages]
+  [languages.en]
+    label = "English"
+    weight = 1
+
+# hugo_stats.json lets Tailwind see every class Hugo renders, and the cachebuster
+# rebuilds CSS when templates change during `hugo server`.
+[build]
+  [build.buildStats]
+    enable = true
+  [[build.cachebusters]]
+    source = "assets/notwatching/hugo_stats\\.json"
+    target = "css"
+  [[build.cachebusters]]
+    source = "(postcss|tailwind)\\.config\\.js"
+    target = "css"
+
+[module]
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+  [[module.mounts]]
+    disableWatch = true
+    source = "hugo_stats.json"
+    target = "assets/notwatching/hugo_stats.json"
+  [[module.mounts]]
+    source = "static"
+    target = "static"
+  # Expose static/images to Hugo Pipes so images can be resized to WebP (replaces next/image).
+  [[module.mounts]]
+    source = "static/images"
+    target = "assets/images"
+
+[markup.goldmark.renderer]
+  unsafe = false
+
+[minify.tdewolff.html]
+  keepWhitespace = false

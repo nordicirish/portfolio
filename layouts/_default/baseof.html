@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.Locale | default "en" }}" class="!scroll-smooth">
+  <head>
+    {{ partial "head.html" . }}
+  </head>
+  <body
+    class="bg-gray-50 text-gray-950 relative pt-24 sm:pt-32 dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90 max-w-[60rem] mx-auto"
+  >
+    <a
+      href="#main"
+      class="skip-link rounded-lg bg-white px-4 py-2 text-blue-800 shadow-lg dark:bg-gray-950 dark:text-gray-50"
+      >{{ T "skipToContent" }}</a
+    >
+    {{ partial "background-divs.html" . }}
+    {{ partial "header.html" . }}
+    {{ block "main" . }}{{ end }}
+    <div id="toast-region" class="toast-region" aria-live="polite" aria-atomic="false"></div>
+    {{ partial "theme-switch.html" . }}
+    {{ $js := resources.Get "js/main.ts" | js.Build (dict "target" "es2018" "minify" hugo.IsProduction "format" "iife") }}
+    {{ if hugo.IsProduction }}{{ $js = $js | fingerprint }}{{ end }}
+    <script src="{{ $js.RelPermalink }}" defer{{ if hugo.IsProduction }} integrity="{{ $js.Data.Integrity }}"{{ end }}></script>
+  </body>
+</html>

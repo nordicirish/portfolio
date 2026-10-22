@@ -1,0 +1,22 @@
+{{- /* Port of components/skills-components/*. Flip animation is triggered by assets/js/animations.ts. */ -}}
+<section id="Skills" data-spy-section data-desktop-threshold="0.5" class="mb-28 scroll-mt-28 text-center sm:mb-32 w-full">
+  {{ partial "section-heading.html" (T "skillsHeading") }}
+  <div class="flex w-full items-center justify-center">
+    <ul class="flex col flex-wrap items-center justify-center gap-4">
+      {{- range $i, $s := hugo.Data.skills }}
+        {{- $icon := printf "icons/%s.html" $s.icon }}
+        {{- if templates.Exists (printf "partials/%s" $icon) }}
+          <li
+            class="skill-hex relative hexagon bg-gradient-to-r from-blue-300 to-teal-300 text-slate-950 shadow-light-mode dark:shadow-dark-mode dark:bg-gradient-to-r dark:from-teal-800 dark:to-blue-900 dark:text-teal-200 flex items-center justify-evenly flex-col max-w-28 max-h-28 sm:max-w-36 sm:max-h-36 px-6 py-6 sm:px-6 sm:py-6"
+            data-skill-index="{{ $i }}"
+          >
+            {{ partial $icon (dict "class" "skill-icon" "size" "100" "label" (T "skillIconAria" (dict "Skill" $s.skill))) }}
+            <span class="text-sm leading-1 -mt-2 sm:-mt-3">{{ $s.skill }}</span>
+          </li>
+        {{- else }}
+          {{- warnf "skills.yml: missing icon partial %s" $icon }}
+        {{- end }}
+      {{- end }}
+    </ul>
+  </div>
+</section>

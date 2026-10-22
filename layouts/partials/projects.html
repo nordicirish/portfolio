@@ -1,0 +1,11 @@
+{{- /* Port of components/projects.tsx */ -}}
+<section id="Projects" data-spy-section data-desktop-threshold="0.5" class="scroll-mt-28 mb-28 sm:mb-32 w-full">
+  {{ partial "section-heading.html" (T "projectsHeading") }}
+  <div class="flex justify-center">
+    <div class="flex flex-col">
+      {{- range hugo.Data.projects }}
+        {{ partial "project-card.html" . }}
+      {{- end }}
+    </div>
+  </div>
+</section>
