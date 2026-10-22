@@ -15,14 +15,14 @@ if (fs.existsSync(envPath) && typeof process.loadEnvFile === "function") {
   }
 }
 
-// Dynamically import api/sendEmail.ts
+// Dynamically import api/sendEmail.js
 let sendEmailHandler = null;
 try {
-  const mod = await import("../api/sendEmail.ts");
-  sendEmailHandler = mod.default;
-  console.log("[dev] Loaded api/sendEmail.ts handler");
+  const mod = await import("../api/sendEmail.js");
+  sendEmailHandler = mod.default || mod;
+  console.log("[dev] Loaded api/sendEmail.js handler");
 } catch (err) {
-  console.error("[dev] Failed to load api/sendEmail.ts:", err);
+  console.error("[dev] Failed to load api/sendEmail.js:", err);
 }
 
 const HUGO_PORT = 1314;

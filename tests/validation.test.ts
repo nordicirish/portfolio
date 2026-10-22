@@ -1,6 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { validateString, validateEmail } from "../api/sendEmail.ts";
+// @ts-ignore
+import { validateString, validateEmail } from "../api/sendEmail.js";
 
 test("validateString accepts valid strings", () => {
   assert.equal(validateString("hello", 10), true);
