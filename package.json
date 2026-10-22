@@ -14,11 +14,11 @@
     "node": ">=22.18.0"
   },
   "dependencies": {
+    "@vercel/node": "^3.2.0",
     "resend": "^3.5.0"
   },
   "devDependencies": {
     "@types/node": "^20",
-    "@vercel/node": "^3.2.0",
     "hugo-extended": "latest",
     "postcss": "^8",
     "postcss-cli": "latest",
