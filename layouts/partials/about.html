@@ -14,11 +14,11 @@
         <a href="{{ $href }}" target="_blank" rel="noopener noreferrer">
           {{- $file := strings.TrimPrefix "/badges/" $src }}
           {{- with resources.Get (printf "badges/%s" $file) }}
-            {{- $w1 := .Resize "75x webp q85" }}
-            {{- $w2 := .Resize "150x webp q85" }}
-            <img src="{{ $w1.RelPermalink }}" srcset="{{ $w1.RelPermalink }} 1x, {{ $w2.RelPermalink }} 2x" alt="{{ $alt }}" class="w-14 h-14 sm:w-16 sm:h-16" width="75" height="75" loading="lazy" decoding="async" />
+            {{- $w1 := .Resize "128x webp q92" }}
+            {{- $w2 := .Resize "256x webp q92" }}
+            <img src="{{ $w1.RelPermalink }}" srcset="{{ $w1.RelPermalink }} 1x, {{ $w2.RelPermalink }} 2x" alt="{{ $alt }}" class="w-14 h-14 sm:w-16 sm:h-16 object-contain" width="64" height="64" loading="lazy" decoding="async" />
           {{- else }}
-            <img src="{{ $src }}" alt="{{ $alt }}" class="w-14 h-14 sm:w-16 sm:h-16" width="75" height="75" loading="lazy" decoding="async" />
+            <img src="{{ $src }}" alt="{{ $alt }}" class="w-14 h-14 sm:w-16 sm:h-16 object-contain" width="64" height="64" loading="lazy" decoding="async" />
           {{- end }}
         </a>
       </div>

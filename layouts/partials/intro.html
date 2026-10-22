@@ -9,8 +9,8 @@
           class="absolute rounded-full w-44 h-44 bg-gradient-to-r from-cyan-500 from-10% via-blue-700 via-50% to-cyan-500 to-90% dark:from-cyan-400 dark:from-10% dark:via-blue-400 dark:via-50% dark:to-cyan-400 dark:to-90% p-1 z-1 blur-sm shadow-lg"
         ></div>
         {{- with resources.Get (printf "images/%s" $site.profileImage) }}
-          {{- $x1 := .Resize "176x webp q82" }}
-          {{- $x2 := .Resize "352x webp q82" }}
+          {{- $x1 := .Resize "176x webp q92" }}
+          {{- $x2 := .Resize "352x webp q92" }}
           <img
             src="{{ $x1.RelPermalink }}"
             srcset="{{ $x1.RelPermalink }} 1x, {{ $x2.RelPermalink }} 2x"
