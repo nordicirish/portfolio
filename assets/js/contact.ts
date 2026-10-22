@@ -93,16 +93,32 @@ export function initContactForm(): void {
         }),
       });
 
-      const result = await response.json().catch(() => ({}));
+      let result: any = null;
+      try {
+        result = await response.json();
+      } catch {
+        result = null;
+      }
 
-      if (!response.ok || result.error) {
-        showToast(result.error || msgError, "error");
+      if (!response.ok || (result && result.error)) {
+        let errMessage: string = msgError;
+        if (result && typeof result.error === "string" && result.error.trim()) {
+          errMessage = result.error;
+        } else if (result && result.error && typeof result.error === "object") {
+          errMessage = result.error.message || result.error.code || JSON.stringify(result.error);
+        } else if (result && typeof result.message === "string" && result.message.trim()) {
+          errMessage = result.message;
+        } else if (response.statusText) {
+          errMessage = `${response.status}: ${response.statusText}`;
+        }
+        showToast(errMessage, "error");
       } else {
         showToast(msgSuccess, "success");
         form.reset();
       }
-    } catch {
-      showToast(msgError, "error");
+    } catch (networkErr: any) {
+      const errMessage = networkErr?.message || msgError;
+      showToast(errMessage, "error");
     } finally {
       setPending(false);
     }
