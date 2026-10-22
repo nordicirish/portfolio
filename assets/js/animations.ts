@@ -57,13 +57,15 @@ export function initAnimations(): void {
 
     function updateProjectCards(): void {
       const windowHeight = window.innerHeight;
+      const start = windowHeight;
+      const end = windowHeight * 0.33;
 
-      projectCards.forEach((card) => {
-        const rect = card.getBoundingClientRect();
-        // Progress from when top enters bottom of window to when it is 33% past
-        const start = windowHeight;
-        const end = windowHeight * 0.33;
+      // 1. Read phase: query all rects first to prevent layout thrashing
+      const rects = projectCards.map((card) => card.getBoundingClientRect());
 
+      // 2. Write phase: mutate all styles together
+      projectCards.forEach((card, i) => {
+        const rect = rects[i];
         let progress = (windowHeight - rect.top) / (start - end);
         progress = Math.max(0, Math.min(1, progress));
 
@@ -88,7 +90,7 @@ export function initAnimations(): void {
       { passive: true }
     );
 
-    // Initial check
-    updateProjectCards();
+    // Initial check via rAF
+    window.requestAnimationFrame(updateProjectCards);
   }
 }

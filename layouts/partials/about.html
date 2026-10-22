@@ -5,11 +5,21 @@
 
   <div class="flex flex-wrap justify-center gap-3 md:gap-8">
     {{- range hugo.Data.badges }}
+      {{- $alt := .alt }}
+      {{- $src := .src }}
+      {{- $href := .href }}
       <div
         class="p-2 m-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-110 transition cursor-pointer bg-gray-200 hover:bg-gray-300 border dark:border dark:border-white/10 dark:bg-gray-700 dark:hover:bg-gray-600 shadow-light-mode dark:shadow-dark-mode"
       >
-        <a href="{{ .href }}" target="_blank" rel="noopener noreferrer">
-          <img src="{{ .src }}" alt="{{ .alt }}" class="w-14 h-14 sm:w-16 sm:h-16" width="75" height="75" loading="lazy" decoding="async" />
+        <a href="{{ $href }}" target="_blank" rel="noopener noreferrer">
+          {{- $file := strings.TrimPrefix "/badges/" $src }}
+          {{- with resources.Get (printf "badges/%s" $file) }}
+            {{- $w1 := .Resize "75x webp q85" }}
+            {{- $w2 := .Resize "150x webp q85" }}
+            <img src="{{ $w1.RelPermalink }}" srcset="{{ $w1.RelPermalink }} 1x, {{ $w2.RelPermalink }} 2x" alt="{{ $alt }}" class="w-14 h-14 sm:w-16 sm:h-16" width="75" height="75" loading="lazy" decoding="async" />
+          {{- else }}
+            <img src="{{ $src }}" alt="{{ $alt }}" class="w-14 h-14 sm:w-16 sm:h-16" width="75" height="75" loading="lazy" decoding="async" />
+          {{- end }}
         </a>
       </div>
     {{- end }}

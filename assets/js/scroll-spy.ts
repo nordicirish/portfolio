@@ -14,6 +14,8 @@ export function initScrollSpy(): void {
   let activeSection = "Home";
   let timeOfLastClick = 0;
 
+  let pillRaf: number | null = null;
+
   function updatePill(animate = true): void {
     if (!desktopNav || !pill) return;
     const targetLink = desktopLinks.find(
@@ -24,30 +26,39 @@ export function initScrollSpy(): void {
       return;
     }
 
-    const navRect = desktopNav.getBoundingClientRect();
-    const linkRect = targetLink.getBoundingClientRect();
-
-    const left = linkRect.left - navRect.left;
-    const top = linkRect.top - navRect.top;
-    const width = linkRect.width;
-    const height = linkRect.height;
-
-    if (!animate) {
-      pill.classList.add("no-transition");
-    } else {
-      pill.classList.remove("no-transition");
+    if (pillRaf !== null) {
+      window.cancelAnimationFrame(pillRaf);
     }
 
-    pill.style.transform = `translate3d(${left}px, ${top}px, 0)`;
-    pill.style.width = `${width}px`;
-    pill.style.height = `${height}px`;
-    pill.style.opacity = "1";
+    pillRaf = window.requestAnimationFrame(() => {
+      pillRaf = null;
+      if (!desktopNav || !pill || !targetLink) return;
 
-    if (!animate) {
-      // Force layout before re-enabling transitions
-      void pill.offsetHeight;
-      pill.classList.remove("no-transition");
-    }
+      const navRect = desktopNav.getBoundingClientRect();
+      const linkRect = targetLink.getBoundingClientRect();
+
+      const left = linkRect.left - navRect.left;
+      const top = linkRect.top - navRect.top;
+      const width = linkRect.width;
+      const height = linkRect.height;
+
+      if (!animate) {
+        pill.classList.add("no-transition");
+      } else {
+        pill.classList.remove("no-transition");
+      }
+
+      pill.style.transform = `translate3d(${left}px, ${top}px, 0)`;
+      pill.style.width = `${width}px`;
+      pill.style.height = `${height}px`;
+      pill.style.opacity = "1";
+
+      if (!animate) {
+        window.requestAnimationFrame(() => {
+          pill.classList.remove("no-transition");
+        });
+      }
+    });
   }
 
   function setActive(name: string, animate = true): void {

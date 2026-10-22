@@ -33,11 +33,11 @@
             {{- $fallback := . }}
             {{- range $w := slice 384 640 828 1080 1200 }}
               {{- if ge $fallback.Width $w }}
-                {{- $r := $fallback.Resize (printf "%dx webp q95" $w) }}
+                {{- $r := $fallback.Resize (printf "%dx webp q80" $w) }}
                 {{- $srcset = $srcset | append (printf "%s %dw" $r.RelPermalink $w) }}
               {{- end }}
             {{- end }}
-            {{- $default := .Resize (printf "%dx webp q95" (cond (gt .Width 828) 828 .Width)) }}
+            {{- $default := .Resize (printf "%dx webp q80" (cond (gt .Width 828) 828 .Width)) }}
             <img
               class="absolute inset-0 h-full w-full object-cover object-left-top rounded-lg shadow-2xl transition md:group-hover:scale-[1.04] group-hover:-translate-y-[2%] group-hover:rotate-1 group-even:group-hover:translate-x-[2%] group-even:group-hover:rotate-1 group-odd:group-hover:-translate-x-[2%] group-odd:group-hover:-rotate-1"
               src="{{ $default.RelPermalink }}"
