@@ -1,6 +1,4 @@
 export function initScrollSpy(): void {
-  const desktopNav = document.querySelector<HTMLElement>("[data-desktop-nav]");
-  const pill = document.querySelector<HTMLElement>("[data-nav-pill]");
   const desktopLinks = Array.from(
     document.querySelectorAll<HTMLAnchorElement>("a[data-section-link]:not([data-mobile-link])")
   );
@@ -14,75 +12,13 @@ export function initScrollSpy(): void {
   let activeSection = "Home";
   let timeOfLastClick = 0;
 
-  interface PillPos {
-    left: number;
-    top: number;
-    width: number;
-    height: number;
-  }
-  const pillPositions = new Map<string, PillPos>();
-
-  function measurePositions(): void {
-    if (!desktopNav) return;
-    if (window.innerWidth < 640) {
-      pillPositions.clear();
-      return;
-    }
-    const navRect = desktopNav.getBoundingClientRect();
-    desktopLinks.forEach((link) => {
-      const name = link.getAttribute("data-section-link");
-      if (!name) return;
-      const linkRect = link.getBoundingClientRect();
-      pillPositions.set(name, {
-        left: linkRect.left - navRect.left,
-        top: linkRect.top - navRect.top,
-        width: linkRect.width,
-        height: linkRect.height,
-      });
-    });
-  }
-
-  function updatePill(animate = true): void {
-    if (!desktopNav || !pill) return;
-    if (window.innerWidth < 640) {
-      pill.style.opacity = "0";
-      return;
-    }
-
-    let pos = pillPositions.get(activeSection);
-    if (!pos) {
-      measurePositions();
-      pos = pillPositions.get(activeSection);
-    }
-    if (!pos) {
-      pill.style.opacity = "0";
-      return;
-    }
-
-    if (!animate) {
-      pill.classList.add("no-transition");
-    } else {
-      pill.classList.remove("no-transition");
-    }
-
-    pill.style.transform = `translate3d(${pos.left}px, ${pos.top}px, 0)`;
-    pill.style.width = `${pos.width}px`;
-    pill.style.height = `${pos.height}px`;
-    pill.style.opacity = "1";
-
-    if (!animate) {
-      window.requestAnimationFrame(() => {
-        pill.classList.remove("no-transition");
-      });
-    }
-  }
-
-  function setActive(name: string, animate = true): void {
+  function setActive(name: string): void {
     activeSection = name;
 
     // Update desktop links
     desktopLinks.forEach((link) => {
       const linkSection = link.getAttribute("data-section-link");
+      const pill = link.querySelector<HTMLElement>("[data-desktop-pill]");
       const activeClass = link.getAttribute("data-active-class") || "";
       const inactiveClass = link.getAttribute("data-inactive-class") || "";
       const activeTokens = activeClass.split(" ").filter(Boolean);
@@ -92,10 +28,12 @@ export function initScrollSpy(): void {
         link.classList.remove(...inactiveTokens);
         link.classList.add(...activeTokens);
         link.setAttribute("aria-current", "true");
+        if (pill) pill.hidden = false;
       } else {
         link.classList.remove(...activeTokens);
         link.classList.add(...inactiveTokens);
         link.removeAttribute("aria-current");
+        if (pill) pill.hidden = true;
       }
     });
 
@@ -118,36 +56,34 @@ export function initScrollSpy(): void {
         if (mobilePill) mobilePill.hidden = true;
       }
     });
-
-    updatePill(animate);
   }
 
   // Handle click on any section link
-  const allLinks = Array.from(document.querySelectorAll<HTMLAnchorElement>("a[data-section-link], a[data-section-link-trigger]"));
+  const allLinks = Array.from(
+    document.querySelectorAll<HTMLAnchorElement>("a[data-section-link], a[data-section-link-trigger]")
+  );
   allLinks.forEach((link) => {
     link.addEventListener("click", () => {
       const target = link.getAttribute("data-section-link") || link.getAttribute("data-section-link-trigger");
       if (target) {
         timeOfLastClick = Date.now();
-        setActive(target, true);
+        setActive(target);
       }
     });
   });
 
-  // IntersectionObserver for scroll spy
+  // IntersectionObserver for scroll spy with 0 forced reflows
   if ("IntersectionObserver" in window && sections.length > 0) {
-    const isMobile = () => window.innerWidth <= 768;
-
     const observer = new IntersectionObserver(
       (entries) => {
         if (Date.now() - timeOfLastClick < 1000) return;
 
-        // Find the visible section with highest intersection ratio or topmost position
+        // Find the visible section
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const id = entry.target.getAttribute("id");
             if (id) {
-              setActive(id, true);
+              setActive(id);
             }
           }
         });
@@ -161,28 +97,8 @@ export function initScrollSpy(): void {
     sections.forEach((sec) => observer.observe(sec));
   }
 
-  // Window resize handler for pill alignment
-  window.addEventListener("resize", () => {
-    measurePositions();
-    updatePill(false);
-  });
-
-  // Re-measure when custom fonts finish rendering
-  if ("fonts" in document) {
-    document.fonts.ready.then(() => {
-      measurePositions();
-      updatePill(false);
-    });
-  }
-
-  // Initial pill placement (without animation)
-  window.addEventListener("load", () => {
-    measurePositions();
-    setActive(activeSection, false);
-  });
-  // Also call immediately
-  measurePositions();
-  setActive(activeSection, false);
+  // Initial active state placement
+  setActive(activeSection);
 }
 
 export function initMobileDrawer(): void {

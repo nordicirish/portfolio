@@ -33,11 +33,6 @@
     </div>
 
     <div class="relative hidden md:flex w-full" data-desktop-nav>
-      <span
-        class="nav-pill no-transition absolute left-0 top-0 -z-10 rounded-full gradientActiveMenuItem shadow-light-mode dark:shadow-dark-mode opacity-0"
-        aria-hidden="true"
-        data-nav-pill
-      ></span>
       <ul class="flex w-full flex-row items-center justify-center gap-2 text-sm leading-4 font-medium text-gray-500">
         {{- range $links }}
           <li class="rg-navitem-enter h-3/4 flex items-center justify-center relative">
@@ -47,9 +42,16 @@
               data-active-class="{{ $activeCls }}"
               data-inactive-class="{{ $inactiveCls }}"
               {{ if eq .name "Home" }}aria-current="true"{{ end }}
-              class="flex w-full items-center justify-center px-3 py-3 transition relative {{ if eq .name "Home" }}{{ $activeCls }}{{ else }}{{ $inactiveCls }}{{ end }}"
-              >{{ .name }}</a
+              class="flex w-full items-center justify-center px-3 py-3 transition relative rounded-full {{ if eq .name "Home" }}{{ $activeCls }}{{ else }}{{ $inactiveCls }}{{ end }}"
             >
+              {{ .name }}
+              <span
+                class="absolute inset-0 -z-10 rounded-full gradientActiveMenuItem shadow-light-mode dark:shadow-dark-mode transition-opacity duration-200"
+                aria-hidden="true"
+                data-desktop-pill
+                {{ if ne .name "Home" }}hidden{{ end }}
+              ></span>
+            </a>
           </li>
         {{- end }}
       </ul>
