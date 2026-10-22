@@ -14,51 +14,67 @@ export function initScrollSpy(): void {
   let activeSection = "Home";
   let timeOfLastClick = 0;
 
-  let pillRaf: number | null = null;
+  interface PillPos {
+    left: number;
+    top: number;
+    width: number;
+    height: number;
+  }
+  const pillPositions = new Map<string, PillPos>();
+
+  function measurePositions(): void {
+    if (!desktopNav) return;
+    if (window.innerWidth < 640) {
+      pillPositions.clear();
+      return;
+    }
+    const navRect = desktopNav.getBoundingClientRect();
+    desktopLinks.forEach((link) => {
+      const name = link.getAttribute("data-section-link");
+      if (!name) return;
+      const linkRect = link.getBoundingClientRect();
+      pillPositions.set(name, {
+        left: linkRect.left - navRect.left,
+        top: linkRect.top - navRect.top,
+        width: linkRect.width,
+        height: linkRect.height,
+      });
+    });
+  }
 
   function updatePill(animate = true): void {
     if (!desktopNav || !pill) return;
-    const targetLink = desktopLinks.find(
-      (link) => link.getAttribute("data-section-link") === activeSection
-    );
-    if (!targetLink || targetLink.offsetParent === null) {
+    if (window.innerWidth < 640) {
       pill.style.opacity = "0";
       return;
     }
 
-    if (pillRaf !== null) {
-      window.cancelAnimationFrame(pillRaf);
+    let pos = pillPositions.get(activeSection);
+    if (!pos) {
+      measurePositions();
+      pos = pillPositions.get(activeSection);
+    }
+    if (!pos) {
+      pill.style.opacity = "0";
+      return;
     }
 
-    pillRaf = window.requestAnimationFrame(() => {
-      pillRaf = null;
-      if (!desktopNav || !pill || !targetLink) return;
+    if (!animate) {
+      pill.classList.add("no-transition");
+    } else {
+      pill.classList.remove("no-transition");
+    }
 
-      const navRect = desktopNav.getBoundingClientRect();
-      const linkRect = targetLink.getBoundingClientRect();
+    pill.style.transform = `translate3d(${pos.left}px, ${pos.top}px, 0)`;
+    pill.style.width = `${pos.width}px`;
+    pill.style.height = `${pos.height}px`;
+    pill.style.opacity = "1";
 
-      const left = linkRect.left - navRect.left;
-      const top = linkRect.top - navRect.top;
-      const width = linkRect.width;
-      const height = linkRect.height;
-
-      if (!animate) {
-        pill.classList.add("no-transition");
-      } else {
+    if (!animate) {
+      window.requestAnimationFrame(() => {
         pill.classList.remove("no-transition");
-      }
-
-      pill.style.transform = `translate3d(${left}px, ${top}px, 0)`;
-      pill.style.width = `${width}px`;
-      pill.style.height = `${height}px`;
-      pill.style.opacity = "1";
-
-      if (!animate) {
-        window.requestAnimationFrame(() => {
-          pill.classList.remove("no-transition");
-        });
-      }
-    });
+      });
+    }
   }
 
   function setActive(name: string, animate = true): void {
@@ -147,14 +163,25 @@ export function initScrollSpy(): void {
 
   // Window resize handler for pill alignment
   window.addEventListener("resize", () => {
+    measurePositions();
     updatePill(false);
   });
 
+  // Re-measure when custom fonts finish rendering
+  if ("fonts" in document) {
+    document.fonts.ready.then(() => {
+      measurePositions();
+      updatePill(false);
+    });
+  }
+
   // Initial pill placement (without animation)
   window.addEventListener("load", () => {
+    measurePositions();
     setActive(activeSection, false);
   });
   // Also call immediately
+  measurePositions();
   setActive(activeSection, false);
 }
 
