@@ -1,0 +1,12 @@
+{{- /* Port of components/theme-switch.tsx. Icon shown follows the html.dark class (CSS only). */ -}}
+<button
+  id="theme-toggle"
+  title="{{ T "toggleTheme" }}"
+  type="button"
+  aria-label="{{ T "toggleThemeAria" }}"
+  aria-pressed="false"
+  class="fixed bottom-5 right-5 bg-white w-[3rem] h-[3rem] bg-opacity-80 backdrop-blur-[0.5rem] border border-white border-opacity-40 shadow-2xl rounded-full flex items-center justify-center hover:scale-[1.15] active:scale-105 transition-all dark:bg-gray-950"
+>
+  <span class="dark:hidden">{{ partial "icons/BsSun.html" (dict) }}</span>
+  <span class="hidden dark:inline">{{ partial "icons/BsMoon.html" (dict) }}</span>
+</button>

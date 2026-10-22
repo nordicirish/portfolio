@@ -1,0 +1,60 @@
+# Global site content. HTML fields are rendered with safeHTML; highlight classes
+# (.hl-blue, .hl-blue-strong, .hl-green, .hl-teal) are defined in assets/css/main.css.
+brand: RogerGraham.Fi
+profileImage: profile.png
+profileAlt: Roger Graham portrait photo
+copyrightYear: 2024
+copyrightName: Roger
+
+social:
+  linkedin: https://www.linkedin.com/in/roger-graham-coder/
+  github: https://github.com/nordicirish
+
+intro:
+  heading: Hello! I'm Roger Graham
+  html: >-
+    I'm a <span class="hl-green">full-stack &amp; AI developer</span> specializing in
+    <span class="hl-blue-strong">React, Next.js, TypeScript, Tailwind, Prisma, PostgreSQL, AWS, Azure,
+    Vercel, Scrum, Gemini, OpenAI</span> and more...
+
+about:
+  paragraphs:
+    - >-
+      I'm a <span class="hl-blue">passionate</span> and <span class="hl-blue">driven</span>
+      <span class="hl-green">software developer</span> with a strong foundation in full-stack web
+      development, honed through my studies at Tampere University of Applied Sciences and hands-on
+      experience with BearIT and Futurice.
+    - >-
+      <span class="hl-blue">What I Do:</span> I specialize in building dynamic and responsive web
+      applications using a core stack that includes <span class="hl-teal">React</span>,
+      <span class="hl-teal">Next.js</span>, <span class="hl-teal">Node.js</span>, and
+      <span class="hl-teal">PostgreSQL</span>. My toolkit also features
+      <span class="hl-teal">Tailwind</span>, <span class="hl-teal">TypeScript</span>, and
+      <span class="hl-teal">Prisma</span>. I thrive on problem-solving and find immense satisfaction
+      in cracking complex issues and optimising code.
+    - >-
+      <span class="hl-blue">AI &amp; Innovation:</span> I actively explore the potential of
+      artificial intelligence and hold a <span class="hl-teal">Microsoft Certified: Azure AI
+      Fundamentals</span> credential. I have practical experience integrating
+      <span class="hl-teal">OpenAI's and Gemini's APIs</span> into web applications - enabling
+      features like intelligent stock data analysis and AI-driven image generation.
+    - >-
+      <span class="hl-blue">My Journey:</span> Throughout my internships and traineeships, I’ve
+      developed a knack for navigating challenges and turning innovative ideas into reality. I’m
+      always eager to learn and adapt, exploring new technologies and methodologies to enhance my
+      skill set.
+    - >-
+      <span class="hl-blue">Beyond Coding:</span> Outside of coding, you can find me cycling through
+      the beautiful Finnish countryside, capturing moments through photography, or finding balance
+      with yoga. I’m also learning to play guitar, driven by a love for continuous learning and
+      personal growth.
+  # Final paragraph; the "let's connect!" link to #Contact is appended by the template.
+  closing: >-
+    <span class="hl-blue">Looking Ahead:</span> I’m currently seeking a full-time or part-time
+    position as a junior software developer where I can contribute to exciting projects and grow
+    alongside a talented team. If you’re looking for a dedicated and enthusiastic developer with a
+    zest for problem-solving,
+
+footer:
+  builtWith: is built with Hugo, TypeScript, Tailwind CSS &amp; Resend (via a Vercel Function).
+  hostedOn: Hosted on Vercel.

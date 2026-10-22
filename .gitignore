@@ -1,20 +1,21 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
 # dependencies
 /node_modules
 /.pnp
 .pnp.js
 .yarn/install-state.gz
 
-# testing
-/coverage
+# hugo
+/public/
+/resources/_gen/
+.hugo_build.lock
+hugo_stats.json
 
-# next.js
+# legacy next.js build output (pre-migration)
 /.next/
 /out/
 
-# production
-/build
+# testing
+/coverage
 
 # misc
 .DS_Store
@@ -26,12 +27,10 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
-.env
-.env*.local
+.env*
 
 # vercel
 .vercel
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts

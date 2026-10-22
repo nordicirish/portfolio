@@ -1,0 +1,64 @@
+{{- /* Port of components/contact.tsx + submit-button.tsx. Submission handled by assets/js/contact.ts. */ -}}
+<section
+  id="Contact"
+  data-spy-section
+  data-reveal
+  class="rg-reveal-fade flex flex-col items-center scroll-mt-28 mb-20 sm:mb-28 text-center w-full"
+>
+  {{ partial "section-heading.html" (T "contactHeading") }}
+  <p class="text-gray-700 dark:text-white/80">{{ T "contactIntro" }}</p>
+
+  <form
+    id="contact-form"
+    class="mt-6 flex flex-col dark:text-black w-[min(100%,46rem)]"
+    action="{{ site.Params.contactEndpoint }}"
+    method="post"
+    novalidate
+    data-msg-success="{{ T "emailSent" }}"
+    data-msg-invalid-email="{{ T "invalidEmail" }}"
+    data-msg-invalid-message="{{ T "invalidMessage" }}"
+    data-msg-error="{{ T "genericError" }}"
+  >
+    <label for="senderEmail" class="sr-only">{{ T "emailLabel" }}</label>
+    <input
+      id="senderEmail"
+      class="h-14 px-4 rounded-lg borderBlack dark:bg-slate-800 dark:text-gray-100 dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all shadow-light-mode dark:shadow-dark-mode"
+      name="senderEmail"
+      type="email"
+      autocomplete="email"
+      required
+      maxlength="500"
+      placeholder="{{ T "emailLabel" }}"
+    />
+    <label for="message" class="sr-only">{{ T "messageLabel" }}</label>
+    <textarea
+      id="message"
+      class="h-60 my-3 rounded-lg borderBlack p-4 dark:bg-slate-800 dark:text-gray-100 dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all shadow-light-mode dark:shadow-dark-mode"
+      name="message"
+      placeholder="{{ T "messageLabel" }}"
+      required
+      maxlength="5000"
+    ></textarea>
+
+    {{/* Honeypot: hidden from people and assistive tech; bots that fill it are rejected server-side. */}}
+    <div class="absolute -left-[9999px] h-px w-px overflow-hidden" aria-hidden="true">
+      <label for="website">{{ T "honeypotLabel" }}</label>
+      <input id="website" type="text" name="website" tabindex="-1" autocomplete="off" />
+    </div>
+
+    <div class="flex justify-center sm:justify-end sm:pr-6 w-full mt-3">
+      <button
+        id="contact-submit"
+        title="{{ T "submitAria" }}"
+        aria-label="{{ T "submitAria" }}"
+        type="submit"
+        class="group flex items-center justify-center h-[3rem] w-[8rem] gradientLink outline-none text-white rounded-lg transition-all duration-300 ease-out focus:scale-110 hover:scale-110 *:active:scale-110 disabled:scale-100 disabled:bg-opacity-65 dark:disabled:bg-opacity-50 shadow-lg dark:shadow-md"
+      >
+        <span class="contents" data-submit-idle>
+          {{ T "submit" }}&nbsp;{{ partial "icons/FaPaperPlane.html" (dict "class" "text-xs ml-1 opacity-70 transition group-hover:translate-x-1 group-hover:-translate-y-1") }}
+        </span>
+        <span class="h-5 w-5 animate-spin rounded-full border-b-2 border-white" data-submit-pending hidden></span>
+      </button>
+    </div>
+  </form>
+</section>

@@ -1,0 +1,37 @@
+# UI strings. Copy to fi.yaml and translate when the Finnish locale is enabled.
+skipToContent: Skip to content
+openMenu: Open menu
+closeMenu: Close menu
+mainNavigation: Main navigation
+mobileNavigation: Mobile navigation
+contactMeHere: Contact me here
+contactMeAria: Contact me
+connectLinkedIn: Connect on LinkedIn
+linkedInAria: Link to my LinkedIn profile
+checkGitHub: Check out my GitHub
+gitHubAria: Link to my GitHub profile
+aboutHeading: About Me
+letsConnect: let's connect!
+letsConnectAria: Link to contact form
+projectsHeading: My Projects
+viewProjectAria: View {{ .Title }} project on Github
+projectImageAlt: Screenshot of {{ .Title }}. A project that I coded
+skillsHeading: My Skills
+skillIconAria: Icon depicting {{ .Skill }} skill
+experienceHeading: My Experience
+contactHeading: Contact Me
+contactIntro: Please use the form below to get in touch.
+emailLabel: Your email
+messageLabel: Your message
+honeypotLabel: Leave this field empty
+submit: Submit
+submitAria: Submit the message
+emailSent: Email sent successfully!
+invalidEmail: Invalid sender email
+invalidMessage: Invalid message
+genericError: Something went wrong. Please try again later.
+toggleTheme: Toggle theme
+toggleThemeAria: Toggle the current theme
+copyright: Copyright
+allRightsReserved: All rights reserved.
+thisWebsite: This website

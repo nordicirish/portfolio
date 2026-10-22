@@ -1,0 +1,376 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   Ported 1:1 from app/globals.css
+   ========================================================================== */
+
+/* for the vertical timeline */
+html {
+  --line-color: rgba(45, 158, 229, 0.7);
+}
+html.dark {
+  --line-color: rgba(255, 255, 255, 0.2);
+}
+.borderBlack {
+  @apply border border-black/10;
+}
+.borderBlue {
+  @apply border border-blue-800/90;
+}
+.borderGradient {
+  border: 4px solid transparent;
+  border-radius: 100%;
+  background-image: linear-gradient(blue, green, teal);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+.gradientActiveMenuItem {
+  @apply bg-gradient-to-r from-blue-800 via-blue-700 to-blue-800;
+  @apply hover:from-blue-900 hover:via-blue-800 hover:to-blue-900;
+  @apply dark:from-fuchsia-900 dark:via-pink-700 dark:to-fuchsia-900;
+  @apply dark:hover:from-fuchsia-950 dark:hover:via-pink-800 dark:hover:to-fuchsia-950;
+}
+.gradientLink {
+  @apply bg-gradient-to-r from-blue-800 via-blue-700 to-blue-800;
+  @apply hover:from-blue-900 hover:via-blue-800 hover:to-blue-900;
+  @apply active:from-blue-800 active:via-blue-700 active:to-blue-800;
+  @apply dark:from-fuchsia-900 dark:via-pink-700 dark:to-fuchsia-900;
+  @apply dark:hover:from-fuchsia-950 dark:hover:via-pink-800 dark:hover:to-fuchsia-950;
+  @apply dark:active:from-fuchsia-900 dark:active:via-pink-700 dark:active:to-fuchsia-950;
+}
+
+.lightGradientLink {
+  @apply bg-gradient-to-r from-blue-200 via-blue-100 to-blue-200;
+  @apply hover:from-blue-300 hover:via-blue-200 hover:to-blue-300;
+  @apply dark:from-slate-700 dark:via-slate-600 dark:to-slate-700;
+  @apply dark:hover:from-slate-600 dark:hover:via-slate-500 dark:hover:to-slate-600;
+}
+
+.hexagon {
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  width: 100%;
+  height: 100%;
+}
+
+/* ==========================================================================
+   Text highlight spans used in data/site.yml (replace inline JSX classNames)
+   ========================================================================== */
+@layer components {
+  .hl-blue {
+    @apply font-semibold text-blue-700 dark:text-blue-400;
+  }
+  .hl-blue-strong {
+    @apply font-bold text-blue-700 dark:text-blue-400;
+  }
+  .hl-green {
+    @apply font-bold text-green-700 dark:text-green-400;
+  }
+  .hl-teal {
+    @apply font-bold text-teal-700 dark:text-teal-400;
+  }
+}
+
+/* Font stack from next/font (Montserrat + metric-matched Arial fallback) */
+body {
+  font-family: Montserrat, "Montserrat Fallback";
+  font-style: normal;
+}
+
+/* ==========================================================================
+   Accessibility: visible keyboard focus (WCAG 2.4.7). Mouse users see no change.
+   ========================================================================== */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+.outline-none:focus-visible {
+  outline: 2px solid #1d4ed8 !important;
+  outline-offset: 2px !important;
+}
+html.dark a:focus-visible,
+html.dark button:focus-visible,
+html.dark input:focus-visible,
+html.dark textarea:focus-visible,
+html.dark .outline-none:focus-visible {
+  outline-color: #f472b6 !important;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -10rem;
+  z-index: 10000;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* ==========================================================================
+   react-vertical-timeline-component v3.6 style.min.css (vendored verbatim)
+   ========================================================================== */
+.vertical-timeline *{box-sizing:border-box}.vertical-timeline{width:95%;max-width:1170px;margin:0 auto;position:relative;padding:2em 0}.vertical-timeline::after{content:'';display:table;clear:both}.vertical-timeline::before{content:'';position:absolute;top:0;left:18px;height:100%;width:4px;background:var(--line-color)}@media only screen and (min-width:1170px){.vertical-timeline.vertical-timeline--two-columns{width:90%}.vertical-timeline.vertical-timeline--two-columns:before{left:50%;margin-left:-2px}}.vertical-timeline-element{position:relative;margin:2em 0}.vertical-timeline-element>div{min-height:1px}.vertical-timeline-element:after{content:"";display:table;clear:both}.vertical-timeline-element:first-child{margin-top:0}.vertical-timeline-element:last-child{margin-bottom:0}@media only screen and (min-width:1170px){.vertical-timeline-element{margin:4em 0}.vertical-timeline-element:first-child{margin-top:0}.vertical-timeline-element:last-child{margin-bottom:0}}.vertical-timeline-element-icon{position:absolute;top:0;left:0;width:40px;height:40px;border-radius:50%;box-shadow:0 0 0 4px #fff,inset 0 2px 0 rgba(0,0,0,.08),0 3px 0 4px rgba(0,0,0,.05)}.vertical-timeline-element-icon svg{display:block;width:24px;height:24px;position:relative;left:50%;top:50%;margin-left:-12px;margin-top:-12px}@media only screen and (min-width:1170px){.vertical-timeline--two-columns .vertical-timeline-element-icon{width:60px;height:60px;left:50%;margin-left:-30px}}.vertical-timeline-element-icon{-webkit-transform:translateZ(0);-webkit-backface-visibility:hidden}.vertical-timeline--animate .vertical-timeline-element-icon.is-hidden{visibility:hidden}.vertical-timeline--animate .vertical-timeline-element-icon.bounce-in{visibility:visible;animation:cd-bounce-1 .6s}@keyframes cd-bounce-1{0%{opacity:0;transform:scale(.5)}60%{opacity:1;transform:scale(1.2)}100%{transform:scale(1)}}.vertical-timeline-element-content{position:relative;margin-left:60px;background:#fff;border-radius:.25em;padding:1em;box-shadow:0 3px 0 #ddd}.vertical-timeline-element-content:after{content:"";display:table;clear:both}.vertical-timeline-element-content h2{color:#303e49}.vertical-timeline-element-content .vertical-timeline-element-date,.vertical-timeline-element-content p{font-size:13px;font-size:.8125rem;font-weight:500}.vertical-timeline-element-content .vertical-timeline-element-date{display:inline-block}.vertical-timeline-element-content p{margin:1em 0 0;line-height:1.6}.vertical-timeline-element-title{margin:0}.vertical-timeline-element-subtitle{margin:0}.vertical-timeline-element-content .vertical-timeline-element-date{float:left;padding:.8em 0;opacity:.7}.vertical-timeline-element-content-arrow{content:'';position:absolute;top:16px;right:100%;height:0;width:0;border:7px solid transparent;border-right:7px solid #fff}@media only screen and (min-width:768px){.vertical-timeline-element-content h2{font-size:20px;font-size:1.25rem}.vertical-timeline-element-content p{font-size:16px;font-size:1rem}.vertical-timeline-element-content .vertical-timeline-element-date{font-size:14px;font-size:.875rem}}@media only screen and (min-width:1170px){.vertical-timeline--two-columns .vertical-timeline-element-content{margin-left:0;padding:1.5em;width:44%}.vertical-timeline--two-columns .vertical-timeline-element-content-arrow{top:24px;left:100%;transform:rotate(180deg)}.vertical-timeline--two-columns .vertical-timeline-element-content .vertical-timeline-element-date{position:absolute;width:100%;left:124%;top:6px;font-size:16px;font-size:1rem}.vertical-timeline--two-columns .vertical-timeline-element:nth-child(even):not(.vertical-timeline-element--left) .vertical-timeline-element-content{float:right}.vertical-timeline--two-columns .vertical-timeline-element:nth-child(even):not(.vertical-timeline-element--left) .vertical-timeline-element-content-arrow{top:24px;left:auto;right:100%;transform:rotate(0)}.vertical-timeline--two-columns .vertical-timeline-element:nth-child(even):not(.vertical-timeline-element--left) .vertical-timeline-element-content .vertical-timeline-element-date{left:auto;right:124%;text-align:right}}.vertical-timeline--animate .vertical-timeline-element-content.is-hidden{visibility:hidden}.vertical-timeline--animate .vertical-timeline-element-content.bounce-in{visibility:visible;animation:cd-bounce-2 .6s}@media only screen and (min-width:1170px){.vertical-timeline--two-columns.vertical-timeline--animate .vertical-timeline-element:nth-child(even):not(.vertical-timeline-element--left) .vertical-timeline-element-content.bounce-in{animation:cd-bounce-2-inverse .6s}}@media only screen and (max-width:1169px){.vertical-timeline--animate .vertical-timeline-element-content.bounce-in{visibility:visible;animation:cd-bounce-2-inverse .6s}}@keyframes cd-bounce-2{0%{opacity:0;transform:translateX(-100px)}60%{opacity:1;transform:translateX(20px)}100%{transform:translateX(0)}}@keyframes cd-bounce-2-inverse{0%{opacity:0;transform:translateX(100px)}60%{opacity:1;transform:translateX(-20px)}100%{transform:translateX(0)}}
+
+/* Theme styles that were passed as inline props in experience-timeline.tsx.
+   Extra selector weight reproduces the precedence inline styles had. */
+.vertical-timeline.rg-timeline .vertical-timeline-element .vertical-timeline-element-content {
+  max-width: 58rem;
+  background: #f1f5f9;
+  box-shadow: 0px 4px 10px #3498db;
+  border: 2px solid #4ade80;
+  text-align: left;
+  padding: 1.3rem 2rem;
+  font-size: 1rem;
+}
+html.dark .vertical-timeline.rg-timeline .vertical-timeline-element .vertical-timeline-element-content {
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(0, 0, 0, 0.5);
+}
+.vertical-timeline.rg-timeline .vertical-timeline-element .vertical-timeline-element-content-arrow {
+  border-right: 0.6rem solid #3498db;
+}
+html.dark .vertical-timeline.rg-timeline .vertical-timeline-element .vertical-timeline-element-content-arrow {
+  border-right: 0.6rem solid rgba(255, 255, 255, 0.05);
+}
+.vertical-timeline.rg-timeline .vertical-timeline-element .vertical-timeline-element-icon {
+  background: #f1f5f9;
+  border: 2px solid #4ade80;
+  box-shadow: 0px 4px 10px #3498db;
+  font-size: 1.5rem;
+  color: #15803d;
+}
+html.dark .vertical-timeline.rg-timeline .vertical-timeline-element .vertical-timeline-element-icon {
+  background: #1c2432;
+  border: 2px solid #1c2432;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  color: #e5e7eb;
+}
+
+/* Skill icon colours (were inline styles keyed on theme) */
+.skill-icon {
+  max-width: 59%;
+  max-height: 59%;
+  color: #234e52;
+  opacity: 1;
+}
+html.dark .skill-icon {
+  color: #b2fffc;
+}
+
+/* ==========================================================================
+   Motion: CSS replacements for the Framer Motion animations.
+   Spring curves are approximated with multi-stop keyframes.
+   ========================================================================== */
+
+/* Framer default "underdamped spring" for x/y (stiffness 500, damping 25) */
+@keyframes rg-spring-y {
+  0% { transform: translateY(var(--rg-from-y, 0)); }
+  45% { transform: translateY(calc(var(--rg-from-y, 0) * -0.12)); }
+  70% { transform: translateY(calc(var(--rg-from-y, 0) * 0.04)); }
+  88% { transform: translateY(calc(var(--rg-from-y, 0) * -0.01)); }
+  100% { transform: translateY(0); }
+}
+@keyframes rg-nav-spring {
+  0% { transform: translateX(-50%) translateY(-100px); }
+  45% { transform: translateX(-50%) translateY(12px); }
+  70% { transform: translateX(-50%) translateY(-4px); }
+  88% { transform: translateX(-50%) translateY(1px); }
+  100% { transform: translateX(-50%) translateY(0); }
+}
+@keyframes rg-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes rg-scale-in {
+  0% { opacity: 0; transform: scale(0.95); }
+  60% { opacity: 1; transform: scale(1.01); }
+  100% { opacity: 1; transform: scale(1); }
+}
+@keyframes rg-tween-up {
+  from { opacity: 0; transform: translateY(var(--rg-from-y, 0)); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes rg-skill-flip {
+  0% { opacity: 0; transform: translateY(20px) rotateY(0deg); }
+  99.9% { opacity: 0.25; transform: translateY(0) rotateY(360deg); }
+  100% { opacity: 1; transform: translateY(0) rotateY(360deg); }
+}
+
+/* Navbar slide-down on load */
+.rg-nav-enter {
+  animation: rg-nav-spring 0.7s linear both, rg-fade-in 0.3s ease-out both;
+}
+.rg-navitem-enter {
+  --rg-from-y: -100px;
+  animation: rg-spring-y 0.7s linear both, rg-fade-in 0.3s ease-out both;
+}
+
+/* Intro: container scales in, children stagger up by 0.2s */
+.rg-intro {
+  animation: rg-scale-in 0.5s ease-out both;
+}
+.rg-intro-child {
+  --rg-from-y: 50px;
+  animation: rg-spring-y 0.7s linear var(--rg-delay, 0s) both,
+    rg-fade-in 0.3s ease-out var(--rg-delay, 0s) both;
+}
+
+/* About: fades up on load after 0.175s */
+.rg-about-enter {
+  --rg-from-y: 100px;
+  animation: rg-spring-y 0.7s linear 0.175s both, rg-fade-in 0.3s ease-out 0.175s both;
+}
+
+/* Scroll-triggered reveals (only hidden when JS is running) */
+html.js .rg-reveal-up:not(.is-inview) {
+  opacity: 0;
+  transform: translateY(100px);
+}
+.rg-reveal-up.is-inview {
+  --rg-from-y: 100px;
+  animation: rg-tween-up 0.5s ease-in-out 0.3s both;
+}
+html.js .rg-reveal-fade:not(.is-inview) {
+  opacity: 0;
+}
+.rg-reveal-fade.is-inview {
+  animation: rg-fade-in 1s ease-out both;
+}
+
+html.js .skill-hex:not(.is-inview) {
+  opacity: 0;
+  transform: translateY(20px);
+}
+.skill-hex.is-inview {
+  animation: rg-skill-flip 0.9s ease-in-out var(--rg-delay, 0s) both;
+}
+
+@media (max-width: 768px) {
+  html.js .rg-reveal-up:not(.is-inview) {
+    transform: none;
+  }
+  .rg-reveal-up.is-inview {
+    --rg-from-y: 0px;
+  }
+  html.js .skill-hex:not(.is-inview) {
+    transform: none;
+  }
+  .skill-hex.is-inview {
+    animation: rg-fade-in 0.5s ease-in-out var(--rg-delay, 0s) both;
+  }
+}
+
+/* Sliding active-section pill (replaces Framer layoutId, spring 380/30) */
+.nav-pill {
+  transition: transform 0.45s cubic-bezier(0.34, 1.25, 0.64, 1),
+    width 0.45s cubic-bezier(0.34, 1.25, 0.64, 1),
+    height 0.45s cubic-bezier(0.34, 1.25, 0.64, 1), opacity 0.2s;
+}
+.nav-pill.no-transition {
+  transition: none;
+}
+
+/* ==========================================================================
+   Toasts (visual match for react-hot-toast defaults, position top-right)
+   ========================================================================== */
+.toast-region {
+  position: fixed;
+  z-index: 9999;
+  top: 16px;
+  right: 16px;
+  left: 16px;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+.toast {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  color: #363636;
+  line-height: 1.3;
+  will-change: transform;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1), 0 3px 3px rgba(0, 0, 0, 0.05);
+  max-width: 350px;
+  pointer-events: auto;
+  padding: 8px 10px;
+  border-radius: 8px;
+  animation: rg-toast-enter 0.35s cubic-bezier(0.21, 1.02, 0.73, 1) forwards;
+}
+.toast.is-leaving {
+  animation: rg-toast-exit 0.4s cubic-bezier(0.06, 0.71, 0.55, 1) forwards;
+}
+.toast-message {
+  display: flex;
+  justify-content: center;
+  margin: 4px 10px;
+  flex: 1 1 auto;
+  white-space: pre-line;
+}
+.toast-icon {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  border-radius: 10px;
+  opacity: 0;
+  transform: scale(0) rotate(45deg);
+  animation: rg-toast-circle 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.1s forwards;
+}
+.toast-icon--success { background: #61d345; }
+.toast-icon--error { background: #ff4b4b; }
+.toast-icon--success::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 6px;
+  left: 6px;
+  height: 10px;
+  width: 6px;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(45deg);
+}
+.toast-icon--error::before,
+.toast-icon--error::after {
+  content: "";
+  position: absolute;
+  border-radius: 3px;
+  background: #fff;
+  bottom: 9px;
+  left: 4px;
+  height: 2px;
+  width: 12px;
+}
+.toast-icon--error::after { transform: rotate(45deg); }
+.toast-icon--error::before { transform: rotate(-45deg); }
+
+@keyframes rg-toast-enter {
+  0% { transform: translate3d(0, -200%, 0) scale(0.6); opacity: 0.5; }
+  100% { transform: translate3d(0, 0, 0) scale(1); opacity: 1; }
+}
+@keyframes rg-toast-exit {
+  0% { transform: translate3d(0, 0, -1px) scale(1); opacity: 1; }
+  100% { transform: translate3d(0, -150%, -1px) scale(0.6); opacity: 0; }
+}
+@keyframes rg-toast-circle {
+  from { transform: scale(0) rotate(45deg); opacity: 0; }
+  to { transform: scale(1) rotate(45deg); opacity: 1; }
+}
+
+/* Respect users who ask for less motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

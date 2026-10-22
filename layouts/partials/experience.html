@@ -1,0 +1,27 @@
+{{- /* Port of components/experience.tsx + experience-timeline.tsx.
+       Markup mirrors react-vertical-timeline-component (2-columns layout, animate on). */ -}}
+<section
+  id="Experience"
+  data-spy-section
+  data-desktop-threshold="0.5"
+  data-reveal
+  class="rg-reveal-up scroll-mt-28 mb-28 sm:mb-32 w-full"
+>
+  {{ partial "section-heading.html" (T "experienceHeading") }}
+  <div class="vertical-timeline vertical-timeline--animate vertical-timeline--two-columns rg-timeline">
+    {{- range hugo.Data.experiences }}
+      <div class="vertical-timeline-element">
+        <span class="vertical-timeline-element-icon bounce-in">
+          {{ partial (printf "icons/%s.html" .icon) (dict) }}
+        </span>
+        <div class="vertical-timeline-element-content bounce-in">
+          <div class="vertical-timeline-element-content-arrow"></div>
+          <h3 class="font-semibold capitalize text-lg text-blue-700 dark:text-blue-400">{{ .title }}</h3>
+          <p class="font-normal !mt-0 text-green-700 dark:text-green-400">{{ .location }}</p>
+          <p class="!mt-1 !font-normal text-lg text-gray-900 dark:text-gray-200">{{ .description }}</p>
+          <span class="vertical-timeline-element-date xl:mx-2 mx-0">{{ .date }}</span>
+        </div>
+      </div>
+    {{- end }}
+  </div>
+</section>

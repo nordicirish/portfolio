@@ -1,0 +1,55 @@
+{{- /* Port of components/project.tsx. Scroll-linked scale/opacity is applied by assets/js/animations.ts. */ -}}
+{{- $title := .title -}}
+<div class="group mb-8 md:mb-12 last:mb-0 w-full max-w-[52rem]" data-project-card>
+  <a
+    href="{{ .github }}"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="{{ T "viewProjectAria" (dict "Title" $title) }}"
+    class="cursor-pointer"
+  >
+    <section
+      class="flex flex-col md:flex-row bg-gray-50 border border-black/5 rounded-lg overflow-hidden relative hover:bg-gray-100 transition text-blue-700 dark:text-blue-400 dark:bg-white/10 dark:hover:bg-white/20 shadow-light-mode dark:shadow-dark-mode group-even:md:flex-row-reverse gap-4 pt-7 pb-6"
+    >
+      <div class="flex-1 pb-4 px-4 md:pb-0 md:pt-0 flex flex-col h-full md:max-w-[35%]">
+        <h3 class="text-2xl font-semibold">{{ $title }}</h3>
+        <p class="mt-2 mb-2 leading-relaxed text-gray-900 dark:text-gray-200">{{ .description }}</p>
+        <ul class="flex flex-wrap mt-4 gap-2">
+          {{- range .tags }}
+            <li
+              class="bg-teal-800 dark:bg-teal-900 text-gray-100 dark:text-gray-50 px-3 py-1 text-[0.8rem] uppercase tracking-wider rounded-full"
+            >
+              {{ . }}
+            </li>
+          {{- end }}
+        </ul>
+      </div>
+      <div
+        class="flex-1 md:flex md:items-center pl-6 pr-6 md:justify-center group-even:md:pr-6 group-even:md:pl-0 group-odd:md:pl-6 group-odd:md:pr-0"
+      >
+        <div class="w-full h-[18rem] md:h-[20rem] relative group-even:md:translate-x-6 group-odd:md:-translate-x-6">
+          {{- with resources.Get (printf "images/%s" .image) }}
+            {{- $srcset := slice }}
+            {{- $fallback := . }}
+            {{- range $w := slice 384 640 828 1080 1200 }}
+              {{- if ge $fallback.Width $w }}
+                {{- $r := $fallback.Resize (printf "%dx webp q95" $w) }}
+                {{- $srcset = $srcset | append (printf "%s %dw" $r.RelPermalink $w) }}
+              {{- end }}
+            {{- end }}
+            {{- $default := .Resize (printf "%dx webp q95" (cond (gt .Width 828) 828 .Width)) }}
+            <img
+              class="absolute inset-0 h-full w-full object-cover object-left-top rounded-lg shadow-2xl transition md:group-hover:scale-[1.04] group-hover:-translate-y-[2%] group-hover:rotate-1 group-even:group-hover:translate-x-[2%] group-even:group-hover:rotate-1 group-odd:group-hover:-translate-x-[2%] group-odd:group-hover:-rotate-1"
+              src="{{ $default.RelPermalink }}"
+              {{ with $srcset }}srcset="{{ delimit . ", " }}"{{ end }}
+              sizes="(max-width: 768px) 100vw, 50vw"
+              alt="{{ T "projectImageAlt" (dict "Title" $title) }}"
+              loading="lazy"
+              decoding="async"
+            />
+          {{- end }}
+        </div>
+      </div>
+    </section>
+  </a>
+</div>

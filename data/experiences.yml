@@ -1,0 +1,16 @@
+# Timeline entries, newest first. `icon` must match a partial in layouts/partials/icons/.
+- title: Web Developer Internship @ BearIT
+  location: Tampere, Finland
+  description: I levelled up my skills from React to Next.js. and I collaboratively coded a sports training app built with Next.js, PostgreSQL, Tailwind & Typescript and I handled the deployment of a gardening app to AWS.
+  icon: RiNextjsFill
+  date: 09/2023 - 12/2023
+- title: Software Developer Trainee @ Futurice
+  location: Tampere, Finland
+  description: I was a Full-stack Software Development in Cloud Native Environment trainee. I undertook 300 hours of agile project coding work and completed 354 hours of studies. I also gained 4 cloud certifications.
+  icon: FaVuejs
+  date: 10/2022 - 02/2023
+- title: Diploma in Full-stack Development @ Tampere University
+  location: Tampere, Finland
+  description: I studied Full-stack Web Development and gained valuable skills in Front-end (React, Html, Javascript, CSS, SASS, Bootstrap) and Back-end (Node.js, Express, MariaDB) development.
+  icon: LuGraduationCap
+  date: 09/2021 - 10/2022

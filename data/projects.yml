@@ -1,0 +1,26 @@
+# Portfolio projects. `image` is relative to static/images/ (also mounted into assets/images for resizing).
+- title: Gemini AI Council
+  description: An autonomous multi-agent portfolio intelligence system. Using parallel sub-agents, it runs live market scans, consensus debates, and outputs risk-compliant payloads.
+  tags: [Gemini API, Agentic AI, Python, yfinance]
+  image: chat_overlay_mockup.png
+  github: https://github.com/nordicirish/gemini_cli_subagent_system
+- title: ImageGenie
+  description: Image Genie is a full-stack app for AI text-to-image generation using React, Next.js, TypeScript, and OpenAI's DALL-E API. Users can download generated images.
+  tags: [OpenAI, React, Next.js, TypeScript, Tailwind]
+  image: imageGenieImg.jpeg
+  github: https://github.com/nordicirish/dall-e-image-generator-app
+- title: Stock Dashboard
+  description: Stock Dashboard is a full-stack app that allows users to search, store and view stock data using React, Next.js, TypeScript, PostgreSQL, Zod, and OpenAI's API.
+  tags: [OpenAI, React, Next.js, TypeScript, PostgreSQL, Zod]
+  image: stockDashboardImg.png
+  github: https://github.com/nordicirish/stock-dashboard
+- title: Invoice Dashboard
+  description: This app is based on the Next.js App Router Course. I've added Blob storage and message handling using the useContext hook.
+  tags: [React, Next.js, TypeScript, PostgreSQL, Tailwind]
+  image: invoiceDashboardImg.png
+  github: https://github.com/nordicirish/nextjs-dashboard
+- title: Learn Languages App
+  description: A vocabulary learning app. This was my first ever full-stack project. I developed it as my Tampere University course project in 2022.
+  tags: [React, Node.js, Express, MariaDB, Bootstrap]
+  image: learnLangImg.png
+  github: https://github.com/nordicirish/learn-languages-app
