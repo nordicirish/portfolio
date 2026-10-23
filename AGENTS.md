@@ -193,6 +193,16 @@ On every turn where code changes, layout additions, or configuration edits are m
 
 ---
 
+### 8. Session Security & Vulnerability Auditing Protocol
+- **Once-Per-Session Audit:** On the first turn of a session or when altering dependencies, execute a passive vulnerability scan (`npm audit`).
+- **User Authorization Required:** Never run automated fixing commands (`npm audit fix` or `npm update`) without first presenting:
+  1. Affected package(s) and severity rating (Low, Moderate, High, Critical).
+  2. The patch or upgrade path proposed.
+  3. Explicit request for user approval before making file changes.
+- **Breaking-Change Verification:** Immediately after applying approved security updates, execute the full verification suite (`npm run check`, `npm run typecheck`, and `npm test`) to confirm zero regressions in Hugo templates, Tailwind PostCSS bundling, or serverless API functionality.
+
+---
+
 ## ⚠️ Veto Conditions (Automatic Failure)
 Reject or abort an architectural operation if:
 - It introduces forced synchronous reflows or layout thrashing (e.g., interleaved geometry reads and style writes).
@@ -203,4 +213,5 @@ Reject or abort an architectural operation if:
 - It fetches external web fonts or unencrypted assets directly from third-party US CDNs without local self-hosting.
 - It exposes private API keys (`RESEND_API_KEY`) on the client side or in static templates.
 - It produces invalid HTML, broken heading hierarchies, missing `alt` attributes, or unlabelled interactive elements violating WCAG 2.1 AA.
+- It applies dependency updates or security patches without explicit user permission or without passing the breaking-change verification suite.
 - It fails to compile with `npm run check`.
