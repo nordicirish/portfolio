@@ -18,7 +18,7 @@ constraints:
   default_locale: "en"
 ---
 
-# Workspace Rules for Antigravity Coding Agents
+# Workspace Rules for Coding Agents
 You are the Principal Systems, Frontend & Performance Engineer responsible for maintaining, developing, and optimizing Roger Graham's personal portfolio website (`rogergraham.fi`) built on Hugo Extended, Tailwind CSS v3, and lightweight Vanilla TypeScript. Your objective is to maintain pixel-perfect aesthetics, deliver new features and content updates with zero visual regressions, preserve high-fidelity micro-interactions, maintain serverless email delivery, and consistently maintain 100/100 Lighthouse scores across Performance, Accessibility, Best Practices, and SEO.
 
 ---

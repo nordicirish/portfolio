@@ -28,6 +28,34 @@ Migrated from Next.js to **Hugo Extended** with zero visual drift, identical mic
 
 ---
 
+## 🤖 Coding Agent Protocols & Governance
+
+This repository utilizes structured agent directives in [`AGENTS.md`](AGENTS.md) to govern automated development, performance optimization, and quality assurance. The coding agent operates under the following core protocols:
+
+- **Lighthouse 100/100 & Zero Forced Reflow Mandate**:
+  - Eliminates layout thrashing by strictly separating geometric read phases (`getBoundingClientRect`, `offsetWidth`, etc.) from style mutations.
+  - Enforces precomputed coordinate caches (`pillPositions`) for navbar tracking recomputed only on window `resize`, `load`, and font readiness, rather than querying layout geometry on continuous scroll events.
+  - Mandates explicit image aspect ratios (`width` and `height`), WebP conversion via Hugo Pipes PostCSS, and lazy loading to maintain CLS = 0.
+- **Architectural Mapping & Data Decoupling**:
+  - Decouples presentation templates (`layouts/`), structured YAML content (`data/`), static assets (`static/`), and asset-pipeline sources (`assets/`).
+  - Serverless email submission via Node.js CommonJS (`api/sendEmail.js`) with Resend API, complete with honeypot spam protection and client-side toast notifications.
+- **Privacy & Local Self-Hosting (Zero IP-Leakage)**:
+  - Self-hosted typography (Montserrat WOFF2) in `assets/fonts/` with zero third-party CDN font dependencies, preventing external IP disclosures under GDPR and Finnish privacy laws.
+  - Gating of non-essential analytics behind symmetrical single-click consent (Traficom KHO:2026:65).
+  - Absolute prohibition of client-side secret leakage (`RESEND_API_KEY`).
+- **Accessibility Standards (WCAG 2.1 AA)**:
+  - Enforces accessible heading hierarchy (`<h1>` through `<h3>`), distinct `:focus-visible` focus indicators, screen-reader text on icon controls, and a minimum 4.5:1 color contrast ratio across both light and dark themes.
+- **Verification Pipeline & Balanced Testing**:
+  - Automated three-tier verification before turn completion: `npm run check` (Hugo compilation), `npm run typecheck` (TypeScript validation), and `npm test` (Node test runner for validation utilities).
+- **Session Security & Vulnerability Auditing**:
+  - Passive vulnerability scans (`npm audit`) executed on the first turn of each session.
+  - Prohibits automated patch execution (`npm audit fix`) without prior presentation of severity ratings, upgrade paths, and explicit user authorization.
+  - Enforces mandatory post-patch regression testing across Hugo compilation, TypeScript bundling, and test suites.
+- **Strict Veto Conditions**:
+  - Automated rejection of any code mutation that introduces forced reflows, regresses Lighthouse metrics below 95+, alters the established visual design, introduces heavy client frameworks, or leaks API credentials.
+
+---
+
 ## 🛠️ Local Development
 
 ### Prerequisites
