@@ -51,6 +51,10 @@ This repository utilizes structured agent directives in [`AGENTS.md`](AGENTS.md)
   - Passive vulnerability scans (`npm audit`) executed on the first turn of each session.
   - Prohibits automated patch execution (`npm audit fix`) without prior presentation of severity ratings, upgrade paths, and explicit user authorization.
   - Enforces mandatory post-patch regression testing across Hugo compilation, TypeScript bundling, and test suites.
+- **Architectural & Documentation Update Protocol**:
+  - Requires atomic synchronization of configurations, templates, and documentation on turns introducing architectural changes.
+  - Enforces explicit user handoff runbooks (`## 📋 Required User Actions`) for platform-level configurations outside the repository (Vercel project settings, Resend domain verification, DNS records).
+  - Standardizes commit history using Conventional Commits (`feat:`, `fix:`, `perf:`, `style:`, `refactor:`, `chore:`, `data:`).
 - **Strict Veto Conditions**:
   - Automated rejection of any code mutation that introduces forced reflows, regresses Lighthouse metrics below 95+, alters the established visual design, introduces heavy client frameworks, or leaks API credentials.
 
