@@ -3,10 +3,10 @@
   hash: "#Home"
 - name: About
   hash: "#About"
-- name: Projects
-  hash: "#Projects"
 - name: Skills
   hash: "#Skills"
+- name: Projects
+  hash: "#Projects"
 - name: Experience
   hash: "#Experience"
 - name: Contact
